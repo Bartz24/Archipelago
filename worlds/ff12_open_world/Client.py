@@ -10,7 +10,17 @@ import asyncio
 from pymem import pymem
 
 from NetUtils import ClientStatus, NetworkItem
-from CommonClient import gui_enabled, logger, get_base_parser, CommonContext, server_loop, ClientCommandProcessor
+from CommonClient import gui_enabled, logger, get_base_parser, CommonContext, server_loop, ClientCommandProcessor, handle_url_arg
+
+tracker_loaded = False
+try:
+    from worlds.tracker.TrackerClient import TrackerGameContext, TrackerCommandProcessor
+    CommonContext = TrackerGameContext
+    ClientCommandProcessor = TrackerCommandProcessor
+    tracker_loaded = True
+except ModuleNotFoundError:
+    pass
+
 
 from .Items import FF12OW_BASE_ID, item_data_table, inv_item_table
 from .Locations import location_data_table, FF12OpenWorldLocationData
@@ -97,6 +107,7 @@ class FF12OpenWorldContext(CommonContext):
     command_processor = FF12OpenWorldCommandProcessor
     game = "Final Fantasy 12 Open World"
     items_handling = 0b111  # Indicates you get items sent from other worlds.
+    tags = ["AP"]
 
     def __init__(self, server_address, password):
         super(FF12OpenWorldContext, self).__init__(server_address, password)
@@ -192,7 +203,6 @@ class FF12OpenWorldContext(CommonContext):
             return self.ff12.write_bytes(address, value.to_bytes(4, "little"), 4)
 
     def on_package(self, cmd: str, args: dict):
-
         if cmd in {"Connected"}:
             asyncio.create_task(self.send_msgs([{"cmd": "GetDataPackage", "games": ["Final Fantasy 12 Open World"]}]))
             self.ff12slotdata = args['slot_data']
@@ -217,6 +227,8 @@ class FF12OpenWorldContext(CommonContext):
             self.find_game()
             self.server_connected = True
             asyncio.create_task(self.send_msgs([{'cmd': 'Sync'}]))
+
+        super(FF12OpenWorldContext, self).on_package(cmd, args)
 
     def find_game(self):
         if not self.ff12connected:
@@ -1017,18 +1029,17 @@ class FF12OpenWorldContext(CommonContext):
                 self.ff12connected = False
             logger.info(e)
 
-    def run_gui(self):
+    def make_gui(self):
         """Import kivy UI system and start running it as self.ui_task."""
-        from kvui import GameManager
+        ui = super().make_gui()
 
-        class FF12OpenWorldManager(GameManager):
-            logging_pairs = [
-                ("Client", "Archipelago")
-            ]
+        class FF12OpenWorldManager(ui):
+            # logging_pairs = [
+            #     ("Client", "Archipelago")
+            # ]
             base_title = "Archipelago FF12 Open World Client"
 
-        self.ui = FF12OpenWorldManager(self)
-        self.ui_task = asyncio.create_task(self.ui.async_run(), name="UI")
+        return FF12OpenWorldManager
 
     def ff12_write_bit(self, byte_index: int, bit_index: int, value: bool,use_base=True):
         byte = self.ff12_read_byte(byte_index, use_base)
@@ -1068,10 +1079,12 @@ async def ff12_watcher(ctx: FF12OpenWorldContext):
         ctx.give_items_task = None
 
 
-def launch():
-    async def main(args):
+def launch(*launch_args):
+    async def main():
         ctx = FF12OpenWorldContext(args.connect, args.password)
         ctx.server_task = asyncio.create_task(server_loop(ctx), name="server loop")
+        if tracker_loaded:
+            ctx.run_generator()
         if gui_enabled:
             ctx.run_gui()
         ctx.run_cli()
@@ -1088,8 +1101,10 @@ def launch():
     import colorama
 
     parser = get_base_parser(description="FF12 Open World Client, for text interfacing.")
+    parser.add_argument("url", default="", type=str, nargs="?", help="Archipelago connection url")
 
-    args, rest = parser.parse_known_args()
+    args = parser.parse_args(launch_args)
+    args = handle_url_arg(args, parser)
     colorama.init()
-    asyncio.run(main(args))
+    asyncio.run(main())
     colorama.deinit()
