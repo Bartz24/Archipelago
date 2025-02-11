@@ -10,7 +10,8 @@ import asyncio
 from pymem import pymem
 
 from NetUtils import ClientStatus, NetworkItem
-from CommonClient import gui_enabled, logger, get_base_parser, CommonContext, server_loop, ClientCommandProcessor
+from CommonClient import gui_enabled, logger, get_base_parser, CommonContext, server_loop, ClientCommandProcessor, handle_url_arg
+
 
 from .Items import FF12OW_BASE_ID, item_data_table, inv_item_table
 from .Locations import location_data_table, FF12OpenWorldLocationData
@@ -1068,8 +1069,8 @@ async def ff12_watcher(ctx: FF12OpenWorldContext):
         ctx.give_items_task = None
 
 
-def launch():
-    async def main(args):
+def launch(*launch_args):
+    async def main():
         ctx = FF12OpenWorldContext(args.connect, args.password)
         ctx.server_task = asyncio.create_task(server_loop(ctx), name="server loop")
         if gui_enabled:
@@ -1088,8 +1089,10 @@ def launch():
     import colorama
 
     parser = get_base_parser(description="FF12 Open World Client, for text interfacing.")
+    parser.add_argument("url", default="", type=str, nargs="?", help="Archipelago connection url")
 
-    args, rest = parser.parse_known_args()
+    args = parser.parse_args(launch_args)
+    args = handle_url_arg(args, parser)
     colorama.init()
-    asyncio.run(main(args))
+    asyncio.run(main())
     colorama.deinit()
