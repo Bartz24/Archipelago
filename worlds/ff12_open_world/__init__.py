@@ -1,22 +1,24 @@
 import json
 import os
 import re
-from typing import List, Any, Dict, Tuple
+from collections import defaultdict
+from typing import List, Any, Dict, Set, Tuple
 
 from BaseClasses import Region, Tutorial, ItemClassification, CollectionState, Callable, LocationProgressType, \
-    MultiWorld, Item
+    MultiWorld, Item, Location, Entrance
 from worlds.AutoWorld import WebWorld, World
 from worlds.Files import APPlayerContainer
-from worlds.generic.Rules import add_rule
 from worlds.LauncherComponents import launch_subprocess, components, Component, Type
+from rule_builder.rules import Has
 
 from .Items import FF12OpenWorldItem, item_data_table, item_table, filler_items, filler_weights
 from .Locations import FF12OpenWorldLocation, location_data_table, location_table
 from .Options import FF12OpenWorldGameOptions
 from .Regions import region_data_table
-from .Rules import rule_data_table, entrance_rule_data_table, entrance_rule_difficulty_table, indirect_entrance_table
+from .Rules import rule_data_table, entrance_rule_data_table, entrance_rule_difficulty_table, \
+    elixir_shop_rule_table, location_trait_data_table
 from .Events import event_data_table, FF12OpenWorldEventData
-from .RuleLogic import state_has_characters
+from .RuleLogic import state_has_characters, DifficultyAccessRule, DIFFICULTY_RANGE
 
 
 def launch_client(*args):
@@ -29,6 +31,20 @@ components.append(Component("FF12 Open World Client",
                             game_name="Final Fantasy 12 Open World", supports_uri=True))
 
 character_names = ["Vaan", "Ashe", "Fran", "Balthier", "Basch", "Penelo"]
+
+# Trial 100's reward. Clearing the last trials needs elixirs, which only one clan shop sells per seed.
+TRIAL_100_REWARD_ID = "919C"
+
+
+def copy_difficulty_access(old: CollectionState, new: CollectionState) -> CollectionState:
+    # A copy holds the same items, so what was reachable in the original still is.
+    known = getattr(old, "ff12_difficulty_access", None)
+    if known is not None:
+        new.ff12_difficulty_access = {player: difficulties.copy() for player, difficulties in known.items()}
+    return new
+
+
+CollectionState.additional_copy_functions.append(copy_difficulty_access)
 
 
 class FF12OpenWorldContainer(APPlayerContainer):
@@ -82,6 +98,10 @@ class FF12OpenWorldWorld(World):
         self.excluded_locations: Dict[str, tuple[str, int]] = {}
         self.re_gen_data: Dict[str, Any] = {}
         self.origin_region_name = "Initial"
+        self.elixir_shop: int = -1
+        self.locations_by_difficulty: Dict[int, List[Location]] = {}
+        self.entrances_by_difficulty: Dict[int, List[Entrance]] = {}
+        self.difficulty_tier_regions: Dict[int, Set[str]] = {}
 
     def create_item(self, name: str) -> FF12OpenWorldItem:
         return FF12OpenWorldItem(name, item_data_table[name].classification, item_data_table[name].code, self.player)
@@ -152,19 +172,6 @@ class FF12OpenWorldWorld(World):
             region = self.multiworld.get_region(region_name, self.player)
             region.add_exits(region_data_table[region_name].connecting_regions)
 
-        # Register indirect connections
-        # TODO: None anymore so skip for now
-        '''
-        for region_name, connection_tuples in indirect_entrance_table.items():
-            region = self.multiworld.get_region(region_name, self.player)
-            for conn in connection_tuples:
-                name = f"{conn[0]} -> {conn[1]}"
-                connection = self.multiworld.get_entrance(name, self.player)
-                if connection is None:
-                    raise Exception(f"Indirect connection {name} not found")
-                self.multiworld.register_indirect_condition(region, connection)
-        '''
-
         if len(self.re_gen_data) > 0:
             locations_to_add = self.re_gen_data["re_gen_locations"]
             self.selected_treasures = self.re_gen_data["treasures"]
@@ -191,11 +198,13 @@ class FF12OpenWorldWorld(World):
                 region.locations.append(FF12OpenWorldLocation(self.player, event_name, None, region))
             return
 
-        # Select 255 random treasure type locations.
+        # Select random treasure type locations. Respawn ids are banked per map by the mod,
+        # so this is no longer capped at the game's 256 of them.
         treasure_names = [name for name, data in location_data_table.items()
                           if data.type == "treasure"]
-        locations_to_add = self.multiworld.random.sample(treasure_names,
-                                                         k=255)
+        locations_to_add = self.multiworld.random.sample(
+            treasure_names,
+            k=min(self.options.treasure_count.value, len(treasure_names)))
 
         self.selected_treasures = [loc for loc in locations_to_add]        
 
@@ -320,7 +329,18 @@ class FF12OpenWorldWorld(World):
                 return LocationProgressType.EXCLUDED
             if "Clan Esper:" in location_name and not self.options.include_clan_hall_rewards:
                 return LocationProgressType.EXCLUDED
+            trial_stage = self.get_trial_stage(location_name)
+            if trial_stage is not None and trial_stage > self.options.max_trial_stage:
+                return LocationProgressType.EXCLUDED
         return location_data.classification
+
+    @staticmethod
+    def get_trial_stage(location_name: str):
+        """The Trial Mode stage a reward is for, from its Trial10..Trial100 trait, or None."""
+        for trait in location_trait_data_table.get(location_name, ()):
+            if trait.startswith("Trial") and trait[len("Trial"):].isdigit():
+                return int(trait[len("Trial"):])
+        return None
 
     def get_filler_item_name(self) -> str:
         filler = self.multiworld.random.choices(filler_items, weights=filler_weights)[0]
@@ -355,22 +375,43 @@ class FF12OpenWorldWorld(World):
         return filler
 
     def set_rules(self) -> None:
-        # Set location rules
-        for location in self.multiworld.get_locations(self.player):
-            add_rule(location, self.create_rule(location.name))
-            if self.options.difficulty_progressive_scaling:
-                add_rule(location, self.create_chara_rule(location.name))
+        scaling = bool(self.options.difficulty_progressive_scaling)
 
-        # Set entrance rules when defined
+        location_rules: Dict[Location, Any] = {}
+        for location in self.multiworld.get_locations(self.player):
+            rule = rule_data_table.get(location.name)
+            location_data = location_data_table.get(location.name)
+            if rule is not None and location_data is not None and location_data.str_id == TRIAL_100_REWARD_ID \
+                    and self.elixir_shop in elixir_shop_rule_table:
+                rule = rule & elixir_shop_rule_table[self.elixir_shop]
+            location_rules[location] = rule
+
+        entrance_rules: Dict[Entrance, Any] = {}
         for region in self.multiworld.regions:
             if region.player != self.player:
                 continue
             for entrance in region.exits:
                 entrance_tuple = (entrance.parent_region.name, entrance.connected_region.name)
                 if entrance_tuple in entrance_rule_data_table:
-                    add_rule(entrance, self.create_entrance_rule(entrance_tuple))
-                    if self.options.difficulty_progressive_scaling:
-                        add_rule(entrance, self.create_chara_rule_entrance(entrance_tuple))
+                    entrance_rules[entrance] = entrance_rule_data_table[entrance_tuple]
+
+        # The difficulty rule depends on the base rules' region dependencies, so those come first.
+        if scaling:
+            self.group_by_difficulty()
+            self.group_difficulty_regions(location_rules, entrance_rules)
+
+        for location, rule in location_rules.items():
+            if scaling:
+                difficulty_rule = DifficultyAccessRule(self.get_difficulty(location.name))
+                rule = difficulty_rule if rule is None else rule & difficulty_rule
+            if rule is not None:
+                self.set_rule(location, rule)
+
+        for entrance, rule in entrance_rules.items():
+            if scaling:
+                entrance_tuple = (entrance.parent_region.name, entrance.connected_region.name)
+                rule = rule & DifficultyAccessRule(entrance_rule_difficulty_table[entrance_tuple])
+            self.set_rule(entrance, rule)
 
         # Set event locked items
         for event_name, event_data in event_data_table.items():
@@ -397,62 +438,82 @@ class FF12OpenWorldWorld(World):
                 self.create_item("Writ of Transit"))
 
         # Completion condition.
-        self.multiworld.completion_condition[self.player] = lambda state: state.has("Victory", self.player)
+        self.set_completion_rule(Has("Victory"))
 
-    def create_rule(self, location_name: str) -> Callable[[CollectionState], bool]:
-        return lambda state: rule_data_table[location_name](state, self.player)
-    
-    def state_has_difficulty_access(self, state: CollectionState, difficulty: int, player: int, range: int) -> bool:
+    def group_by_difficulty(self) -> None:
+        self.locations_by_difficulty = defaultdict(list)
+        for loc in self.multiworld.get_locations(self.player):
+            if loc.name in location_data_table:
+                self.locations_by_difficulty[location_data_table[loc.name].difficulty].append(loc)
+
+        self.entrances_by_difficulty = defaultdict(list)
+        for entrance in self.multiworld.get_entrances(self.player):
+            entrance_tuple = (entrance.parent_region.name, entrance.connected_region.name)
+            self.entrances_by_difficulty[entrance_rule_difficulty_table[entrance_tuple]].append(entrance)
+
+    def group_difficulty_regions(self, location_rules: Dict[Location, Any],
+                                 entrance_rules: Dict[Entrance, Any]) -> None:
+        self.difficulty_tier_regions = {}
+        top = max([*self.locations_by_difficulty.keys(), *self.entrances_by_difficulty.keys(), 0])
+        for tier in range(top + 1):
+            regions: Set[str] = set(self.difficulty_region_dependencies(tier))
+            for location in self.locations_by_difficulty.get(tier, ()):
+                regions.add(location.parent_region.name)
+                regions.update(self.rule_regions(location_rules.get(location)))
+            for entrance in self.entrances_by_difficulty.get(tier, ()):
+                regions.add(entrance.parent_region.name)
+                regions.update(self.rule_regions(entrance_rules.get(entrance)))
+            self.difficulty_tier_regions[tier] = regions
+
+    def rule_regions(self, rule: Any) -> Set[str]:
+        if rule is None:
+            return set()
+        return set(rule.resolve(self).region_dependencies().keys())
+
+    def difficulty_region_dependencies(self, difficulty: int) -> Tuple[str, ...]:
+        regions: Set[str] = set()
+        for tier in range(max(0, difficulty - DIFFICULTY_RANGE), difficulty):
+            regions.update(self.difficulty_tier_regions.get(tier, ()))
+        return tuple(sorted(regions))
+
+    def get_difficulty(self, name: str) -> int:
+        if name in location_data_table:
+            return location_data_table[name].difficulty
+        if name in event_data_table:
+            return event_data_table[name].difficulty
+        raise Exception(f"Could not find the difficulty for {name}.")
+
+    def state_has_difficulty_access(self, state: CollectionState, difficulty: int, player: int,
+                                    difficulty_range: int) -> bool:
         if not state_has_characters(state, difficulty, player):
             return False
-        
+
         if difficulty == 0:
             return True
 
-        lower_bound = max(0, difficulty - range)
+        known = getattr(state, "ff12_difficulty_access", None)
+        if known is None:
+            known = {}
+            state.ff12_difficulty_access = known
+        opened = known.setdefault(player, set())
+        if difficulty in opened:
+            return True
 
-        def in_range(value: int) -> bool:
-            return lower_bound <= value < difficulty
-
-        multiworld = state.multiworld
-
-        for loc in multiworld.get_locations(player):
-            if not loc.name in location_data_table or not in_range(location_data_table[loc.name].difficulty):
-                continue
-            if loc.can_reach(state):
-                return True
-
-        for entrance in multiworld.get_entrances(player):
-            entrance_tuple = (entrance.parent_region.name, entrance.connected_region.name)
-            if not in_range(entrance_rule_difficulty_table[entrance_tuple]):
-                continue
-            if entrance.can_reach(state):
+        for tier in range(max(0, difficulty - difficulty_range), difficulty):
+            if any(loc.can_reach(state) for loc in self.locations_by_difficulty.get(tier, ())) or \
+                    any(entrance.can_reach(state) for entrance in self.entrances_by_difficulty.get(tier, ())):
+                opened.add(difficulty)
                 return True
 
         return False
 
-    def create_chara_rule(self, name: str) -> Callable[[CollectionState], bool]:
-        if name in location_data_table.keys():
-            return lambda state: self.state_has_difficulty_access(state,
-                                                                  location_data_table[name].difficulty,
-                                                                  self.player,
-                                                                  3)
-        elif name in event_data_table.keys():
-            return lambda state: self.state_has_difficulty_access(state,
-                                                                  event_data_table[name].difficulty,
-                                                                  self.player,
-                                                                  3)
-        else:
-            raise Exception(f"Could not create character rule for {name}.")
-        
-    def create_chara_rule_entrance(self, entrance: Tuple[str, str]) -> Callable[[CollectionState], bool]:
-        return lambda state: self.state_has_difficulty_access(state,
-                                                              entrance_rule_difficulty_table[entrance],
-                                                              self.player,
-                                                              3)      
-
-    def create_entrance_rule(self, entrance: Tuple[str, str]) -> Callable[[CollectionState], bool]:
-        return lambda state: entrance_rule_data_table[entrance](state, self.player)
+    def remove(self, state: CollectionState, item: Item) -> bool:
+        changed = super().remove(state, item)
+        if changed:
+            known = getattr(state, "ff12_difficulty_access", None)
+            if known is not None:
+                known.pop(self.player, None)
+        return changed
 
     def create_event(self, event_item: str) -> FF12OpenWorldItem:
         name = event_item
@@ -464,22 +525,35 @@ class FF12OpenWorldWorld(World):
         if self.options.shuffle_main_party:
             self.multiworld.random.shuffle(self.character_order)
 
+        self.elixir_shop = self.multiworld.random.choice(sorted(elixir_shop_rule_table.keys()))
+
         # Universal tracker stuff, shouldn't do anything in standard gen
         if hasattr(self.multiworld, "re_gen_passthrough"):
             if self.game in self.multiworld.re_gen_passthrough:
                 self.re_gen_data = self.multiworld.re_gen_passthrough[self.game]
                 self.character_order = self.re_gen_data["characters"]
+                self.elixir_shop = self.re_gen_data.get("elixir_shop", -1)
                 options = self.re_gen_data["options"]
                 self.options.shuffle_main_party = options["shuffle_main_party"]
                 self.options.difficulty_progressive_scaling = options["difficulty_progressive_scaling"]
                 self.options.include_treasures = options["include_treasures"]
+                self.options.treasure_count = options.get("treasure_count", 255)
                 self.options.include_chops = options["include_chops"]
                 self.options.include_black_orbs = options["include_black_orbs"]
                 self.options.include_trophy_rare_games = options["include_trophy_rare_games"]
                 self.options.include_hunt_rewards = options["include_hunt_rewards"]
                 self.options.include_clan_hall_rewards = options["include_clan_hall_rewards"]
+                # Older slot data predates the option, when every trial stage was included.
+                self.options.max_trial_stage = options.get("max_trial_stage", 100)
                 self.options.allow_seitengrat = options["allow_seitengrat"]
                 self.options.bahamut_unlock = options["bahamut_unlock"]
+
+    def get_item_display(self, loc) -> str:
+        if loc.item is None:
+            return ""
+        if loc.item.player == self.player:
+            return loc.item.name
+        return f"{self.multiworld.get_player_name(loc.item.player)}'s {loc.item.name}"
 
     def generate_output(self, output_directory: str) -> None:
         spheres: List[Dict[str, Any]] = []
@@ -494,6 +568,7 @@ class FF12OpenWorldWorld(World):
                     spheres.append({"name": loc.name,
                                     "id": location_data_table[loc.name].str_id,
                                     "index": location_data_table[loc.name].secondary_index,
+                                    "item_display": self.get_item_display(loc),
                                     "sphere": cur_sphere})
                 elif loc.name in event_data_table.keys():
                     spheres.append({"name": loc.name,
@@ -515,6 +590,7 @@ class FF12OpenWorldWorld(World):
                     for loc in self.selected_treasures],
                 "character_order": self.character_order,
                 "allow_seitengrat": self.options.allow_seitengrat.value,
+                "elixir_shop": self.elixir_shop,
                 "spheres": spheres,
                 "filler_item_placements": [
                     {"id": location_data_table[loc].str_id,
@@ -541,15 +617,18 @@ class FF12OpenWorldWorld(World):
             "treasures": self.selected_treasures,
             "re_gen_locations": [location.name for location in self.multiworld.get_locations(self.player)],
             "characters": self.character_order,
+            "elixir_shop": self.elixir_shop,
             "options": {
                 "shuffle_main_party": self.options.shuffle_main_party.value,
                 "difficulty_progressive_scaling": self.options.difficulty_progressive_scaling.value,
                 "include_treasures": self.options.include_treasures.value,
+                "treasure_count": self.options.treasure_count.value,
                 "include_chops": self.options.include_chops.value,
                 "include_black_orbs": self.options.include_black_orbs.value,
                 "include_trophy_rare_games": self.options.include_trophy_rare_games.value,
                 "include_hunt_rewards": self.options.include_hunt_rewards.value,
                 "include_clan_hall_rewards": self.options.include_clan_hall_rewards.value,
+                "max_trial_stage": self.options.max_trial_stage.value,
                 "allow_seitengrat": self.options.allow_seitengrat.value,
                 "bahamut_unlock": self.options.bahamut_unlock.value
             }

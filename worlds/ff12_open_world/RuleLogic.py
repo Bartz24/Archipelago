@@ -1,9 +1,11 @@
-from BaseClasses import CollectionState, Callable
-from typing import List
+import dataclasses
+from typing import Any, ClassVar, List
 
-from typing import List
-from .Items import item_data_table
 from BaseClasses import CollectionState
+from rule_builder.rules import Rule
+from .Items import item_data_table
+
+DIFFICULTY_RANGE = 3
 
 def state_has_at_least(possible: List[bool], count: int) -> bool:
     # Returns true if at least count of the possible are true
@@ -47,3 +49,31 @@ def state_has_characters(state: CollectionState, difficulty: int, player: int) -
     if difficulty >= 3:
         return chara_count >= 3
     return True
+
+
+@dataclasses.dataclass()
+class DifficultyAccessRule(Rule[Any], game="Final Fantasy 12 Open World"):
+    difficulty: int
+
+    def _instantiate(self, world):
+        return self.Resolved(
+            self.difficulty,
+            world.difficulty_region_dependencies(self.difficulty),
+            player=world.player,
+            caching_enabled=getattr(world, "rule_caching_enabled", False),
+        )
+
+    class Resolved(Rule.Resolved):
+        difficulty: int
+        region_names: tuple[str, ...]
+        force_recalculate: ClassVar[bool] = True
+
+        def _evaluate(self, state: CollectionState) -> bool:
+            world = state.multiworld.worlds[self.player]
+            return world.state_has_difficulty_access(state, self.difficulty, self.player, DIFFICULTY_RANGE)
+
+        def region_dependencies(self) -> dict[str, set[int]]:
+            return {name: {id(self)} for name in self.region_names}
+
+        def __str__(self) -> str:
+            return f"Difficulty {self.difficulty} access"

@@ -2299,6 +2299,59 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=6,
         difficulty=1
     ),
+    "Nam-Yensa Sandsea Belito - Withering Shores Treasure 1": FF12OpenWorldLocationData(
+        region="Nam-Yensa Sandsea Belito",
+        address=2513,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="enw_a02",
+        difficulty=5
+    ),
+    "Nam-Yensa Sandsea Belito - Withering Shores Treasure 2": FF12OpenWorldLocationData(
+        region="Nam-Yensa Sandsea Belito",
+        address=2514,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="enw_a02",
+        secondary_index=1,
+        difficulty=5
+    ),
+    "Nam-Yensa Sandsea Belito - Withering Shores Treasure 3": FF12OpenWorldLocationData(
+        region="Nam-Yensa Sandsea Belito",
+        address=2515,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="enw_a02",
+        secondary_index=2,
+        difficulty=5
+    ),
+    "Nam-Yensa Sandsea - Withering Shores Treasure 4": FF12OpenWorldLocationData(
+        region="Nam-Yensa Sandsea",
+        address=2516,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="enw_a02",
+        secondary_index=3,
+        difficulty=5
+    ),
+    "Nam-Yensa Sandsea - Withering Shores Treasure 5": FF12OpenWorldLocationData(
+        region="Nam-Yensa Sandsea",
+        address=2517,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="enw_a02",
+        secondary_index=4,
+        difficulty=5
+    ),
+    "Nam-Yensa Sandsea - Withering Shores Treasure 6": FF12OpenWorldLocationData(
+        region="Nam-Yensa Sandsea",
+        address=2518,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="enw_a02",
+        secondary_index=5,
+        difficulty=5
+    ),
     "Nam-Yensa Sandsea - Augur Hill Treasure 1": FF12OpenWorldLocationData(
         region="Nam-Yensa Sandsea",
         address=259,
@@ -4110,16 +4163,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         str_id="gil_g05",
         difficulty=4
     ),
-    "Great Crystal - Crystal Peak Treasure 1": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Crystal Peak Treasure 1": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=464,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
         str_id="gil_h01",
         difficulty=8
     ),
-    "Great Crystal - Crystal Peak Treasure 2": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Crystal Peak Treasure 2": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=465,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4127,16 +4180,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=8
     ),
-    "Great Crystal - Dhebon Jilaam Avaapratii Treasure 1": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Dhebon Jilaam Avaapratii Treasure 1": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=466,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
         str_id="gil_i08",
         difficulty=8
     ),
-    "Great Crystal - Dhebon Jilaam Avaapratii Treasure 2": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Dhebon Jilaam Avaapratii Treasure 2": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=467,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4144,16 +4197,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=8
     ),
-    "Great Crystal - Sirhru Phullam Praa Treasure 1": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Sirhru Phullam Praa Treasure 1": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=468,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
         str_id="gil_j03",
         difficulty=8
     ),
-    "Great Crystal - Sirhru Phullam Praa Treasure 2": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Sirhru Phullam Praa Treasure 2": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=469,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4161,16 +4214,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=8
     ),
-    "Great Crystal - Sirhru Phullam Praa'vaa Treasure 1": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Sirhru Phullam Praa'vaa Treasure 1": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=470,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
         str_id="gil_j05",
         difficulty=8
     ),
-    "Great Crystal - Sirhru Phullam Praa'vaa Treasure 2": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Sirhru Phullam Praa'vaa Treasure 2": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=471,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4178,16 +4231,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=8
     ),
-    "Great Crystal - Sirhru Phullam Pratii'vaa Treasure 1": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Sirhru Phullam Pratii'vaa Treasure 1": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=472,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
         str_id="gil_j06",
         difficulty=8
     ),
-    "Great Crystal - Sirhru Phullam Pratii'vaa Treasure 2": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Sirhru Phullam Pratii'vaa Treasure 2": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=473,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4195,16 +4248,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=8
     ),
-    "Great Crystal - Sirhru Phullam Udiipratii Treasure 1": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Sirhru Phullam Udiipratii Treasure 1": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=474,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
         str_id="gil_j08",
         difficulty=8
     ),
-    "Great Crystal - Sirhru Phullam Udiipratii Treasure 2": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Sirhru Phullam Udiipratii Treasure 2": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=475,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4212,16 +4265,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=8
     ),
-    "Great Crystal - Sirhru Jilaam Praa'vaa Treasure 1": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Sirhru Jilaam Praa'vaa Treasure 1": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=476,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
         str_id="gil_j13",
         difficulty=8
     ),
-    "Great Crystal - Sirhru Jilaam Praa'vaa Treasure 2": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Sirhru Jilaam Praa'vaa Treasure 2": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=477,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4229,16 +4282,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=8
     ),
-    "Great Crystal - Sirhru Jilaam Pratii'vaa Treasure 1": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Sirhru Jilaam Pratii'vaa Treasure 1": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=478,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
         str_id="gil_j14",
         difficulty=8
     ),
-    "Great Crystal - Sirhru Jilaam Pratii'vaa Treasure 2": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Sirhru Jilaam Pratii'vaa Treasure 2": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=479,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4246,16 +4299,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=8
     ),
-    "Great Crystal - Uldobi Phullam Pratii'dii Treasure 1": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Uldobi Phullam Pratii'dii Treasure 1": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=480,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
         str_id="gil_k06",
         difficulty=8
     ),
-    "Great Crystal - Uldobi Phullam Pratii'dii Treasure 2": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Uldobi Phullam Pratii'dii Treasure 2": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=481,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4263,16 +4316,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=8
     ),
-    "Great Crystal - Uldobi Phullam Udiipraa Treasure 1": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Uldobi Phullam Udiipraa Treasure 1": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=482,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
         str_id="gil_k09",
         difficulty=8
     ),
-    "Great Crystal - Uldobi Phullam Udiipraa Treasure 2": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Uldobi Phullam Udiipraa Treasure 2": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=483,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4280,16 +4333,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=8
     ),
-    "Great Crystal - Uldobi Phullam Pratii Treasure 1": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Uldobi Phullam Pratii Treasure 1": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=484,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
         str_id="gil_k12",
         difficulty=8
     ),
-    "Great Crystal - Uldobi Phullam Pratii Treasure 2": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Uldobi Phullam Pratii Treasure 2": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=485,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4314,16 +4367,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=1
     ),
-    "Golmore Jungle NW - Paths of Chained Light Treasure 1": FF12OpenWorldLocationData(
-        region="Golmore Jungle NW",
+    "Golmore Jungle S - Paths of Chained Light Treasure 1": FF12OpenWorldLocationData(
+        region="Golmore Jungle S",
         address=488,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
         str_id="gol_a01",
         difficulty=2
     ),
-    "Golmore Jungle NW - Paths of Chained Light Treasure 2": FF12OpenWorldLocationData(
-        region="Golmore Jungle NW",
+    "Golmore Jungle S - Paths of Chained Light Treasure 2": FF12OpenWorldLocationData(
+        region="Golmore Jungle S",
         address=489,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4331,8 +4384,8 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=2
     ),
-    "Golmore Jungle NW - Paths of Chained Light Treasure 3": FF12OpenWorldLocationData(
-        region="Golmore Jungle NW",
+    "Golmore Jungle S - Paths of Chained Light Treasure 3": FF12OpenWorldLocationData(
+        region="Golmore Jungle S",
         address=490,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -4347,6 +4400,50 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         type="treasure",
         str_id="gol_a01",
         secondary_index=3,
+        difficulty=2
+    ),
+    "Golmore Jungle NW - The Needlebrake Treasure 1": FF12OpenWorldLocationData(
+        region="Golmore Jungle NW",
+        address=2519,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="gol_a02",
+        difficulty=2
+    ),
+    "Golmore Jungle NW - The Needlebrake Treasure 2": FF12OpenWorldLocationData(
+        region="Golmore Jungle NW",
+        address=2520,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="gol_a02",
+        secondary_index=1,
+        difficulty=2
+    ),
+    "Golmore Jungle NW - The Needlebrake Treasure 3": FF12OpenWorldLocationData(
+        region="Golmore Jungle NW",
+        address=2521,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="gol_a02",
+        secondary_index=2,
+        difficulty=2
+    ),
+    "Golmore Jungle S - The Needlebrake Treasure 4": FF12OpenWorldLocationData(
+        region="Golmore Jungle S",
+        address=2522,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="gol_a02",
+        secondary_index=3,
+        difficulty=2
+    ),
+    "Golmore Jungle NW - The Needlebrake Treasure 5": FF12OpenWorldLocationData(
+        region="Golmore Jungle NW",
+        address=2523,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="gol_a02",
+        secondary_index=4,
         difficulty=2
     ),
     "Golmore Jungle E - The Parting Glade Treasure 1": FF12OpenWorldLocationData(
@@ -5114,6 +5211,59 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         type="treasure",
         str_id="hne_c02",
         secondary_index=7,
+        difficulty=8
+    ),
+    "Henne Mines Feywood - Phase 2 Shaft Treasure 1": FF12OpenWorldLocationData(
+        region="Henne Mines Feywood",
+        address=2524,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="hne_c04",
+        difficulty=8
+    ),
+    "Henne Mines Feywood - Phase 2 Shaft Treasure 2": FF12OpenWorldLocationData(
+        region="Henne Mines Feywood",
+        address=2525,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="hne_c04",
+        secondary_index=1,
+        difficulty=8
+    ),
+    "Henne Mines Deep - Phase 2 Shaft Treasure 3": FF12OpenWorldLocationData(
+        region="Henne Mines Deep",
+        address=2526,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="hne_c04",
+        secondary_index=2,
+        difficulty=8
+    ),
+    "Henne Mines Deep - Phase 2 Shaft Treasure 4": FF12OpenWorldLocationData(
+        region="Henne Mines Deep",
+        address=2527,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="hne_c04",
+        secondary_index=3,
+        difficulty=8
+    ),
+    "Henne Mines Deep - Phase 2 Shaft Treasure 5": FF12OpenWorldLocationData(
+        region="Henne Mines Deep",
+        address=2528,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="hne_c04",
+        secondary_index=4,
+        difficulty=8
+    ),
+    "Henne Mines Deep - Phase 2 Shaft Treasure 6": FF12OpenWorldLocationData(
+        region="Henne Mines Deep",
+        address=2529,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="hne_c04",
+        secondary_index=5,
         difficulty=8
     ),
     "Henne Mines Deep - Special Charter Shaft Treasure 1": FF12OpenWorldLocationData(
@@ -6363,331 +6513,6 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=10,
         difficulty=3
     ),
-    "Barheim Passage - The Lightworks Treasure 1": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=720,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a01",
-        difficulty=3
-    ),
-    "Barheim Passage - The Lightworks Treasure 2": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=721,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a01",
-        secondary_index=1,
-        difficulty=3
-    ),
-    "Barheim Passage - The Lightworks Treasure 3": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=722,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a01",
-        secondary_index=2,
-        difficulty=3
-    ),
-    "Barheim Passage - Great Eastern Passage Treasure 1": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=723,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a02",
-        difficulty=3
-    ),
-    "Barheim Passage - Great Eastern Passage Treasure 2": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=724,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a02",
-        secondary_index=1,
-        difficulty=3
-    ),
-    "Barheim Passage - Great Eastern Passage Treasure 3": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=725,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a02",
-        secondary_index=2,
-        difficulty=3
-    ),
-    "Barheim Passage - Great Eastern Passage Treasure 4": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=726,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a02",
-        secondary_index=3,
-        difficulty=3
-    ),
-    "Barheim Passage - Great Eastern Passage Treasure 5": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=727,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a02",
-        secondary_index=4,
-        difficulty=3
-    ),
-    "Barheim Passage - Great Eastern Passage Treasure 6": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=728,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a02",
-        secondary_index=5,
-        difficulty=3
-    ),
-    "Barheim Passage - Great Eastern Passage Treasure 7": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=729,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a02",
-        secondary_index=6,
-        difficulty=3
-    ),
-    "Barheim Passage - Op Sector 36 Treasure 1": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=730,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a03",
-        difficulty=3
-    ),
-    "Barheim Passage - Op Sector 36 Treasure 2": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=731,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a03",
-        secondary_index=1,
-        difficulty=3
-    ),
-    "Barheim Passage - Op Sector 36 Treasure 3": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=732,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a03",
-        secondary_index=2,
-        difficulty=3
-    ),
-    "Barheim Passage - Special Op Sector 3 Treasure 1": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=733,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a04",
-        difficulty=3
-    ),
-    "Barheim Passage - Special Op Sector 3 Treasure 2": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=734,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a04",
-        secondary_index=1,
-        difficulty=3
-    ),
-    "Barheim Passage - Special Op Sector 3 Treasure 3": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=735,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a04",
-        secondary_index=2,
-        difficulty=3
-    ),
-    "Barheim Passage - Op Sector 37 Treasure 1": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=736,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a05",
-        difficulty=3
-    ),
-    "Barheim Passage - Op Sector 37 Treasure 2": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=737,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a05",
-        secondary_index=1,
-        difficulty=3
-    ),
-    "Barheim Passage - Op Sector 37 Treasure 3": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=738,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a05",
-        secondary_index=2,
-        difficulty=3
-    ),
-    "Barheim Passage - Op Sector 37 Treasure 4": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=739,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a05",
-        secondary_index=3,
-        difficulty=3
-    ),
-    "Barheim Passage - Op Sector 37 Treasure 5": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=740,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a05",
-        secondary_index=4,
-        difficulty=3
-    ),
-    "Barheim Passage - Op Sector 29 Treasure 1": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=741,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a06",
-        difficulty=3
-    ),
-    "Barheim Passage - Op Sector 29 Treasure 2": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=742,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a06",
-        secondary_index=1,
-        difficulty=3
-    ),
-    "Barheim Passage - Op Sector 29 Treasure 3": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=743,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_a06",
-        secondary_index=2,
-        difficulty=3
-    ),
-    "Barheim Passage - Great Central Passage Treasure 1": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=744,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b01",
-        difficulty=3
-    ),
-    "Barheim Passage - Great Central Passage Treasure 2": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=745,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b01",
-        secondary_index=1,
-        difficulty=3
-    ),
-    "Barheim Passage - Great Central Passage Treasure 3": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=746,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b01",
-        secondary_index=2,
-        difficulty=3
-    ),
-    "Barheim Passage - Great Central Passage Treasure 4": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=747,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b01",
-        secondary_index=3,
-        difficulty=3
-    ),
-    "Barheim Passage - The Zeviah Subterrane Treasure 1": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=748,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b02",
-        difficulty=3
-    ),
-    "Barheim Passage - The Zeviah Subterrane Treasure 2": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=749,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b02",
-        secondary_index=1,
-        difficulty=3
-    ),
-    "Barheim Passage - The Zeviah Subterrane Treasure 3": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=750,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b02",
-        secondary_index=2,
-        difficulty=3
-    ),
-    "Barheim Passage - The Zeviah Subterrane Treasure 4": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=751,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b02",
-        secondary_index=3,
-        difficulty=3
-    ),
-    "Barheim Passage - The Zeviah Subterrane Treasure 5": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=752,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b02",
-        secondary_index=4,
-        difficulty=3
-    ),
-    "Barheim Passage - The Zeviah Subterrane Treasure 6": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=753,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b02",
-        secondary_index=5,
-        difficulty=3
-    ),
-    "Barheim Passage - The Zeviah Subterrane Treasure 7": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=754,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b02",
-        secondary_index=6,
-        difficulty=3
-    ),
-    "Barheim Passage - The Zeviah Subterrane Treasure 8": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=755,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b02",
-        secondary_index=7,
-        difficulty=3
-    ),
-    "Barheim Passage - The Zeviah Subterrane Treasure 9": FF12OpenWorldLocationData(
-        region="Barheim Passage",
-        address=756,
-        classification=LocationProgressType.DEFAULT,
-        type="treasure",
-        str_id="mic_b02",
-        secondary_index=8,
-        difficulty=3
-    ),
     "Barheim Passage - Terminus No. 7 Treasure 1": FF12OpenWorldLocationData(
         region="Barheim Passage",
         address=757,
@@ -7419,6 +7244,41 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         type="treasure",
         str_id="mnt_b06",
         secondary_index=1,
+        difficulty=2
+    ),
+    "Mosphoran Highwaste Upper - Babbling Vale Treasure 1": FF12OpenWorldLocationData(
+        region="Mosphoran Highwaste Upper",
+        address=2530,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="mnt_d01",
+        difficulty=2
+    ),
+    "Mosphoran Highwaste - Babbling Vale Treasure 2": FF12OpenWorldLocationData(
+        region="Mosphoran Highwaste",
+        address=2531,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="mnt_d01",
+        secondary_index=1,
+        difficulty=2
+    ),
+    "Mosphoran Highwaste - Babbling Vale Treasure 3": FF12OpenWorldLocationData(
+        region="Mosphoran Highwaste",
+        address=2532,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="mnt_d01",
+        secondary_index=2,
+        difficulty=2
+    ),
+    "Mosphoran Highwaste - Babbling Vale Treasure 4": FF12OpenWorldLocationData(
+        region="Mosphoran Highwaste",
+        address=2533,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="mnt_d01",
+        secondary_index=3,
         difficulty=2
     ),
     "Stilshrine of Miriam - Walk of Sky Treasure 1": FF12OpenWorldLocationData(
@@ -13801,6 +13661,50 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=8,
         difficulty=5
     ),
+    "Zertinan Caverns Center - Sandfalls Treasure 1": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2534,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="ztc_a02",
+        difficulty=5
+    ),
+    "Zertinan Caverns N - Sandfalls Treasure 2": FF12OpenWorldLocationData(
+        region="Zertinan Caverns N",
+        address=2535,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="ztc_a02",
+        secondary_index=1,
+        difficulty=5
+    ),
+    "Zertinan Caverns Center - Sandfalls Treasure 3": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2536,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="ztc_a02",
+        secondary_index=2,
+        difficulty=5
+    ),
+    "Zertinan Caverns Center - Sandfalls Treasure 4": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2537,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="ztc_a02",
+        secondary_index=3,
+        difficulty=5
+    ),
+    "Zertinan Caverns Center - Sandfalls Treasure 5": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2538,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="ztc_a02",
+        secondary_index=4,
+        difficulty=5
+    ),
     "Zertinan Caverns Center - Hourglass Basin Treasure 1": FF12OpenWorldLocationData(
         region="Zertinan Caverns Center",
         address=1561,
@@ -13880,8 +13784,8 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=4,
         difficulty=5
     ),
-    "Zertinan Caverns S - Halls of Ardent Darkness Treasure 1": FF12OpenWorldLocationData(
-        region="Zertinan Caverns S",
+    "Zertinan Caverns Center - Halls of Ardent Darkness Treasure 1": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
         address=1570,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -13931,6 +13835,68 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         type="treasure",
         str_id="ztc_b02",
         secondary_index=5,
+        difficulty=5
+    ),
+    "Zertinan Caverns Center - The Balamka Fault Treasure 1": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2539,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="ztc_c01",
+        difficulty=5
+    ),
+    "Zertinan Caverns Center - The Balamka Fault Treasure 2": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2540,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="ztc_c01",
+        secondary_index=1,
+        difficulty=5
+    ),
+    "Zertinan Caverns Center - The Balamka Fault Treasure 3": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2541,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="ztc_c01",
+        secondary_index=2,
+        difficulty=5
+    ),
+    "Zertinan Caverns Center - The Balamka Fault Treasure 4": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2542,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="ztc_c01",
+        secondary_index=3,
+        difficulty=5
+    ),
+    "Zertinan Caverns N - The Balamka Fault Treasure 5": FF12OpenWorldLocationData(
+        region="Zertinan Caverns N",
+        address=2543,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="ztc_c01",
+        secondary_index=4,
+        difficulty=5
+    ),
+    "Zertinan Caverns Center - The Balamka Fault Treasure 6": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2544,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="ztc_c01",
+        secondary_index=5,
+        difficulty=5
+    ),
+    "Zertinan Caverns Center - The Balamka Fault Treasure 7": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2545,
+        classification=LocationProgressType.DEFAULT,
+        type="treasure",
+        str_id="ztc_c01",
+        secondary_index=6,
         difficulty=5
     ),
     "Zertinan Caverns Center - Drybeam Cavern Treasure 1": FF12OpenWorldLocationData(
@@ -13994,8 +13960,8 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         str_id="ztc_c03",
         difficulty=5
     ),
-    "Zertinan Caverns Center - Darkened Wharf Treasure 2": FF12OpenWorldLocationData(
-        region="Zertinan Caverns Center",
+    "Zertinan Caverns S - Darkened Wharf Treasure 2": FF12OpenWorldLocationData(
+        region="Zertinan Caverns S",
         address=1583,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -19478,16 +19444,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=2,
         difficulty=5
     ),
-    "Great Crystal - Defeat Ultima Reward (1)": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Defeat Ultima Reward (1)": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=2231,
         classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="919A",
         difficulty=6
     ),
-    "Great Crystal - Defeat Ultima Reward (2)": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Defeat Ultima Reward (2)": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=2232,
         classification=LocationProgressType.DEFAULT,
         type="reward",
@@ -19495,8 +19461,8 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=6
     ),
-    "Great Crystal - Defeat Ultima Reward (3)": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Defeat Ultima Reward (3)": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=2233,
         classification=LocationProgressType.DEFAULT,
         type="reward",
@@ -20024,16 +19990,16 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=2,
         difficulty=7
     ),
-    "Great Crystal - Crystal Knight - Skull Trophy Reward (1)": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Crystal Knight - Skull Trophy Reward (1)": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=2294,
         classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90A3",
         difficulty=5
     ),
-    "Great Crystal - Crystal Knight - Skull Trophy Reward (2)": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Crystal Knight - Skull Trophy Reward (2)": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=2295,
         classification=LocationProgressType.DEFAULT,
         type="reward",
@@ -20041,8 +20007,8 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=5
     ),
-    "Great Crystal - Crystal Knight - Skull Trophy Reward (3)": FF12OpenWorldLocationData(
-        region="Great Crystal",
+    "Great Crystal Deep - Crystal Knight - Skull Trophy Reward (3)": FF12OpenWorldLocationData(
+        region="Great Crystal Deep",
         address=2296,
         classification=LocationProgressType.DEFAULT,
         type="reward",
@@ -20492,157 +20458,157 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=2,
         difficulty=10
     ),
-    "Phon Coast - All Trophies Atak 16 or more Reward (1)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 1 Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2348,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F3",
         difficulty=10
     ),
-    "Phon Coast - All Trophies Atak 16 or more Reward (2)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 1 Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2349,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F3",
         secondary_index=1,
         difficulty=10
     ),
-    "Phon Coast - All Trophies Atak 16 or more Reward (3)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 1 Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2350,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F3",
         secondary_index=2,
         difficulty=10
     ),
-    "Phon Coast - All Trophies Atak 15 or less Reward (1)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 2 Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2351,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F4",
         difficulty=10
     ),
-    "Phon Coast - All Trophies Atak 15 or less Reward (2)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 2 Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2352,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F4",
         secondary_index=1,
         difficulty=10
     ),
-    "Phon Coast - All Trophies Atak 15 or less Reward (3)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 2 Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2353,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F4",
         secondary_index=2,
         difficulty=10
     ),
-    "Phon Coast - All Trophies Blok 16 or more Reward (1)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 3 Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2354,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F5",
         difficulty=10
     ),
-    "Phon Coast - All Trophies Blok 16 or more Reward (2)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 3 Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2355,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F5",
         secondary_index=1,
         difficulty=10
     ),
-    "Phon Coast - All Trophies Blok 16 or more Reward (3)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 3 Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2356,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F5",
         secondary_index=2,
         difficulty=10
     ),
-    "Phon Coast - All Trophies Blok 15 or less Reward (1)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 4 Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2357,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F6",
         difficulty=10
     ),
-    "Phon Coast - All Trophies Blok 15 or less Reward (2)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 4 Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2358,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F6",
         secondary_index=1,
         difficulty=10
     ),
-    "Phon Coast - All Trophies Blok 15 or less Reward (3)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 4 Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2359,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F6",
         secondary_index=2,
         difficulty=10
     ),
-    "Phon Coast - All Trophies Stok 16 or more Reward (1)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 5 Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2360,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F7",
         difficulty=10
     ),
-    "Phon Coast - All Trophies Stok 16 or more Reward (2)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 5 Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2361,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F7",
         secondary_index=1,
         difficulty=10
     ),
-    "Phon Coast - All Trophies Stok 16 or more Reward (3)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 5 Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2362,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F7",
         secondary_index=2,
         difficulty=10
     ),
-    "Phon Coast - All Trophies Stok 15 or less Reward (1)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 6 Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2363,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F8",
         difficulty=10
     ),
-    "Phon Coast - All Trophies Stok 15 or less Reward (2)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 6 Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2364,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F8",
         secondary_index=1,
         difficulty=10
     ),
-    "Phon Coast - All Trophies Stok 15 or less Reward (3)": FF12OpenWorldLocationData(
+    "Phon Coast - All Trophies Turn In 6 Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2365,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90F8",
         secondary_index=2,
@@ -20651,7 +20617,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 1, Blok 0, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2366,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90FF",
         difficulty=5
@@ -20659,7 +20625,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 1, Blok 0, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2367,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90FF",
         secondary_index=1,
@@ -20668,7 +20634,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 1, Blok 0, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2368,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90FF",
         secondary_index=2,
@@ -20677,7 +20643,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 1, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2369,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9100",
         difficulty=5
@@ -20685,7 +20651,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 1, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2370,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9100",
         secondary_index=1,
@@ -20694,7 +20660,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 1, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2371,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9100",
         secondary_index=2,
@@ -20703,7 +20669,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 1 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2372,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9101",
         difficulty=5
@@ -20711,7 +20677,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 1 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2373,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9101",
         secondary_index=1,
@@ -20720,7 +20686,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 1 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2374,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9101",
         secondary_index=2,
@@ -20729,7 +20695,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 5, Blok 0, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2375,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9102",
         difficulty=6
@@ -20737,7 +20703,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 5, Blok 0, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2376,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9102",
         secondary_index=1,
@@ -20746,7 +20712,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 5, Blok 0, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2377,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9102",
         secondary_index=2,
@@ -20755,7 +20721,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 5, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2378,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9103",
         difficulty=6
@@ -20763,7 +20729,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 5, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2379,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9103",
         secondary_index=1,
@@ -20772,7 +20738,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 5, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2380,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9103",
         secondary_index=2,
@@ -20781,7 +20747,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 5 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2381,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9104",
         difficulty=6
@@ -20789,7 +20755,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 5 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2382,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9104",
         secondary_index=1,
@@ -20798,7 +20764,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 5 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2383,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9104",
         secondary_index=2,
@@ -20807,7 +20773,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 10, Blok 0, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2384,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9105",
         difficulty=7
@@ -20815,7 +20781,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 10, Blok 0, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2385,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9105",
         secondary_index=1,
@@ -20824,7 +20790,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 10, Blok 0, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2386,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9105",
         secondary_index=2,
@@ -20833,7 +20799,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 10, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2387,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9106",
         difficulty=7
@@ -20841,7 +20807,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 10, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2388,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9106",
         secondary_index=1,
@@ -20850,7 +20816,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 10, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2389,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9106",
         secondary_index=2,
@@ -20859,7 +20825,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 10 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2390,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9107",
         difficulty=7
@@ -20867,7 +20833,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 10 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2391,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9107",
         secondary_index=1,
@@ -20876,7 +20842,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 10 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2392,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9107",
         secondary_index=2,
@@ -20885,7 +20851,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 15, Blok 0, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2393,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9108",
         difficulty=7
@@ -20893,7 +20859,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 15, Blok 0, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2394,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9108",
         secondary_index=1,
@@ -20902,7 +20868,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 15, Blok 0, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2395,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9108",
         secondary_index=2,
@@ -20911,7 +20877,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 15, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2396,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9109",
         difficulty=7
@@ -20919,7 +20885,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 15, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2397,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9109",
         secondary_index=1,
@@ -20928,7 +20894,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 15, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2398,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9109",
         secondary_index=2,
@@ -20937,7 +20903,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 15 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2399,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910A",
         difficulty=7
@@ -20945,7 +20911,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 15 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2400,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910A",
         secondary_index=1,
@@ -20954,7 +20920,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 15 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2401,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910A",
         secondary_index=2,
@@ -20963,7 +20929,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 10, Blok 5, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2402,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910B",
         difficulty=7
@@ -20971,7 +20937,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 10, Blok 5, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2403,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910B",
         secondary_index=1,
@@ -20980,7 +20946,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 10, Blok 5, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2404,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910B",
         secondary_index=2,
@@ -20989,7 +20955,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 20, Blok 0, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2405,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910C",
         difficulty=8
@@ -20997,7 +20963,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 20, Blok 0, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2406,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910C",
         secondary_index=1,
@@ -21006,7 +20972,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 20, Blok 0, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2407,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910C",
         secondary_index=2,
@@ -21015,7 +20981,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 20, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2408,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910D",
         difficulty=8
@@ -21023,7 +20989,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 20, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2409,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910D",
         secondary_index=1,
@@ -21032,7 +20998,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 20, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2410,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910D",
         secondary_index=2,
@@ -21041,7 +21007,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 20 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2411,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910E",
         difficulty=8
@@ -21049,7 +21015,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 20 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2412,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910E",
         secondary_index=1,
@@ -21058,7 +21024,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 20 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2413,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910E",
         secondary_index=2,
@@ -21067,33 +21033,33 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 5, Blok 10, Stok 5 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2414,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910F",
-        difficulty=8
+        difficulty=7
     ),
     "Phon Coast - Atak 5, Blok 10, Stok 5 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2415,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910F",
         secondary_index=1,
-        difficulty=8
+        difficulty=7
     ),
     "Phon Coast - Atak 5, Blok 10, Stok 5 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2416,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="910F",
         secondary_index=2,
-        difficulty=8
+        difficulty=7
     ),
     "Phon Coast - Atak 25, Blok 0, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2417,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9110",
         difficulty=9
@@ -21101,7 +21067,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 25, Blok 0, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2418,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9110",
         secondary_index=1,
@@ -21110,7 +21076,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 25, Blok 0, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2419,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9110",
         secondary_index=2,
@@ -21119,7 +21085,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 25, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2420,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9111",
         difficulty=9
@@ -21127,7 +21093,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 25, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2421,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9111",
         secondary_index=1,
@@ -21136,7 +21102,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 25, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2422,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9111",
         secondary_index=2,
@@ -21145,7 +21111,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 25 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2423,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9112",
         difficulty=9
@@ -21153,7 +21119,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 25 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2424,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9112",
         secondary_index=1,
@@ -21162,7 +21128,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 25 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2425,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9112",
         secondary_index=2,
@@ -21171,33 +21137,33 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 5, Blok 5, Stok 15 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2426,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9113",
-        difficulty=9
+        difficulty=7
     ),
     "Phon Coast - Atak 5, Blok 5, Stok 15 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2427,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9113",
         secondary_index=1,
-        difficulty=9
+        difficulty=7
     ),
     "Phon Coast - Atak 5, Blok 5, Stok 15 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2428,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9113",
         secondary_index=2,
-        difficulty=9
+        difficulty=7
     ),
     "Phon Coast - Atak 30, Blok 0, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2429,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9114",
         difficulty=10
@@ -21205,7 +21171,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 30, Blok 0, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2430,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9114",
         secondary_index=1,
@@ -21214,7 +21180,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 30, Blok 0, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2431,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9114",
         secondary_index=2,
@@ -21223,7 +21189,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 30, Stok 0 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2432,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9115",
         difficulty=10
@@ -21231,7 +21197,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 30, Stok 0 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2433,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9115",
         secondary_index=1,
@@ -21240,7 +21206,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 30, Stok 0 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2434,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9115",
         secondary_index=2,
@@ -21249,7 +21215,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 30 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2435,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9116",
         difficulty=10
@@ -21257,7 +21223,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 30 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2436,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9116",
         secondary_index=1,
@@ -21266,7 +21232,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 0, Blok 0, Stok 30 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2437,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9116",
         secondary_index=2,
@@ -21275,33 +21241,33 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 10, Blok 10, Stok 10 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2438,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9117",
-        difficulty=10
+        difficulty=7
     ),
     "Phon Coast - Atak 10, Blok 10, Stok 10 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2439,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9117",
         secondary_index=1,
-        difficulty=10
+        difficulty=7
     ),
     "Phon Coast - Atak 10, Blok 10, Stok 10 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2440,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9117",
         secondary_index=2,
-        difficulty=10
+        difficulty=7
     ),
     "Phon Coast - Atak 25, Blok 1, Stok 1 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2441,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9118",
         difficulty=9
@@ -21309,7 +21275,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 25, Blok 1, Stok 1 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2442,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9118",
         secondary_index=1,
@@ -21318,7 +21284,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 25, Blok 1, Stok 1 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2443,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9118",
         secondary_index=2,
@@ -21327,7 +21293,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 1, Blok 25, Stok 1 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2444,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9119",
         difficulty=9
@@ -21335,7 +21301,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 1, Blok 25, Stok 1 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2445,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9119",
         secondary_index=1,
@@ -21344,7 +21310,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 1, Blok 25, Stok 1 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2446,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9119",
         secondary_index=2,
@@ -21353,7 +21319,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 1, Blok 1, Stok 25 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2447,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="911A",
         difficulty=9
@@ -21361,7 +21327,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 1, Blok 1, Stok 25 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2448,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="911A",
         secondary_index=1,
@@ -21370,7 +21336,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 1, Blok 1, Stok 25 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2449,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="911A",
         secondary_index=2,
@@ -21379,90 +21345,1262 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
     "Phon Coast - Atak 12, Blok 5, Stok 5 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2450,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="911B",
-        difficulty=8
+        difficulty=7
     ),
     "Phon Coast - Atak 12, Blok 5, Stok 5 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2451,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="911B",
         secondary_index=1,
-        difficulty=8
+        difficulty=7
     ),
     "Phon Coast - Atak 12, Blok 5, Stok 5 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2452,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="911B",
         secondary_index=2,
-        difficulty=8
+        difficulty=7
     ),
     "Phon Coast - Atak 5, Blok 12, Stok 5 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2453,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="911C",
-        difficulty=8
+        difficulty=7
     ),
     "Phon Coast - Atak 5, Blok 12, Stok 5 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2454,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="911C",
         secondary_index=1,
-        difficulty=8
+        difficulty=7
     ),
     "Phon Coast - Atak 5, Blok 12, Stok 5 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2455,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="911C",
         secondary_index=2,
-        difficulty=8
+        difficulty=7
     ),
     "Phon Coast - Atak 5, Blok 5, Stok 12 Outfitters Reward (1)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2456,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="911D",
-        difficulty=8
+        difficulty=7
     ),
     "Phon Coast - Atak 5, Blok 5, Stok 12 Outfitters Reward (2)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2457,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="911D",
         secondary_index=1,
-        difficulty=8
+        difficulty=7
     ),
     "Phon Coast - Atak 5, Blok 5, Stok 12 Outfitters Reward (3)": FF12OpenWorldLocationData(
         region="Phon Coast",
         address=2458,
-        classification=LocationProgressType.EXCLUDED,
+        classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="911D",
         secondary_index=2,
+        difficulty=7
+    ),
+    "Giza Plains Rains - Feather of the Flock Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Giza Plains Rains",
+        address=2546,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90AF",
+        difficulty=2
+    ),
+    "Giza Plains Rains - Feather of the Flock Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Giza Plains Rains",
+        address=2547,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90AF",
+        secondary_index=1,
+        difficulty=2
+    ),
+    "Giza Plains Rains - Feather of the Flock Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Giza Plains Rains",
+        address=2548,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90AF",
+        secondary_index=2,
+        difficulty=2
+    ),
+    "Rabanastre - Great Cockatrice Escape Renn Reward (1)": FF12OpenWorldLocationData(
+        region="Rabanastre",
+        address=2549,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9063"
+    ),
+    "Rabanastre - Great Cockatrice Escape Renn Reward (2)": FF12OpenWorldLocationData(
+        region="Rabanastre",
+        address=2550,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9063",
+        secondary_index=1
+    ),
+    "Rabanastre - Great Cockatrice Escape Renn Reward (3)": FF12OpenWorldLocationData(
+        region="Rabanastre",
+        address=2551,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9063",
+        secondary_index=2
+    ),
+    "Jahara - Great Cockatrice Escape Gift of the Great-chief Reward (1)": FF12OpenWorldLocationData(
+        region="Jahara",
+        address=2552,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B0"
+    ),
+    "Jahara - Great Cockatrice Escape Gift of the Great-chief Reward (2)": FF12OpenWorldLocationData(
+        region="Jahara",
+        address=2553,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B0",
+        secondary_index=1
+    ),
+    "Jahara - Great Cockatrice Escape Gift of the Great-chief Reward (3)": FF12OpenWorldLocationData(
+        region="Jahara",
+        address=2554,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B0",
+        secondary_index=2
+    ),
+    "Jahara - Great Cockatrice Escape Shurry Reward (1)": FF12OpenWorldLocationData(
+        region="Jahara",
+        address=2555,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9064"
+    ),
+    "Jahara - Great Cockatrice Escape Shurry Reward (2)": FF12OpenWorldLocationData(
+        region="Jahara",
+        address=2556,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9064",
+        secondary_index=1
+    ),
+    "Jahara - Great Cockatrice Escape Shurry Reward (3)": FF12OpenWorldLocationData(
+        region="Jahara",
+        address=2557,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9064",
+        secondary_index=2
+    ),
+    "Balfonheim - Great Cockatrice Escape Moomer Reward (1)": FF12OpenWorldLocationData(
+        region="Balfonheim",
+        address=2558,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9065"
+    ),
+    "Balfonheim - Great Cockatrice Escape Moomer Reward (2)": FF12OpenWorldLocationData(
+        region="Balfonheim",
+        address=2559,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9065",
+        secondary_index=1
+    ),
+    "Balfonheim - Great Cockatrice Escape Moomer Reward (3)": FF12OpenWorldLocationData(
+        region="Balfonheim",
+        address=2560,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9065",
+        secondary_index=2
+    ),
+    "Dalmasca Estersand - Great Cockatrice Escape Sassan Reward (1)": FF12OpenWorldLocationData(
+        region="Dalmasca Estersand",
+        address=2561,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9066"
+    ),
+    "Dalmasca Estersand - Great Cockatrice Escape Sassan Reward (2)": FF12OpenWorldLocationData(
+        region="Dalmasca Estersand",
+        address=2562,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9066",
+        secondary_index=1
+    ),
+    "Dalmasca Estersand - Great Cockatrice Escape Sassan Reward (3)": FF12OpenWorldLocationData(
+        region="Dalmasca Estersand",
+        address=2563,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9066",
+        secondary_index=2
+    ),
+    "Eruyt Village - Great Cockatrice Escape Chit Reward (1)": FF12OpenWorldLocationData(
+        region="Eruyt Village",
+        address=2564,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9067"
+    ),
+    "Eruyt Village - Great Cockatrice Escape Chit Reward (2)": FF12OpenWorldLocationData(
+        region="Eruyt Village",
+        address=2565,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9067",
+        secondary_index=1
+    ),
+    "Eruyt Village - Great Cockatrice Escape Chit Reward (3)": FF12OpenWorldLocationData(
+        region="Eruyt Village",
+        address=2566,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9067",
+        secondary_index=2
+    ),
+    "Archades - Great Cockatrice Escape Agytha Reward (1)": FF12OpenWorldLocationData(
+        region="Archades",
+        address=2567,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9068"
+    ),
+    "Archades - Great Cockatrice Escape Agytha Reward (2)": FF12OpenWorldLocationData(
+        region="Archades",
+        address=2568,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9068",
+        secondary_index=1
+    ),
+    "Archades - Great Cockatrice Escape Agytha Reward (3)": FF12OpenWorldLocationData(
+        region="Archades",
+        address=2569,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9068",
+        secondary_index=2
+    ),
+    "Giza Plains Dry - Great Cockatrice Escape Complete Terra Reward (1)": FF12OpenWorldLocationData(
+        region="Giza Plains Dry",
+        address=2570,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9069"
+    ),
+    "Giza Plains Dry - Great Cockatrice Escape Complete Terra Reward (2)": FF12OpenWorldLocationData(
+        region="Giza Plains Dry",
+        address=2571,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9069",
+        secondary_index=1
+    ),
+    "Giza Plains Dry - Great Cockatrice Escape Complete Terra Reward (3)": FF12OpenWorldLocationData(
+        region="Giza Plains Dry",
+        address=2572,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9069",
+        secondary_index=2
+    ),
+    "Nabreus Deadlands - Map of Nabreus Deadlands Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Nabreus Deadlands",
+        address=2573,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B1",
+        difficulty=5
+    ),
+    "Nabreus Deadlands - Map of Nabreus Deadlands Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Nabreus Deadlands",
+        address=2574,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B1",
+        secondary_index=1,
+        difficulty=5
+    ),
+    "Nabreus Deadlands - Map of Nabreus Deadlands Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Nabreus Deadlands",
+        address=2575,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B1",
+        secondary_index=2,
+        difficulty=5
+    ),
+    "Ogir-Yensa Sandsea - Map of Ogir-Yensa Sandsea Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Ogir-Yensa Sandsea",
+        address=2576,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B2",
+        difficulty=1
+    ),
+    "Ogir-Yensa Sandsea - Map of Ogir-Yensa Sandsea Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Ogir-Yensa Sandsea",
+        address=2577,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B2",
+        secondary_index=1,
+        difficulty=1
+    ),
+    "Ogir-Yensa Sandsea - Map of Ogir-Yensa Sandsea Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Ogir-Yensa Sandsea",
+        address=2578,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B2",
+        secondary_index=2,
+        difficulty=1
+    ),
+    "Ogir-Yensa Sandsea - Map of Nam-Yensa Sandsea Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Ogir-Yensa Sandsea",
+        address=2579,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B3",
+        difficulty=1
+    ),
+    "Ogir-Yensa Sandsea - Map of Nam-Yensa Sandsea Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Ogir-Yensa Sandsea",
+        address=2580,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B3",
+        secondary_index=1,
+        difficulty=1
+    ),
+    "Ogir-Yensa Sandsea - Map of Nam-Yensa Sandsea Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Ogir-Yensa Sandsea",
+        address=2581,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B3",
+        secondary_index=2,
+        difficulty=1
+    ),
+    "Salikawood - Map of Salikawood Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Salikawood",
+        address=2582,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B4",
+        difficulty=2
+    ),
+    "Salikawood - Map of Salikawood Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Salikawood",
+        address=2583,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B4",
+        secondary_index=1,
+        difficulty=2
+    ),
+    "Salikawood - Map of Salikawood Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Salikawood",
+        address=2584,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B4",
+        secondary_index=2,
+        difficulty=2
+    ),
+    "Giruvegan - Map of Giruvegan Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Giruvegan",
+        address=2585,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B5",
+        difficulty=4
+    ),
+    "Giruvegan - Map of Giruvegan Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Giruvegan",
+        address=2586,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B5",
+        secondary_index=1,
+        difficulty=4
+    ),
+    "Giruvegan - Map of Giruvegan Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Giruvegan",
+        address=2587,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B5",
+        secondary_index=2,
+        difficulty=4
+    ),
+    "Golmore Jungle NW - Map of Golmore Jungle Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Golmore Jungle NW",
+        address=2588,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B6",
+        difficulty=2
+    ),
+    "Golmore Jungle NW - Map of Golmore Jungle Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Golmore Jungle NW",
+        address=2589,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B6",
+        secondary_index=1,
+        difficulty=2
+    ),
+    "Golmore Jungle NW - Map of Golmore Jungle Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Golmore Jungle NW",
+        address=2590,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B6",
+        secondary_index=2,
+        difficulty=2
+    ),
+    "Garamsythe Waterway - Map of Garamsythe Waterway Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Garamsythe Waterway",
+        address=2591,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B7",
+        difficulty=5
+    ),
+    "Garamsythe Waterway - Map of Garamsythe Waterway Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Garamsythe Waterway",
+        address=2592,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B7",
+        secondary_index=1,
+        difficulty=5
+    ),
+    "Garamsythe Waterway - Map of Garamsythe Waterway Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Garamsythe Waterway",
+        address=2593,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B7",
+        secondary_index=2,
+        difficulty=5
+    ),
+    "Garamsythe Waterway - Candle of Garamsythe Waterway Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Garamsythe Waterway",
+        address=2594,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B8",
+        difficulty=5
+    ),
+    "Garamsythe Waterway - Candle of Garamsythe Waterway Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Garamsythe Waterway",
+        address=2595,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B8",
+        secondary_index=1,
+        difficulty=5
+    ),
+    "Garamsythe Waterway - Candle of Garamsythe Waterway Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Garamsythe Waterway",
+        address=2596,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B8",
+        secondary_index=2,
+        difficulty=5
+    ),
+    "Henne Mines - Map of Henne Mines Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Henne Mines",
+        address=2597,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B9",
+        difficulty=2
+    ),
+    "Henne Mines - Map of Henne Mines Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Henne Mines",
+        address=2598,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B9",
+        secondary_index=1,
+        difficulty=2
+    ),
+    "Henne Mines - Map of Henne Mines Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Henne Mines",
+        address=2599,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90B9",
+        secondary_index=2,
+        difficulty=2
+    ),
+    "Henne Mines Deep - Candle of Henne Mines Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Henne Mines Deep",
+        address=2600,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BA",
         difficulty=8
     ),
+    "Henne Mines Deep - Candle of Henne Mines Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Henne Mines Deep",
+        address=2601,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BA",
+        secondary_index=1,
+        difficulty=8
+    ),
+    "Henne Mines Deep - Candle of Henne Mines Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Henne Mines Deep",
+        address=2602,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BA",
+        secondary_index=2,
+        difficulty=8
+    ),
+    "Lhusu Mines - Candle of Lhusu Mines Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Lhusu Mines",
+        address=2603,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BB",
+        difficulty=2
+    ),
+    "Lhusu Mines - Candle of Lhusu Mines Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Lhusu Mines",
+        address=2604,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BB",
+        secondary_index=1,
+        difficulty=2
+    ),
+    "Lhusu Mines - Candle of Lhusu Mines Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Lhusu Mines",
+        address=2605,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BB",
+        secondary_index=2,
+        difficulty=2
+    ),
+    "Feywood - Map of Feywood Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Feywood",
+        address=2606,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BC",
+        difficulty=3
+    ),
+    "Feywood - Map of Feywood Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Feywood",
+        address=2607,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BC",
+        secondary_index=1,
+        difficulty=3
+    ),
+    "Feywood - Map of Feywood Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Feywood",
+        address=2608,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BC",
+        secondary_index=2,
+        difficulty=3
+    ),
+    "Feywood - Candle of Feywood Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Feywood",
+        address=2609,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BD",
+        difficulty=3
+    ),
+    "Feywood - Candle of Feywood Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Feywood",
+        address=2610,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BD",
+        secondary_index=1,
+        difficulty=3
+    ),
+    "Feywood - Candle of Feywood Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Feywood",
+        address=2611,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BD",
+        secondary_index=2,
+        difficulty=3
+    ),
+    "Barheim Passage - Map of Barheim Passage Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Barheim Passage",
+        address=2612,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BE",
+        difficulty=3
+    ),
+    "Barheim Passage - Map of Barheim Passage Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Barheim Passage",
+        address=2613,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BE",
+        secondary_index=1,
+        difficulty=3
+    ),
+    "Barheim Passage - Map of Barheim Passage Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Barheim Passage",
+        address=2614,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BE",
+        secondary_index=2,
+        difficulty=3
+    ),
+    "Barheim Passage - Candle of Barheim Passage Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Barheim Passage",
+        address=2615,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BF",
+        difficulty=3
+    ),
+    "Barheim Passage - Candle of Barheim Passage Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Barheim Passage",
+        address=2616,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BF",
+        secondary_index=1,
+        difficulty=3
+    ),
+    "Barheim Passage - Candle of Barheim Passage Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Barheim Passage",
+        address=2617,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90BF",
+        secondary_index=2,
+        difficulty=3
+    ),
+    "Stilshrine of Miriam - Map of Stilshrine of Miriam Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Stilshrine of Miriam",
+        address=2618,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C0",
+        difficulty=2
+    ),
+    "Stilshrine of Miriam - Map of Stilshrine of Miriam Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Stilshrine of Miriam",
+        address=2619,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C0",
+        secondary_index=1,
+        difficulty=2
+    ),
+    "Stilshrine of Miriam - Map of Stilshrine of Miriam Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Stilshrine of Miriam",
+        address=2620,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C0",
+        secondary_index=2,
+        difficulty=2
+    ),
+    "Pharos of Ridorana - Map of Pharos of Ridorana First Ascent Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Pharos of Ridorana",
+        address=2621,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C1",
+        difficulty=5
+    ),
+    "Pharos of Ridorana - Map of Pharos of Ridorana First Ascent Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Pharos of Ridorana",
+        address=2622,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C1",
+        secondary_index=1,
+        difficulty=5
+    ),
+    "Pharos of Ridorana - Map of Pharos of Ridorana First Ascent Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Pharos of Ridorana",
+        address=2623,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C1",
+        secondary_index=2,
+        difficulty=5
+    ),
+    "Pharos of Ridorana - Map of Pharos of Ridorana Second Ascent Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Pharos of Ridorana",
+        address=2624,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C2",
+        difficulty=5
+    ),
+    "Pharos of Ridorana - Map of Pharos of Ridorana Second Ascent Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Pharos of Ridorana",
+        address=2625,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C2",
+        secondary_index=1,
+        difficulty=5
+    ),
+    "Pharos of Ridorana - Map of Pharos of Ridorana Second Ascent Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Pharos of Ridorana",
+        address=2626,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C2",
+        secondary_index=2,
+        difficulty=5
+    ),
+    "Pharos of Ridorana - Map of Pharos of Ridorana Third Ascent Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Pharos of Ridorana",
+        address=2627,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C3",
+        difficulty=5
+    ),
+    "Pharos of Ridorana - Map of Pharos of Ridorana Third Ascent Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Pharos of Ridorana",
+        address=2628,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C3",
+        secondary_index=1,
+        difficulty=5
+    ),
+    "Pharos of Ridorana - Map of Pharos of Ridorana Third Ascent Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Pharos of Ridorana",
+        address=2629,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C3",
+        secondary_index=2,
+        difficulty=5
+    ),
+    "Royal Palace - Map of Royal Palace Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Royal Palace",
+        address=2630,
+        classification=LocationProgressType.EXCLUDED,
+        type="reward",
+        str_id="90C4",
+        difficulty=1
+    ),
+    "Royal Palace - Map of Royal Palace Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Royal Palace",
+        address=2631,
+        classification=LocationProgressType.EXCLUDED,
+        type="reward",
+        str_id="90C4",
+        secondary_index=1,
+        difficulty=1
+    ),
+    "Royal Palace - Map of Royal Palace Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Royal Palace",
+        address=2632,
+        classification=LocationProgressType.EXCLUDED,
+        type="reward",
+        str_id="90C4",
+        secondary_index=2,
+        difficulty=1
+    ),
+    "Sochen Cave Palace Middle - Map of Sochen Cave Palace Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Sochen Cave Palace Middle",
+        address=2633,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C5",
+        difficulty=3
+    ),
+    "Sochen Cave Palace Middle - Map of Sochen Cave Palace Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Sochen Cave Palace Middle",
+        address=2634,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C5",
+        secondary_index=1,
+        difficulty=3
+    ),
+    "Sochen Cave Palace Middle - Map of Sochen Cave Palace Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Sochen Cave Palace Middle",
+        address=2635,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C5",
+        secondary_index=2,
+        difficulty=3
+    ),
+    "Ridorana Cataract - Map of Ridorana Cataract Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Ridorana Cataract",
+        address=2636,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C6",
+        difficulty=4
+    ),
+    "Ridorana Cataract - Map of Ridorana Cataract Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Ridorana Cataract",
+        address=2637,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C6",
+        secondary_index=1,
+        difficulty=4
+    ),
+    "Ridorana Cataract - Map of Ridorana Cataract Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Ridorana Cataract",
+        address=2638,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C6",
+        secondary_index=2,
+        difficulty=4
+    ),
+    "Tomb of Raithwall - Map of Tomb of Raithwall Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Tomb of Raithwall",
+        address=2639,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C7",
+        difficulty=1
+    ),
+    "Tomb of Raithwall - Map of Tomb of Raithwall Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Tomb of Raithwall",
+        address=2640,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C7",
+        secondary_index=1,
+        difficulty=1
+    ),
+    "Tomb of Raithwall - Map of Tomb of Raithwall Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Tomb of Raithwall",
+        address=2641,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C7",
+        secondary_index=2,
+        difficulty=1
+    ),
+    "Zertinan Caverns Center - Map of Zertinan Caverns Urn Reward (1)": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2642,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C8",
+        difficulty=5
+    ),
+    "Zertinan Caverns Center - Map of Zertinan Caverns Urn Reward (2)": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2643,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C8",
+        secondary_index=1,
+        difficulty=5
+    ),
+    "Zertinan Caverns Center - Map of Zertinan Caverns Urn Reward (3)": FF12OpenWorldLocationData(
+        region="Zertinan Caverns Center",
+        address=2644,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C8",
+        secondary_index=2,
+        difficulty=5
+    ),
+    "Necrohol of Nabudis - Map of Necrohol of Nabudis Reward (1)": FF12OpenWorldLocationData(
+        region="Necrohol of Nabudis",
+        address=2645,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C9",
+        difficulty=7
+    ),
+    "Necrohol of Nabudis - Map of Necrohol of Nabudis Reward (2)": FF12OpenWorldLocationData(
+        region="Necrohol of Nabudis",
+        address=2646,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C9",
+        secondary_index=1,
+        difficulty=7
+    ),
+    "Necrohol of Nabudis - Map of Necrohol of Nabudis Reward (3)": FF12OpenWorldLocationData(
+        region="Necrohol of Nabudis",
+        address=2647,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90C9",
+        secondary_index=2,
+        difficulty=7
+    ),
+    "Salikawood - Moogle Boss Accept Search Reward (1)": FF12OpenWorldLocationData(
+        region="Salikawood",
+        address=2648,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90CA",
+        difficulty=2
+    ),
+    "Salikawood - Moogle Boss Accept Search Reward (2)": FF12OpenWorldLocationData(
+        region="Salikawood",
+        address=2649,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90CA",
+        secondary_index=1,
+        difficulty=2
+    ),
+    "Salikawood - Moogle Boss Accept Search Reward (3)": FF12OpenWorldLocationData(
+        region="Salikawood",
+        address=2650,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="90CA",
+        secondary_index=2,
+        difficulty=2
+    ),
+    "Salikawood - Moogle Boss Repair Gate Reward (1)": FF12OpenWorldLocationData(
+        region="Salikawood",
+        address=2651,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="908E",
+        difficulty=2
+    ),
+    "Salikawood - Moogle Boss Repair Gate Reward (2)": FF12OpenWorldLocationData(
+        region="Salikawood",
+        address=2652,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="908E",
+        secondary_index=1,
+        difficulty=2
+    ),
+    "Salikawood - Moogle Boss Repair Gate Reward (3)": FF12OpenWorldLocationData(
+        region="Salikawood",
+        address=2653,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="908E",
+        secondary_index=2,
+        difficulty=2
+    ),
+    "Trials - Complete Stage 10 Reward (1)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2654,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9123",
+        difficulty=1
+    ),
+    "Trials - Complete Stage 10 Reward (2)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2655,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9123",
+        secondary_index=1,
+        difficulty=1
+    ),
+    "Trials - Complete Stage 10 Reward (3)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2656,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9123",
+        secondary_index=2,
+        difficulty=1
+    ),
+    "Trials - Complete Stage 20 Reward (1)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2657,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9124",
+        difficulty=2
+    ),
+    "Trials - Complete Stage 20 Reward (2)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2658,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9124",
+        secondary_index=1,
+        difficulty=2
+    ),
+    "Trials - Complete Stage 20 Reward (3)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2659,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9124",
+        secondary_index=2,
+        difficulty=2
+    ),
+    "Trials - Complete Stage 30 Reward (1)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2660,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9125",
+        difficulty=3
+    ),
+    "Trials - Complete Stage 30 Reward (2)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2661,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9125",
+        secondary_index=1,
+        difficulty=3
+    ),
+    "Trials - Complete Stage 30 Reward (3)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2662,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9125",
+        secondary_index=2,
+        difficulty=3
+    ),
+    "Trials - Complete Stage 40 Reward (1)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2663,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9126",
+        difficulty=4
+    ),
+    "Trials - Complete Stage 40 Reward (2)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2664,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9126",
+        secondary_index=1,
+        difficulty=4
+    ),
+    "Trials - Complete Stage 40 Reward (3)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2665,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9126",
+        secondary_index=2,
+        difficulty=4
+    ),
+    "Trials - Complete Stage 50 Reward (1)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2666,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9127",
+        difficulty=5
+    ),
+    "Trials - Complete Stage 50 Reward (2)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2667,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9127",
+        secondary_index=1,
+        difficulty=5
+    ),
+    "Trials - Complete Stage 50 Reward (3)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2668,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9127",
+        secondary_index=2,
+        difficulty=5
+    ),
+    "Trials - Complete Stage 60 Reward (1)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2669,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9128",
+        difficulty=6
+    ),
+    "Trials - Complete Stage 60 Reward (2)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2670,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9128",
+        secondary_index=1,
+        difficulty=6
+    ),
+    "Trials - Complete Stage 60 Reward (3)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2671,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9128",
+        secondary_index=2,
+        difficulty=6
+    ),
+    "Trials - Complete Stage 70 Reward (1)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2672,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9129",
+        difficulty=7
+    ),
+    "Trials - Complete Stage 70 Reward (2)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2673,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9129",
+        secondary_index=1,
+        difficulty=7
+    ),
+    "Trials - Complete Stage 70 Reward (3)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2674,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="9129",
+        secondary_index=2,
+        difficulty=7
+    ),
+    "Trials - Complete Stage 80 Reward (1)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2675,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="912A",
+        difficulty=8
+    ),
+    "Trials - Complete Stage 80 Reward (2)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2676,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="912A",
+        secondary_index=1,
+        difficulty=8
+    ),
+    "Trials - Complete Stage 80 Reward (3)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2677,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="912A",
+        secondary_index=2,
+        difficulty=8
+    ),
+    "Trials - Complete Stage 90 Reward (1)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2678,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="912B",
+        difficulty=9
+    ),
+    "Trials - Complete Stage 90 Reward (2)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2679,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="912B",
+        secondary_index=1,
+        difficulty=9
+    ),
+    "Trials - Complete Stage 90 Reward (3)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2680,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="912B",
+        secondary_index=2,
+        difficulty=9
+    ),
+    "Trials - Complete Stage 100 Reward (1)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2681,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="919C",
+        difficulty=10
+    ),
+    "Trials - Complete Stage 100 Reward (2)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2682,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="919C",
+        secondary_index=1,
+        difficulty=10
+    ),
+    "Trials - Complete Stage 100 Reward (3)": FF12OpenWorldLocationData(
+        region="Trials",
+        address=2683,
+        classification=LocationProgressType.DEFAULT,
+        type="reward",
+        str_id="919C",
+        secondary_index=2,
+        difficulty=10
+    ),
     "Vaan's Starting Items (1)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2459,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
         str_id="0"
     ),
     "Vaan's Starting Items (2)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2460,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21470,7 +22608,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1
     ),
     "Vaan's Starting Items (3)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2461,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21478,7 +22616,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=2
     ),
     "Vaan's Starting Items (4)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2462,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21486,7 +22624,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=3
     ),
     "Vaan's Starting Items (5)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2463,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21494,7 +22632,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=4
     ),
     "Vaan's Starting Items (6)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2464,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21502,7 +22640,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=5
     ),
     "Vaan's Starting Items (7)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2465,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21510,7 +22648,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=6
     ),
     "Vaan's Starting Items (8)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2466,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21518,7 +22656,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=7
     ),
     "Vaan's Starting Items (9)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2467,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21526,14 +22664,14 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=8
     ),
     "Ashe's Starting Items (1)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2468,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
         str_id="1"
     ),
     "Ashe's Starting Items (2)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2469,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21541,7 +22679,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1
     ),
     "Ashe's Starting Items (3)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2470,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21549,7 +22687,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=2
     ),
     "Ashe's Starting Items (4)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2471,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21557,7 +22695,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=3
     ),
     "Ashe's Starting Items (5)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2472,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21565,7 +22703,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=4
     ),
     "Ashe's Starting Items (6)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2473,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21573,7 +22711,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=5
     ),
     "Ashe's Starting Items (7)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2474,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21581,7 +22719,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=6
     ),
     "Ashe's Starting Items (8)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2475,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21589,7 +22727,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=7
     ),
     "Ashe's Starting Items (9)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2476,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21597,14 +22735,14 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=8
     ),
     "Fran's Starting Items (1)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2477,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
         str_id="2"
     ),
     "Fran's Starting Items (2)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2478,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21612,7 +22750,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1
     ),
     "Fran's Starting Items (3)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2479,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21620,7 +22758,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=2
     ),
     "Fran's Starting Items (4)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2480,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21628,7 +22766,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=3
     ),
     "Fran's Starting Items (5)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2481,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21636,7 +22774,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=4
     ),
     "Fran's Starting Items (6)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2482,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21644,7 +22782,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=5
     ),
     "Fran's Starting Items (7)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2483,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21652,7 +22790,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=6
     ),
     "Fran's Starting Items (8)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2484,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21660,7 +22798,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=7
     ),
     "Fran's Starting Items (9)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2485,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21668,14 +22806,14 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=8
     ),
     "Balthier's Starting Items (1)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2486,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
         str_id="3"
     ),
     "Balthier's Starting Items (2)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2487,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21683,7 +22821,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1
     ),
     "Balthier's Starting Items (3)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2488,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21691,7 +22829,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=2
     ),
     "Balthier's Starting Items (4)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2489,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21699,7 +22837,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=3
     ),
     "Balthier's Starting Items (5)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2490,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21707,7 +22845,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=4
     ),
     "Balthier's Starting Items (6)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2491,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21715,7 +22853,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=5
     ),
     "Balthier's Starting Items (7)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2492,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21723,7 +22861,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=6
     ),
     "Balthier's Starting Items (8)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2493,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21731,7 +22869,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=7
     ),
     "Balthier's Starting Items (9)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2494,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21739,14 +22877,14 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=8
     ),
     "Basch's Starting Items (1)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2495,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
         str_id="4"
     ),
     "Basch's Starting Items (2)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2496,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21754,7 +22892,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1
     ),
     "Basch's Starting Items (3)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2497,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21762,7 +22900,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=2
     ),
     "Basch's Starting Items (4)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2498,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21770,7 +22908,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=3
     ),
     "Basch's Starting Items (5)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2499,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21778,7 +22916,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=4
     ),
     "Basch's Starting Items (6)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2500,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21786,7 +22924,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=5
     ),
     "Basch's Starting Items (7)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2501,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21794,7 +22932,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=6
     ),
     "Basch's Starting Items (8)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2502,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21802,7 +22940,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=7
     ),
     "Basch's Starting Items (9)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2503,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21810,14 +22948,14 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=8
     ),
     "Penelo's Starting Items (1)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2504,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
         str_id="5"
     ),
     "Penelo's Starting Items (2)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2505,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21825,7 +22963,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1
     ),
     "Penelo's Starting Items (3)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2506,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21833,7 +22971,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=2
     ),
     "Penelo's Starting Items (4)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2507,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21841,7 +22979,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=3
     ),
     "Penelo's Starting Items (5)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2508,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21849,7 +22987,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=4
     ),
     "Penelo's Starting Items (6)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2509,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21857,7 +22995,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=5
     ),
     "Penelo's Starting Items (7)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2510,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21865,7 +23003,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=6
     ),
     "Penelo's Starting Items (8)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2511,
         classification=LocationProgressType.DEFAULT,
         type="inventory",
@@ -21873,7 +23011,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=7
     ),
     "Penelo's Starting Items (9)": FF12OpenWorldLocationData(
-        region="Initial",
+        region="Starting Items",
         address=2512,
         classification=LocationProgressType.DEFAULT,
         type="inventory",

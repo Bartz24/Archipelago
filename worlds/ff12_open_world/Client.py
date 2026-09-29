@@ -1,6 +1,6 @@
 import os
 import time
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 import ModuleUpdate
 from Utils import async_start
@@ -13,6 +13,7 @@ from CommonClient import gui_enabled, logger, get_base_parser, CommonContext, se
 
 from .Items import item_data_table, inv_item_table
 from .Locations import location_data_table, FF12OpenWorldLocationData
+from .MapIds import map_name_to_id
 
 tracker_loaded = False
 try:
@@ -69,6 +70,34 @@ tracker_event_offsets.extend(range(0x1064 + 128, 0x1064 + 173))  # Hunt Progress
 tracker_event_offsets.extend(range(0x0A03, 0x0A6C))  # Defeat flags
 tracker_event_offsets.extend(range(0x06D7, 0x06DC))  # Visitor on Deck traveler aerodrome locations
 tracker_event_offsets.extend(range(0x05AF, 0x05B6))  # Ann's letter delivery
+
+urn_treasure_flags = {
+    0x90AF: 33,  # sav_g01  Feather of the Flock
+    0x90B1: 12,  # bog_a03  Map of Nabreus Deadlands
+    0x90B2: 8,   # ene_a01  Map of Ogir-Yensa Sandsea
+    0x90B3: 9,   # ene_a01  Map of Nam-Yensa Sandsea
+    0x90B4: 11,  # frs_a02  Map of Salikawood
+    0x90B5: 18,  # gil_b01  Map of Giruvegan
+    0x90B6: 15,  # gol_a01  Map of Golmore Jungle
+    0x90B7: 1,   # grm_a06  Map of Garamsythe Waterway
+    0x90B8: 2,   # grm_e03  Candle of Garamsythe Waterway
+    0x90B9: 13,  # hne_a03  Map of Henne Mines
+    0x90BA: 14,  # hne_c01  Candle of Henne Mines
+    0x90BB: 7,   # lus_f02  Candle of Lhusu Mines
+    0x90BC: 16,  # mfr_a02  Map of Feywood
+    0x90BD: 17,  # mfr_c01  Candle of Feywood
+    0x90BE: 4,   # mic_a02  Map of Barheim Passage
+    0x90BF: 5,   # mic_e02  Candle of Barheim Passage
+    0x90C0: 19,  # mrm_c01  Map of Stilshrine of Miriam
+    0x90C1: 25,  # rbl_b01  Map of Pharos of Ridorana First Ascent
+    0x90C2: 24,  # rbl_l01  Map of Pharos of Ridorana Second Ascent
+    0x90C3: 23,  # rbl_n01  Map of Pharos of Ridorana Third Ascent
+    0x90C4: 0,   # rrp_a01  Map of Royal Palace
+    0x90C5: 20,  # rui_a02  Map of Sochen Cave Palace
+    0x90C6: 22,  # rwf_d01  Map of Ridorana Cataract
+    0x90C7: 10,  # rwg_c01  Map of Tomb of Raithwall
+    0x90C8: 6,   # ztc_c01  Map of Zertinan Caverns
+}
 
 MAX_PARTY_MEMBERS = 12
 
@@ -165,6 +194,12 @@ class FF12OpenWorldContext(CommonContext):
         self.ff12connected = False
         self.stored_map_id = 0
         self.event_flags = {}
+        # Map id -> (file stamp, opened chest indexes). Kept between passes and only re-read when the
+        # hook rewrites that map's file.
+        self.opened_treasures: Dict[int, Tuple[Tuple[int, int], set]] = {}
+        # Item code written for each received item index, so every file is written once rather than
+        # every pass.
+        self.written_items: List[int] = []
         # hooked object
         self.ff12 = None
         self.game_state_cache = FF12StateCache()
@@ -286,10 +321,20 @@ class FF12OpenWorldContext(CommonContext):
                 self.ff12connected = True
             except Exception:
                 if self.ff12connected:
-                    self.ff12connected = False
+                    self.disconnect_game()
                 logger.info("Game is not open (Try running the client as an admin).")
 
+    def disconnect_game(self):
+        if self.ff12connected:
+            self.ff12connected = False
+            self.ff12 = None
+            logger.info("Disconnected from the game.")
+            self.delete_communication_files()
+
     def delete_communication_files(self):
+        # Everything the files held is gone, so all of it is written and read again from scratch.
+        self.written_items = []
+        self.opened_treasures = {}
         if os.path.exists(self.game_communication_path):
             for filename in os.listdir(self.game_communication_path):
                 file_path = os.path.join(self.game_communication_path, filename)
@@ -427,7 +472,7 @@ class FF12OpenWorldContext(CommonContext):
             self.game_state_cache = new_cache
         except Exception as e:
             if self.ff12connected:
-                self.ff12connected = False
+                self.disconnect_game()
             logger.info(e)
 
     def get_party_address(self) -> int:
@@ -475,6 +520,8 @@ class FF12OpenWorldContext(CommonContext):
     async def ff12_check_locations(self):
         try:
             self.sending.clear()
+            self.refresh_opened_treasures()
+            selected_treasures = set(self.ff12slotdata["treasures"]) if self.ff12slotdata else set()
             index = 0
             for location_name, data in location_data_table.items():
                 index += 1
@@ -496,14 +543,13 @@ class FF12OpenWorldContext(CommonContext):
                     if self.is_reward_met(data):
                         self.sending.append(data.address)
                 elif data.type == "treasure":
-                    treasures: list[str] = self.ff12slotdata["treasures"]
-                    if location_name not in treasures:
+                    if location_name not in selected_treasures:
                         continue
-                    treasure_index = treasures.index(location_name)
-                    byte_index = treasure_index // 8
-                    bit_index = treasure_index % 8
-                    treasure_byte = self.game_state_cache.save_byte(0x14B4 + byte_index)
-                    if (treasure_byte >> bit_index) & 1:
+
+                    treasure_map = map_name_to_id.get(data.str_id)
+                    if treasure_map is None:
+                        continue
+                    if data.secondary_index in self.read_opened_treasures(treasure_map):
                         self.sending.append(data.address)
 
             self.locations_checked |= set(self.sending)
@@ -553,7 +599,7 @@ class FF12OpenWorldContext(CommonContext):
 
         except Exception as e:
             if self.ff12connected:
-                self.ff12connected = False
+                self.disconnect_game()
             logger.info(e)
 
     def is_reward_met(self, location_data: FF12OpenWorldLocationData) -> bool:
@@ -875,46 +921,87 @@ class FF12OpenWorldContext(CommonContext):
         elif 0x90F9 <= int(location_data.str_id, 16) <= 0x90FE:  # Rare Game Defeats (5,10,15,20,25,30)
             return save.save_byte(0x725) > \
                 (int(location_data.str_id, 16) - 0x90F9) + 1
-        elif location_data.str_id == "90F3":  # Atak >=16
-            if save.save_byte(0x1064 + 71) < 170:
-                return False
-            max_trophies = self.get_max_trophies()
-            return save.save_byte(0xB14) == max_trophies and \
-                max_trophies >= 16
-        elif location_data.str_id == "90F4":  # Atak <16
-            if save.save_byte(0x1064 + 71) < 170:
-                return False
-            max_trophies = self.get_max_trophies()
-            return save.save_byte(0xB14) == max_trophies and \
-                max_trophies < 16
-        elif location_data.str_id == "90F5":  # Blok >=16
-            if save.save_byte(0x1064 + 71) < 170:
-                return False
-            max_trophies = self.get_max_trophies()
-            return save.save_byte(0xB15) == max_trophies and \
-                max_trophies >= 16
-        elif location_data.str_id == "90F6":  # Blok <16
-            if save.save_byte(0x1064 + 71) < 170:
-                return False
-            max_trophies = self.get_max_trophies()
-            return save.save_byte(0xB15) == max_trophies and \
-                max_trophies < 16
-        elif location_data.str_id == "90F7":  # Stok >=16
-            if save.save_byte(0x1064 + 71) < 170:
-                return False
-            max_trophies = self.get_max_trophies()
-            return save.save_byte(0xB16) == max_trophies and \
-                max_trophies >= 16
-        elif location_data.str_id == "90F8":  # Stok <16
-            if save.save_byte(0x1064 + 71) < 170:
-                return False
-            max_trophies = self.get_max_trophies()
-            return save.save_byte(0xB16) == max_trophies and \
-                max_trophies < 16
+        elif 0x90F3 <= int(location_data.str_id, 16) <= 0x90F8:  # All 30 Trophy turn ins
+            return save.save_byte(0x1064 + 71) >= 170
         elif 0x90FF <= int(location_data.str_id, 16) <= 0x911D:  # Hunt Club Outfitters
             outfitter_index = int(location_data.str_id, 16) - 0x90FF
             return save.save_byte(0xAF2 + outfitter_index) >= 1
+        elif 0x9063 <= int(location_data.str_id, 16) <= 0x9068:  # Great Cockatrice Escape NPCs
+            return save.save_byte(0x482 + int(location_data.str_id, 16) - 0x9063) >= 1
+        elif location_data.str_id == "9069":  # Great Cockatrice Escape Complete (Terra)
+            return save.save_byte(0x1064 + 160) >= 160
+        elif location_data.str_id == "90B0":  # Great Cockatrice Escape Gift of the Great-chief
+            return save.save_byte(0x319) >= 40
+        elif location_data.str_id == "90C9":  # Map of Necrohol of Nabudis
+            # Given by whichever of Humbaba Mistant (bds_f01) / Fury (bds_g01) dies first;
+            # the second one hands out the Medallion of Might instead.
+            return save.save_byte(0xA0F) >= 2 or save.save_byte(0xA10) >= 2
+        elif location_data.str_id == "90CA":  # Moogle Boss Accept Search
+            return save.save_byte(0x6B4) >= 1
+        elif location_data.str_id == "908E":  # Moogle Boss Repair Gate
+            return save.save_byte(0x6B4) >= 3
+        elif 0x9123 <= int(location_data.str_id, 16) <= 0x912B:  # Trial Stage 10-90 rewards
+            stage = (int(location_data.str_id, 16) - 0x9123 + 1) * 10
+            return save.save_byte(0xDFFE) >= stage
+        elif location_data.str_id == "919C":  # Trial Stage 100 reward
+            return save.save_byte(0xDFFE) >= 100
+        elif int(location_data.str_id, 16) in urn_treasure_flags:  # Map/Candle urns
+            flag = urn_treasure_flags[int(location_data.str_id, 16)]
+            return save.save_bit(0x14D4 + (flag // 8), flag % 8)
         raise Exception(f"Unknown reward location ID: {location_data.str_id}")
+
+    def refresh_opened_treasures(self):
+        """Re-reads only the treasure files the hook has rewritten since the last pass. One directory
+        listing gives every file's timestamp, which is far cheaper than opening every map's file each
+        pass: the hook only ever rewrites the map being played."""
+        stamps: Dict[int, Tuple[int, int]] = {}
+        if self.game_communication_path:
+            try:
+                with os.scandir(self.game_communication_path) as entries:
+                    for entry in entries:
+                        if not (entry.name.startswith("treasures_") and entry.name.endswith(".txt")):
+                            continue
+                        try:
+                            map_id = int(entry.name[len("treasures_"):-len(".txt")], 16)
+                            stat = entry.stat()
+                        except (ValueError, OSError):
+                            continue
+                        stamps[map_id] = (stat.st_mtime_ns, stat.st_size)
+            except OSError:
+                pass
+
+        # Files that are gone drop out here too, which is what a wiped folder needs.
+        refreshed: Dict[int, Tuple[Tuple[int, int], set]] = {}
+        for map_id, stamp in stamps.items():
+            cached = self.opened_treasures.get(map_id)
+            if cached is not None and cached[0] == stamp:
+                refreshed[map_id] = cached
+                continue
+
+            opened = self.read_treasure_file(map_id)
+            if opened is not None:
+                refreshed[map_id] = (stamp, opened)
+            elif cached is not None:
+                # Caught mid rewrite. The old stamp is kept so the next pass reads it again.
+                refreshed[map_id] = cached
+        self.opened_treasures = refreshed
+
+    def read_treasure_file(self, map_id: int) -> Optional[set]:
+        opened = set()
+        path = os.path.join(self.game_communication_path, f"treasures_{map_id:04X}.txt")
+        try:
+            with open(path, "r") as f:
+                for line in f:
+                    line = line.strip()
+                    if line.isdigit():
+                        opened.add(int(line))
+        except OSError:
+            return None
+        return opened
+
+    def read_opened_treasures(self, map_id: int) -> set:
+        cached = self.opened_treasures.get(map_id)
+        return cached[1] if cached is not None else set()
 
     def read_hunt_progress(self, hunt_id: int) -> int:
         value = self.game_state_cache.save_byte(0x1064 + 128 + hunt_id)
@@ -929,8 +1016,12 @@ class FF12OpenWorldContext(CommonContext):
     async def give_items(self):
         try:
             # Write obtained items to txt files in the communication folder in format items_received_####.txt
-            cur_index = 0
-            for item in self.ff12_items_received:
+            # Each file only needs writing once. Rewriting every one every pass costs a file write per
+            # item received so far, which late in a seed blocks the client for most of each pass.
+            for cur_index, item in enumerate(self.ff12_items_received):
+                if cur_index < len(self.written_items) and self.written_items[cur_index] == item.item:
+                    continue
+
                 file_path = os.path.join(
                     self.game_communication_path,
                     f"items_received_{cur_index:04d}.txt")
@@ -941,10 +1032,15 @@ class FF12OpenWorldContext(CommonContext):
                         item_id = 0xFFFE
                     item_count = item_data_table[inv_item_table[item.item]].amount
                     f.write(f"{item_id}\n{item_count}\n")
-                cur_index += 1
+
+                # In order, so an index is either rewritten or the next one on the end.
+                if cur_index < len(self.written_items):
+                    self.written_items[cur_index] = item.item
+                else:
+                    self.written_items.append(item.item)
         except Exception as e:
             if self.ff12connected:
-                self.ff12connected = False
+                self.disconnect_game()
             logger.info(e)
 
     def make_gui(self):

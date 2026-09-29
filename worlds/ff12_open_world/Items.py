@@ -13,6 +13,7 @@ class FF12OpenWorldItemData(NamedTuple):
     weight: int = 0
     amount: int = 1
     duplicateAmount: int = 1
+    traits: list = []
 
 
 item_data_table: Dict[str, FF12OpenWorldItemData] = {
@@ -4327,7 +4328,7 @@ item_data_table: Dict[str, FF12OpenWorldItemData] = {
         category="Loot",
         weight=10
     ),
-    "Gysahl Greens": FF12OpenWorldItemData(
+    "Spoiled Gysahl Greens": FF12OpenWorldItemData(
         code=8409,
         classification=ItemClassification.filler,
         category="Loot",
@@ -4564,25 +4565,36 @@ item_data_table: Dict[str, FF12OpenWorldItemData] = {
     "Sandalwood Chop": FF12OpenWorldItemData(
         code=8467,
         classification=ItemClassification.progression,
-        category="Key"
+        category="Key",
+        traits=["BazaarIgnore"]
     ),
     "Pinewood Chop": FF12OpenWorldItemData(
         code=8468,
         classification=ItemClassification.progression_skip_balancing,
         category="Key",
-        duplicateAmount=28
+        duplicateAmount=28,
+        traits=["BazaarIgnore"]
     ),
     "Black Orb": FF12OpenWorldItemData(
         code=8471,
         classification=ItemClassification.progression_skip_balancing,
         category="Key",
-        duplicateAmount=24
+        duplicateAmount=24,
+        traits=["BazaarIgnore"]
     ),
     "Systems Access Key": FF12OpenWorldItemData(
         code=8473,
         classification=ItemClassification.progression_skip_balancing,
         category="Key",
-        duplicateAmount=3
+        duplicateAmount=4,
+        traits=["BazaarIgnore"]
+    ),
+    "Progressive Trial Unlock": FF12OpenWorldItemData(
+        code=8474,
+        classification=ItemClassification.progression_skip_balancing,
+        category="Key",
+        duplicateAmount=10,
+        traits=["BazaarIgnore"]
     ),
     "Writ of Transit": FF12OpenWorldItemData(
         code=32881,
@@ -4626,6 +4638,11 @@ item_data_table: Dict[str, FF12OpenWorldItemData] = {
     ),
     "Sunstone": FF12OpenWorldItemData(
         code=32891,
+        classification=ItemClassification.progression,
+        category="Key"
+    ),
+    "Feather of the Flock": FF12OpenWorldItemData(
+        code=32892,
         classification=ItemClassification.progression,
         category="Key"
     ),
@@ -4784,6 +4801,11 @@ item_data_table: Dict[str, FF12OpenWorldItemData] = {
         classification=ItemClassification.progression,
         category="Key"
     ),
+    "Gift of the Great-chief": FF12OpenWorldItemData(
+        code=32942,
+        classification=ItemClassification.progression,
+        category="Key"
+    ),
     "Broken Key": FF12OpenWorldItemData(
         code=32943,
         classification=ItemClassification.progression,
@@ -4831,153 +4853,183 @@ item_data_table: Dict[str, FF12OpenWorldItemData] = {
     ),
     "Fur-scaled Trophy": FF12OpenWorldItemData(
         code=32954,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Bony Trophy": FF12OpenWorldItemData(
         code=32955,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Fanged Trophy": FF12OpenWorldItemData(
         code=32956,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Hide-covered Trophy": FF12OpenWorldItemData(
         code=32957,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Maned Trophy": FF12OpenWorldItemData(
         code=32958,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Fell Trophy": FF12OpenWorldItemData(
         code=32959,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Accursed Trophy": FF12OpenWorldItemData(
         code=32960,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Beaked Trophy": FF12OpenWorldItemData(
         code=32961,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Maverick Trophy": FF12OpenWorldItemData(
         code=32962,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Soulless Trophy": FF12OpenWorldItemData(
         code=32963,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Leathern Trophy": FF12OpenWorldItemData(
         code=32964,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Sickle Trophy": FF12OpenWorldItemData(
         code=32965,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Vengeful Trophy": FF12OpenWorldItemData(
         code=32966,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Gravesoil Trophy": FF12OpenWorldItemData(
         code=32967,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Metallic Trophy": FF12OpenWorldItemData(
         code=32968,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Slimy Trophy": FF12OpenWorldItemData(
         code=32969,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Scythe Trophy": FF12OpenWorldItemData(
         code=32970,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Feathered Trophy": FF12OpenWorldItemData(
         code=32971,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Skull Trophy": FF12OpenWorldItemData(
         code=32972,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Mind Trophy": FF12OpenWorldItemData(
         code=32973,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Eternal Trophy": FF12OpenWorldItemData(
         code=32974,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Clawed Trophy": FF12OpenWorldItemData(
         code=32975,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Odiferous Trophy": FF12OpenWorldItemData(
         code=32976,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Whiskered Trophy": FF12OpenWorldItemData(
         code=32977,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Frigid Trophy": FF12OpenWorldItemData(
         code=32978,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Ensanguined Trophy": FF12OpenWorldItemData(
         code=32979,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Cruel Trophy": FF12OpenWorldItemData(
         code=32980,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Adamantine Trophy": FF12OpenWorldItemData(
         code=32981,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Reptilian Trophy": FF12OpenWorldItemData(
         code=32982,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Vile Trophy": FF12OpenWorldItemData(
         code=32983,
-        classification=ItemClassification.filler,
-        category="Key"
+        classification=ItemClassification.progression,
+        category="Key",
+        traits=["Trophy"]
     ),
     "Rainstone": FF12OpenWorldItemData(
         code=32993,
@@ -5006,6 +5058,51 @@ item_data_table: Dict[str, FF12OpenWorldItemData] = {
     ),
     "Balfonheim Aeropass": FF12OpenWorldItemData(
         code=32998,
+        classification=ItemClassification.progression,
+        category="Key"
+    ),
+    "Gysahl Greens": FF12OpenWorldItemData(
+        code=33000,
+        classification=ItemClassification.progression,
+        category="Key"
+    ),
+    "Krakka Greens": FF12OpenWorldItemData(
+        code=33001,
+        classification=ItemClassification.progression,
+        category="Key"
+    ),
+    "Tantal Greens": FF12OpenWorldItemData(
+        code=33002,
+        classification=ItemClassification.progression,
+        category="Key"
+    ),
+    "Pahsana Greens": FF12OpenWorldItemData(
+        code=33003,
+        classification=ItemClassification.progression,
+        category="Key"
+    ),
+    "Curiel Greens": FF12OpenWorldItemData(
+        code=33004,
+        classification=ItemClassification.progression,
+        category="Key"
+    ),
+    "Mimett Greens": FF12OpenWorldItemData(
+        code=33005,
+        classification=ItemClassification.progression,
+        category="Key"
+    ),
+    "Reagan Greens": FF12OpenWorldItemData(
+        code=33006,
+        classification=ItemClassification.progression,
+        category="Key"
+    ),
+    "Sylkis Greens": FF12OpenWorldItemData(
+        code=33007,
+        classification=ItemClassification.progression,
+        category="Key"
+    ),
+    "Kupo Nuts": FF12OpenWorldItemData(
+        code=33008,
         classification=ItemClassification.progression,
         category="Key"
     ),

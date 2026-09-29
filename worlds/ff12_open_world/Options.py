@@ -1,6 +1,6 @@
 from typing import Dict
 from dataclasses import dataclass
-from Options import Choice, Toggle, PerGameCommonOptions
+from Options import Choice, Range, Toggle, PerGameCommonOptions, StartInventoryPool
 
 
 class AllowSeitengrat(Toggle):
@@ -26,6 +26,17 @@ class IncludeTreasures(Toggle):
     """Allows treasures to contain progression and useful items."""
     display_name = "Treasures"
     default = 0
+
+
+class TreasureCount(Range):
+    """How many of the game's 1581 treasures become checks.
+    Treasures are picked at random, and the ones not picked are emptied.
+    Every treasure is one time only, so the count is not limited by the game's
+    256 respawn ids: the mod banks them per map."""
+    display_name = "Treasure Count"
+    range_start = 0
+    range_end = 1581
+    default = 255
 
 
 class IncludeChops(Toggle):
@@ -61,6 +72,17 @@ class IncludeClanHallRewards(Toggle):
     default = 0
 
 
+class MaxTrialStage(Range):
+    """The highest Trial Mode stage whose rewards can contain progression and useful items.
+    Rewards for later stages only get filler, so the trials can be stopped at this stage without
+    missing anything. Stages come in steps of 10; values in between round down.
+    0 excludes every trial reward, 100 includes them all."""
+    display_name = "Highest Trial Stage with Important Rewards"
+    range_start = 0
+    range_end = 100
+    default = 100
+
+
 class BahamutUnlock(Choice):
     """Determines where the Writ of Transit is placed to unlock travel to the Bahamut to beat the game.
     Defeat Cid 2: Climb the Pharos and defeat Cid 2 (Requires 2 magicites and 1 story sword).
@@ -83,13 +105,16 @@ class BahamutUnlock(Choice):
 
 @dataclass
 class FF12OpenWorldGameOptions(PerGameCommonOptions):
+    start_inventory_from_pool: StartInventoryPool
     shuffle_main_party: ShuffleMainParty
     difficulty_progressive_scaling: ProgressiveScaling
     include_treasures: IncludeTreasures
+    treasure_count: TreasureCount
     include_chops: IncludeChops
     include_black_orbs: IncludeBlackOrbs
     include_trophy_rare_games: IncludeTrophyRareGames
     include_hunt_rewards: IncludeHuntRewards
     include_clan_hall_rewards: IncludeClanHallRewards
+    max_trial_stage: MaxTrialStage
     allow_seitengrat: AllowSeitengrat
     bahamut_unlock: BahamutUnlock

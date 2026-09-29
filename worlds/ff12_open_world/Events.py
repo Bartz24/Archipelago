@@ -429,7 +429,7 @@ event_data_table: Dict[str, FF12OpenWorldEventData] = {
         difficulty=7
     ),
     "Crystal Knight - Skull Trophy Event (1)": FF12OpenWorldEventData(
-        region="Great Crystal",
+        region="Great Crystal Deep",
         item="HuntClubKill",
         difficulty=5
     ),
