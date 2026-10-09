@@ -194,6 +194,8 @@ class FF12OpenWorldWorld(World):
 
             # Add events
             for event_name, data in event_data_table.items():
+                if not self.is_event_possible(event_name):
+                    continue
                 region = self.multiworld.get_region(data.region, self.player)
                 region.locations.append(FF12OpenWorldLocation(self.player, event_name, None, region))
             return
@@ -261,11 +263,19 @@ class FF12OpenWorldWorld(World):
 
         # Add events
         for event_name, data in event_data_table.items():
+            if not self.is_event_possible(event_name):
+                continue
             region = self.multiworld.get_region(data.region, self.player)
             region.locations.append(FF12OpenWorldLocation(self.player, event_name, None, region))
 
         # from Utils import visualize_regions
         # visualize_regions(self.get_region("Initial"), "ff12_open_world_regions.puml")
+
+    def is_event_possible(self, event_name: str) -> bool:
+        """Events whose rule can never pass with the chosen options (the advanced chocobo routes when they're off)
+        are left out, so they don't sit in the world as locations nothing can reach."""
+        rule = rule_data_table.get(event_name)
+        return rule is None or not rule.resolve(self).always_false
 
     def get_loc_classification(self, location_name: str) -> LocationProgressType:
         location_data = location_data_table[location_name]
@@ -300,6 +310,10 @@ class FF12OpenWorldWorld(World):
             if 0x9090 <= int(location_data.str_id, 16) <= 0x90AE and not self.options.include_trophy_rare_games:
                 return LocationProgressType.EXCLUDED
             if 0x90F9 <= int(location_data.str_id, 16) <= 0x90FE and not self.options.include_trophy_rare_games:
+                return LocationProgressType.EXCLUDED
+            if 0x90F3 <= int(location_data.str_id, 16) <= 0x90F8 and not self.options.include_trophy_turn_ins:
+                return LocationProgressType.EXCLUDED
+            if 0x90FF <= int(location_data.str_id, 16) <= 0x911D and not self.options.include_trophy_turn_ins:
                 return LocationProgressType.EXCLUDED
             if re.search(r"Hunt \d+:", location_name) and not self.options.include_hunt_rewards:
                 return LocationProgressType.EXCLUDED
@@ -415,6 +429,8 @@ class FF12OpenWorldWorld(World):
 
         # Set event locked items
         for event_name, event_data in event_data_table.items():
+            if not self.is_event_possible(event_name):
+                continue
             location = self.multiworld.get_location(event_name, self.player)
             location.place_locked_item(self.create_event(event_data.item))
 
@@ -541,11 +557,12 @@ class FF12OpenWorldWorld(World):
                 self.options.include_chops = options["include_chops"]
                 self.options.include_black_orbs = options["include_black_orbs"]
                 self.options.include_trophy_rare_games = options["include_trophy_rare_games"]
+                self.options.include_trophy_turn_ins = options["include_trophy_turn_ins"]
                 self.options.include_hunt_rewards = options["include_hunt_rewards"]
                 self.options.include_clan_hall_rewards = options["include_clan_hall_rewards"]
-                # Older slot data predates the option, when every trial stage was included.
                 self.options.max_trial_stage = options.get("max_trial_stage", 100)
                 self.options.allow_seitengrat = options["allow_seitengrat"]
+                self.options.allow_advanced_chocobo_routes = options.get("allow_advanced_chocobo_routes", 1)
                 self.options.bahamut_unlock = options["bahamut_unlock"]
 
     def get_item_display(self, loc) -> str:
@@ -626,10 +643,12 @@ class FF12OpenWorldWorld(World):
                 "include_chops": self.options.include_chops.value,
                 "include_black_orbs": self.options.include_black_orbs.value,
                 "include_trophy_rare_games": self.options.include_trophy_rare_games.value,
+                "include_trophy_turn_ins": self.options.include_trophy_turn_ins.value,
                 "include_hunt_rewards": self.options.include_hunt_rewards.value,
                 "include_clan_hall_rewards": self.options.include_clan_hall_rewards.value,
                 "max_trial_stage": self.options.max_trial_stage.value,
                 "allow_seitengrat": self.options.allow_seitengrat.value,
+                "allow_advanced_chocobo_routes": self.options.allow_advanced_chocobo_routes.value,
                 "bahamut_unlock": self.options.bahamut_unlock.value
             }
         }

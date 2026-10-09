@@ -7272,8 +7272,8 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=2,
         difficulty=2
     ),
-    "Mosphoran Highwaste - Babbling Vale Treasure 4": FF12OpenWorldLocationData(
-        region="Mosphoran Highwaste",
+    "Mosphoran Highwaste Upper - Babbling Vale Treasure 4": FF12OpenWorldLocationData(
+        region="Mosphoran Highwaste Upper",
         address=2533,
         classification=LocationProgressType.DEFAULT,
         type="treasure",
@@ -17856,7 +17856,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=2,
         difficulty=4
     ),
-    "Clan Hall - Clan Boss: Daedulus Reward (1)": FF12OpenWorldLocationData(
+    "Clan Hall - Clan Boss: Daedalus Reward (1)": FF12OpenWorldLocationData(
         region="Clan Hall",
         address=2045,
         classification=LocationProgressType.DEFAULT,
@@ -17864,7 +17864,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         str_id="9049",
         difficulty=5
     ),
-    "Clan Hall - Clan Boss: Daedulus Reward (2)": FF12OpenWorldLocationData(
+    "Clan Hall - Clan Boss: Daedalus Reward (2)": FF12OpenWorldLocationData(
         region="Clan Hall",
         address=2046,
         classification=LocationProgressType.DEFAULT,
@@ -17873,7 +17873,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         secondary_index=1,
         difficulty=5
     ),
-    "Clan Hall - Clan Boss: Daedulus Reward (3)": FF12OpenWorldLocationData(
+    "Clan Hall - Clan Boss: Daedalus Reward (3)": FF12OpenWorldLocationData(
         region="Clan Hall",
         address=2047,
         classification=LocationProgressType.DEFAULT,
@@ -21896,7 +21896,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="90BB",
-        difficulty=2
+        difficulty=6
     ),
     "Lhusu Mines - Candle of Lhusu Mines Urn Reward (2)": FF12OpenWorldLocationData(
         region="Lhusu Mines",
@@ -21905,7 +21905,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         type="reward",
         str_id="90BB",
         secondary_index=1,
-        difficulty=2
+        difficulty=6
     ),
     "Lhusu Mines - Candle of Lhusu Mines Urn Reward (3)": FF12OpenWorldLocationData(
         region="Lhusu Mines",
@@ -21914,7 +21914,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         type="reward",
         str_id="90BB",
         secondary_index=2,
-        difficulty=2
+        difficulty=6
     ),
     "Feywood - Map of Feywood Urn Reward (1)": FF12OpenWorldLocationData(
         region="Feywood",

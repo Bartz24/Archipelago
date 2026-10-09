@@ -121,6 +121,8 @@ class AtLeastRule(Rule[Any], game="Final Fantasy 12 Open World"):
                     deps.setdefault(entrance_name, {id(self)}).update(rules)
             return deps
 
+from .Options import AdvChoco
+from rule_builder.options import OptionFilter
 rule_data_list: list[Rule[Any]] = [
     Has("Sandalwood Chop"),  # Rule 0
     True_(),  # Rule 1
@@ -247,78 +249,92 @@ rule_data_list: list[Rule[Any]] = [
     (Has("Shelled Trophy") & Has("HuntClubStart") & HasTraitRule("Trophy", 20)),  # Rule 122
     (Has("Shelled Trophy") & Has("HuntClubStart") & HasTraitRule("Trophy", 25)),  # Rule 123
     (Has("Shelled Trophy") & Has("HuntClubStart") & HasTraitRule("Trophy", 12)),  # Rule 124
-    (Has("Feather of the Flock") & CanReachRegion("Giza Plains Dry") & CanReachRegion("Clan Hall")),  # Rule 125
-    (Has("Feather of the Flock") & Has("Gift of the Great-chief") & CanReachRegion("Giza Plains Dry") & CanReachRegion("Clan Hall")),  # Rule 126
-    (Has("Cactus Flower") & Has("Feather of the Flock") & CanReachRegion("Giza Plains Dry") & CanReachRegion("Clan Hall")),  # Rule 127
-    (Has("Sandalwood Chop") & Has("Feather of the Flock") & CanReachRegion("Giza Plains Dry") & CanReachRegion("Clan Hall") & CanReachRegion("Old Archades")),  # Rule 128
-    (Has("Feather of the Flock") & CanReachRegion("Clan Hall") & CanReachRegion("Rabanastre") & CanReachRegion("Jahara") & Has("Gift of the Great-chief") & CanReachRegion("Balfonheim") & CanReachRegion("Dalmasca Estersand") & Has("Cactus Flower") & CanReachRegion("Eruyt Village") & CanReachRegion("Archades") & CanReachRegion("Old Archades") & Has("Sandalwood Chop")),  # Rule 129
-    ((Has("Medallion of Bravery") | Has("Medallion of Love")) & Has("Lusterless Medallion")),  # Rule 130
-    Has("Kupo Nuts"),  # Rule 131
-    Has("Progressive Trial Unlock"),  # Rule 132
-    Has("Progressive Trial Unlock", 2),  # Rule 133
-    Has("Progressive Trial Unlock", 3),  # Rule 134
-    Has("Progressive Trial Unlock", 4),  # Rule 135
-    Has("Progressive Trial Unlock", 5),  # Rule 136
-    Has("Progressive Trial Unlock", 6),  # Rule 137
-    Has("Progressive Trial Unlock", 7),  # Rule 138
-    Has("Progressive Trial Unlock", 8),  # Rule 139
-    Has("Progressive Trial Unlock", 9),  # Rule 140
-    (Has("Progressive Trial Unlock", 10) & Has("Zeromus")),  # Rule 141
-    Has("Vaan"),  # Rule 142
-    Has("Ashe"),  # Rule 143
-    Has("Fran"),  # Rule 144
-    Has("Balthier"),  # Rule 145
-    Has("Basch"),  # Rule 146
-    Has("Penelo"),  # Rule 147
-    (Has("Wind Globe") & Has("Windvane") & Has("Defeat Vossler")),  # Rule 148
-    (Has("Defeat Cid") & Has("Treaty-Blade")),  # Rule 149
-    (Has("Clan Primer") & Has("Hunt", 2)),  # Rule 150
-    (Has("Clan Primer") & Has("Hunt", 4)),  # Rule 151
-    (Has("Clan Primer") & Has("Hunt", 8)),  # Rule 152
-    (Has("Clan Primer") & Has("Hunt", 10)),  # Rule 153
-    (Has("Clan Primer") & Has("Hunt", 12)),  # Rule 154
-    (Has("Clan Primer") & Has("Hunt", 14)),  # Rule 155
-    (Has("Clan Primer") & Has("Hunt", 16)),  # Rule 156
-    (Has("Clan Primer") & Has("Hunt", 24)),  # Rule 157
-    (Has("Clan Primer") & Has("Hunt", 28)),  # Rule 158
-    (Has("Clan Primer") & Has("Hunt", 32)),  # Rule 159
-    (Has("Clan Primer") & Has("Hunt", 45) & HasCategoryRule("Esper", 13) & Has("HuntClubKill", 30) & Has("Soul Ward Key") & Has("Ageworn Key")),  # Rule 160
-    (Has("Rabanastre Aeropass") & Has("Bhujerba Aeropass") & CanReachRegion("Rabanastre") & CanReachRegion("Bhujerba")),  # Rule 161
-    (Has("Rabanastre Aeropass") & Has("Nalbina Aeropass") & CanReachRegion("Rabanastre") & CanReachRegion("Nalbina Fortress")),  # Rule 162
-    (Has("Rabanastre Aeropass") & Has("Archades Aeropass") & CanReachRegion("Rabanastre") & CanReachRegion("Archades")),  # Rule 163
-    (Has("Nalbina Aeropass") & Has("Archades Aeropass") & CanReachRegion("Nalbina Fortress") & CanReachRegion("Archades")),  # Rule 164
-    (Has("Nalbina Aeropass") & Has("Balfonheim Aeropass") & CanReachRegion("Nalbina Fortress") & CanReachRegion("Balfonheim")),  # Rule 165
-    (Has("Bhujerba Aeropass") & Has("Balfonheim Aeropass") & CanReachRegion("Bhujerba") & CanReachRegion("Balfonheim")),  # Rule 166
-    (Has("Archades Aeropass") & Has("Balfonheim Aeropass") & CanReachRegion("Archades") & CanReachRegion("Balfonheim")),  # Rule 167
-    Has("Rainstone"),  # Rule 168
-    Has("Crescent Stone"),  # Rule 169
-    Has("Barheim Key"),  # Rule 170
-    Has("Defeat Ghis"),  # Rule 171
-    Has("Defeat Bergan"),  # Rule 172
-    ((Has("Defeat Bergan") & Has("Krakka Greens")) | Has("Sylkis Greens") | (Has("Defeat Earth Tyrant") & Has("Gysahl Greens"))),  # Rule 173
-    Has("Tantal Greens"),  # Rule 174
-    HasCategoryRule("Esper", 10),  # Rule 175
-    Has("Lente's Tear"),  # Rule 176
-    Has("Belias"),  # Rule 177
-    Has("Treaty-Blade"),  # Rule 178
-    Has("Curiel Greens"),  # Rule 179
-    Has("Mimett Greens"),  # Rule 180
-    Has("Soul Ward Key"),  # Rule 181
-    (Has("Pinewood Chop", 3) | Has("Sandalwood Chop")),  # Rule 182
-    (Has("Rabanastre Aeropass") & Has("Nalbina Aeropass")),  # Rule 183
-    (Has("Rabanastre Aeropass") & Has("Bhujerba Aeropass")),  # Rule 184
-    (Has("Rabanastre Aeropass") & Has("Archades Aeropass")),  # Rule 185
-    (Has("Nalbina Aeropass") & Has("Archades Aeropass")),  # Rule 186
-    (Has("Nalbina Aeropass") & Has("Balfonheim Aeropass")),  # Rule 187
-    (Has("Bhujerba Aeropass") & Has("Balfonheim Aeropass")),  # Rule 188
-    (Has("Archades Aeropass") & Has("Balfonheim Aeropass")),  # Rule 189
-    Has("Systems Access Key"),  # Rule 190
-    Has("Systems Access Key", 4),  # Rule 191
-    (Has("Systems Access Key") & Has("Rainstone")),  # Rule 192
-    Has("Systems Access Key", 2),  # Rule 193
-    Has("Systems Access Key", 3),  # Rule 194
-    (Has("Basch") | Has("Goddess's Magicite")),  # Rule 195
-    (Has("Writ of Transit") & Has("Systems Access Key")),  # Rule 196
+    (Has("Feather of the Flock") & CanReachRegion("Giza Plains Dry") & CanReachRegion("Clan Hall") & CanReachRegion("Eruyt Village")),  # Rule 125
+    (Has("Feather of the Flock") & CanReachRegion("Giza Plains Dry") & CanReachRegion("Clan Hall")),  # Rule 126
+    (Has("Feather of the Flock") & Has("Gift of the Great-chief") & CanReachRegion("Giza Plains Dry") & CanReachRegion("Clan Hall")),  # Rule 127
+    (Has("Cactus Flower") & Has("Feather of the Flock") & CanReachRegion("Giza Plains Dry") & CanReachRegion("Clan Hall") & Has("Defeat Vossler")),  # Rule 128
+    (Has("Sandalwood Chop") & Has("Feather of the Flock") & CanReachRegion("Giza Plains Dry") & CanReachRegion("Clan Hall") & CanReachRegion("Old Archades")),  # Rule 129
+    (Has("Feather of the Flock") & CanReachRegion("Clan Hall") & CanReachRegion("Rabanastre") & CanReachRegion("Jahara") & Has("Gift of the Great-chief") & CanReachRegion("Balfonheim") & CanReachRegion("Dalmasca Estersand") & Has("Cactus Flower") & CanReachRegion("Eruyt Village") & CanReachRegion("Archades") & CanReachRegion("Old Archades") & Has("Sandalwood Chop") & Has("Defeat Vossler")),  # Rule 130
+    ((Has("Medallion of Bravery") | Has("Medallion of Love")) & Has("Lusterless Medallion")),  # Rule 131
+    Has("Kupo Nuts"),  # Rule 132
+    Has("Progressive Trial Unlock"),  # Rule 133
+    Has("Progressive Trial Unlock", 2),  # Rule 134
+    Has("Progressive Trial Unlock", 3),  # Rule 135
+    Has("Progressive Trial Unlock", 4),  # Rule 136
+    Has("Progressive Trial Unlock", 5),  # Rule 137
+    Has("Progressive Trial Unlock", 6),  # Rule 138
+    Has("Progressive Trial Unlock", 7),  # Rule 139
+    Has("Progressive Trial Unlock", 8),  # Rule 140
+    Has("Progressive Trial Unlock", 9),  # Rule 141
+    (Has("Progressive Trial Unlock", 10) & Has("Zeromus")),  # Rule 142
+    Has("Vaan"),  # Rule 143
+    Has("Ashe"),  # Rule 144
+    Has("Fran"),  # Rule 145
+    Has("Balthier"),  # Rule 146
+    Has("Basch"),  # Rule 147
+    Has("Penelo"),  # Rule 148
+    (Has("Wind Globe") & Has("Windvane") & Has("Defeat Vossler")),  # Rule 149
+    (Has("Defeat Cid") & Has("Treaty-Blade")),  # Rule 150
+    (CanReachRegion("Jahara") & Has("Tantal Greens")),  # Rule 151
+    (OptionFilter(AdvChoco, AdvChoco.option_true) & CanReachRegion("Rabanastre") & Has("Gysahl Greens") & Has("Rainstone")),  # Rule 152
+    (OptionFilter(AdvChoco, AdvChoco.option_true) & CanReachRegion("Nalbina Fortress") & Has("Krakka Greens") & Has("Rainstone")),  # Rule 153
+    (OptionFilter(AdvChoco, AdvChoco.option_true) & CanReachRegion("Mt. Bur-Omisace") & Has("Pahsana Greens") & Has("Lente's Tear")),  # Rule 154
+    (OptionFilter(AdvChoco, AdvChoco.option_true) & CanReachRegion("Mosphoran Highwaste") & Has("Sylkis Greens") & Has("Rainstone")),  # Rule 155
+    Has("Sylkis Greens"),  # Rule 156
+    (OptionFilter(AdvChoco, AdvChoco.option_true) & CanReachRegion("Nalbina Fortress") & Has("Krakka Greens") & Has("Defeat Bergan")),  # Rule 157
+    (OptionFilter(AdvChoco, AdvChoco.option_true) & CanReachRegion("Rabanastre") & Has("Gysahl Greens") & Has("Defeat Bergan")),  # Rule 158
+    (OptionFilter(AdvChoco, AdvChoco.option_true) & CanReachRegion("Rabanastre") & Has("Gysahl Greens") & Has("Defeat Earth Tyrant")),  # Rule 159
+    (OptionFilter(AdvChoco, AdvChoco.option_true) & CanReachRegion("Phon Coast") & CanReachRegion("Salikawood") & Has("Curiel Greens") & Has("Kupo Nuts")),  # Rule 160
+    (OptionFilter(AdvChoco, AdvChoco.option_true) & CanReachRegion("Ozmone Plain") & Has("Tantal Greens") & Has("Rainstone") & Has("Defeat Earth Tyrant")),  # Rule 161
+    (OptionFilter(AdvChoco, AdvChoco.option_true) & CanReachRegion("Jahara") & Has("Tantal Greens") & Has("Rainstone") & Has("Defeat Bergan")),  # Rule 162
+    (Has("Clan Primer") & Has("Hunt", 2)),  # Rule 163
+    (Has("Clan Primer") & Has("Hunt", 4)),  # Rule 164
+    (Has("Clan Primer") & Has("Hunt", 8)),  # Rule 165
+    (Has("Clan Primer") & Has("Hunt", 10)),  # Rule 166
+    (Has("Clan Primer") & Has("Hunt", 12)),  # Rule 167
+    (Has("Clan Primer") & Has("Hunt", 14)),  # Rule 168
+    (Has("Clan Primer") & Has("Hunt", 16)),  # Rule 169
+    (Has("Clan Primer") & Has("Hunt", 24)),  # Rule 170
+    (Has("Clan Primer") & Has("Hunt", 28)),  # Rule 171
+    (Has("Clan Primer") & Has("Hunt", 32)),  # Rule 172
+    (Has("Clan Primer") & Has("Hunt", 45) & HasCategoryRule("Esper", 13) & Has("HuntClubKill", 30) & Has("Soul Ward Key") & Has("Ageworn Key")),  # Rule 173
+    (Has("Rabanastre Aeropass") & Has("Bhujerba Aeropass") & CanReachRegion("Rabanastre") & CanReachRegion("Bhujerba")),  # Rule 174
+    (Has("Rabanastre Aeropass") & Has("Nalbina Aeropass") & CanReachRegion("Rabanastre") & CanReachRegion("Nalbina Fortress")),  # Rule 175
+    (Has("Rabanastre Aeropass") & Has("Archades Aeropass") & CanReachRegion("Rabanastre") & CanReachRegion("Archades")),  # Rule 176
+    (Has("Nalbina Aeropass") & Has("Archades Aeropass") & CanReachRegion("Nalbina Fortress") & CanReachRegion("Archades")),  # Rule 177
+    (Has("Nalbina Aeropass") & Has("Balfonheim Aeropass") & CanReachRegion("Nalbina Fortress") & CanReachRegion("Balfonheim")),  # Rule 178
+    (Has("Bhujerba Aeropass") & Has("Balfonheim Aeropass") & CanReachRegion("Bhujerba") & CanReachRegion("Balfonheim")),  # Rule 179
+    (Has("Archades Aeropass") & Has("Balfonheim Aeropass") & CanReachRegion("Archades") & CanReachRegion("Balfonheim")),  # Rule 180
+    Has("Rainstone"),  # Rule 181
+    Has("Crescent Stone"),  # Rule 182
+    Has("Barheim Key"),  # Rule 183
+    Has("Defeat Ghis"),  # Rule 184
+    Has("Defeat Bergan"),  # Rule 185
+    Has("MosphoranChocobo"),  # Rule 186
+    Has("HenneChocobo"),  # Rule 187
+    Has("Tantal Greens"),  # Rule 188
+    HasCategoryRule("Esper", 10),  # Rule 189
+    Has("Lente's Tear"),  # Rule 190
+    Has("Belias"),  # Rule 191
+    Has("Treaty-Blade"),  # Rule 192
+    Has("Curiel Greens"),  # Rule 193
+    Has("Mimett Greens"),  # Rule 194
+    Has("Soul Ward Key"),  # Rule 195
+    (Has("Pinewood Chop", 3) | Has("Sandalwood Chop")),  # Rule 196
+    (Has("Rabanastre Aeropass") & Has("Nalbina Aeropass")),  # Rule 197
+    (Has("Rabanastre Aeropass") & Has("Bhujerba Aeropass")),  # Rule 198
+    (Has("Rabanastre Aeropass") & Has("Archades Aeropass")),  # Rule 199
+    (Has("Nalbina Aeropass") & Has("Archades Aeropass")),  # Rule 200
+    (Has("Nalbina Aeropass") & Has("Balfonheim Aeropass")),  # Rule 201
+    (Has("Bhujerba Aeropass") & Has("Balfonheim Aeropass")),  # Rule 202
+    (Has("Archades Aeropass") & Has("Balfonheim Aeropass")),  # Rule 203
+    Has("Systems Access Key"),  # Rule 204
+    Has("Systems Access Key", 4),  # Rule 205
+    (Has("Systems Access Key") & Has("Rainstone")),  # Rule 206
+    Has("Systems Access Key", 2),  # Rule 207
+    Has("Systems Access Key", 3),  # Rule 208
+    (Has("Basch") | Has("Goddess's Magicite")),  # Rule 209
+    (Has("Writ of Transit") & Has("Systems Access Key")),  # Rule 210
 ]
 
 location_trait_data_table = {
@@ -711,9 +727,9 @@ location_trait_data_table = {
     "Clan Hall - Clan Boss: Ahriman Reward (1)": ("ClanBoss",),
     "Clan Hall - Clan Boss: Ahriman Reward (2)": ("ClanBoss",),
     "Clan Hall - Clan Boss: Ahriman Reward (3)": ("ClanBoss",),
-    "Clan Hall - Clan Boss: Daedulus Reward (1)": ("ClanBoss",),
-    "Clan Hall - Clan Boss: Daedulus Reward (2)": ("ClanBoss",),
-    "Clan Hall - Clan Boss: Daedulus Reward (3)": ("ClanBoss",),
+    "Clan Hall - Clan Boss: Daedalus Reward (1)": ("ClanBoss",),
+    "Clan Hall - Clan Boss: Daedalus Reward (2)": ("ClanBoss",),
+    "Clan Hall - Clan Boss: Daedalus Reward (3)": ("ClanBoss",),
     "Clan Hall - Clan Boss: Demon Wall 1 Reward (1)": ("ClanBoss",),
     "Clan Hall - Clan Boss: Demon Wall 1 Reward (2)": ("ClanBoss",),
     "Clan Hall - Clan Boss: Demon Wall 1 Reward (3)": ("ClanBoss",),
@@ -1433,6 +1449,8 @@ location_trait_data_table = {
     "Great Crystal Deep - Uldobi Phullam Udiipraa Treasure 2": (),
     "Great-chief Elder After Defeating Vossler Event (1)": ("Fake",),
     "Grimalkin - Whiskered Trophy Event (1)": ("Fake",),
+    "Henne Gysahl Advanced Chocobo Event (1)": ("Fake",),
+    "Henne Krakka Advanced Chocobo Event (1)": ("Fake",),
     "Henne Mines - Crossover A Treasure 1": (),
     "Henne Mines - Crossover A Treasure 2": (),
     "Henne Mines - Crossover A Treasure 3": (),
@@ -1506,6 +1524,9 @@ location_trait_data_table = {
     "Henne Mines Deep - Special Charter Shaft Treasure 9": (),
     "Henne Mines Feywood - Phase 2 Shaft Treasure 1": (),
     "Henne Mines Feywood - Phase 2 Shaft Treasure 2": (),
+    "Henne Pahsana Advanced Chocobo Event (1)": ("Fake",),
+    "Henne Sylkis Advanced Chocobo Event (1)": ("Fake",),
+    "Henne Tantal Chocobo Event (1)": ("Fake",),
     "Hume Shop Event (1)": ("Fake",),
     "Hunt 10: Enkelados Event (1)": ("Fake",),
     "Hunt 11: Croakadile Event (1)": ("Fake",),
@@ -1694,9 +1715,11 @@ location_trait_data_table = {
     "Melt - Slimy Trophy Event (1)": ("Fake",),
     "Migelo's Sundries Shop Event (1)": ("Fake",),
     "Morning Star Gambits Shop Event (1)": ("Fake",),
+    "Mosphoran Curiel Advanced Chocobo Event (1)": ("Fake",),
+    "Mosphoran Gysahl Advanced Chocobo 1 Event (1)": ("Fake",),
+    "Mosphoran Gysahl Advanced Chocobo 2 Event (1)": ("Fake",),
     "Mosphoran Highwaste - Babbling Vale Treasure 2": (),
     "Mosphoran Highwaste - Babbling Vale Treasure 3": (),
-    "Mosphoran Highwaste - Babbling Vale Treasure 4": (),
     "Mosphoran Highwaste - Empyrean Way Treasure 1": (),
     "Mosphoran Highwaste - Empyrean Way Treasure 2": (),
     "Mosphoran Highwaste - Empyrean Way Treasure 3": (),
@@ -1739,6 +1762,7 @@ location_trait_data_table = {
     "Mosphoran Highwaste - Trail of Sky-flung Stone Treasure 4": (),
     "Mosphoran Highwaste - Trail of Sky-flung Stone Treasure 5": (),
     "Mosphoran Highwaste Upper - Babbling Vale Treasure 1": (),
+    "Mosphoran Highwaste Upper - Babbling Vale Treasure 4": (),
     "Mosphoran Highwaste Upper - Defeat Exodus Reward (1)": (),
     "Mosphoran Highwaste Upper - Defeat Exodus Reward (2)": (),
     "Mosphoran Highwaste Upper - Defeat Exodus Reward (3)": (),
@@ -1749,6 +1773,10 @@ location_trait_data_table = {
     "Mosphoran Highwaste Upper - Skyreach Ridge Treasure 2": (),
     "Mosphoran Highwaste Upper - Skyreach Ridge Treasure 3": (),
     "Mosphoran Highwaste Upper - Skyreach Ridge Treasure 4": (),
+    "Mosphoran Nalbina Advanced Chocobo Event (1)": ("Fake",),
+    "Mosphoran Sylkis Chocobo Event (1)": ("Fake",),
+    "Mosphoran Tantal Advanced Chocobo 1 Event (1)": ("Fake",),
+    "Mosphoran Tantal Advanced Chocobo 2 Event (1)": ("Fake",),
     "Mt. Bur-Omisace - Acolyte Stone of the Condemner Reward (1)": (),
     "Mt. Bur-Omisace - Acolyte Stone of the Condemner Reward (2)": (),
     "Mt. Bur-Omisace - Acolyte Stone of the Condemner Reward (3)": (),
@@ -3957,7 +3985,7 @@ rule_data_table: Dict[str, Rule[Any]] = {
     "Mosphoran Highwaste Upper - Babbling Vale Treasure 1": rule_data_list[1],
     "Mosphoran Highwaste - Babbling Vale Treasure 2": rule_data_list[1],
     "Mosphoran Highwaste - Babbling Vale Treasure 3": rule_data_list[1],
-    "Mosphoran Highwaste - Babbling Vale Treasure 4": rule_data_list[1],
+    "Mosphoran Highwaste Upper - Babbling Vale Treasure 4": rule_data_list[1],
     "Stilshrine of Miriam - Walk of Sky Treasure 1": rule_data_list[1],
     "Stilshrine of Miriam - Walk of Sky Treasure 2": rule_data_list[1],
     "Stilshrine of Miriam - Walk of Sky Treasure 3": rule_data_list[1],
@@ -5175,9 +5203,9 @@ rule_data_table: Dict[str, Rule[Any]] = {
     "Clan Hall - Clan Boss: Rafflesia Reward (1)": rule_data_list[47],
     "Clan Hall - Clan Boss: Rafflesia Reward (2)": rule_data_list[47],
     "Clan Hall - Clan Boss: Rafflesia Reward (3)": rule_data_list[47],
-    "Clan Hall - Clan Boss: Daedulus Reward (1)": rule_data_list[46],
-    "Clan Hall - Clan Boss: Daedulus Reward (2)": rule_data_list[46],
-    "Clan Hall - Clan Boss: Daedulus Reward (3)": rule_data_list[46],
+    "Clan Hall - Clan Boss: Daedalus Reward (1)": rule_data_list[46],
+    "Clan Hall - Clan Boss: Daedalus Reward (2)": rule_data_list[46],
+    "Clan Hall - Clan Boss: Daedalus Reward (3)": rule_data_list[46],
     "Clan Hall - Clan Boss: Tyrant Reward (1)": rule_data_list[46],
     "Clan Hall - Clan Boss: Tyrant Reward (2)": rule_data_list[46],
     "Clan Hall - Clan Boss: Tyrant Reward (3)": rule_data_list[46],
@@ -5595,27 +5623,27 @@ rule_data_table: Dict[str, Rule[Any]] = {
     "Rabanastre - Great Cockatrice Escape Renn Reward (1)": rule_data_list[125],
     "Rabanastre - Great Cockatrice Escape Renn Reward (2)": rule_data_list[125],
     "Rabanastre - Great Cockatrice Escape Renn Reward (3)": rule_data_list[125],
-    "Jahara - Great Cockatrice Escape Gift of the Great-chief Reward (1)": rule_data_list[125],
-    "Jahara - Great Cockatrice Escape Gift of the Great-chief Reward (2)": rule_data_list[125],
-    "Jahara - Great Cockatrice Escape Gift of the Great-chief Reward (3)": rule_data_list[125],
-    "Jahara - Great Cockatrice Escape Shurry Reward (1)": rule_data_list[126],
-    "Jahara - Great Cockatrice Escape Shurry Reward (2)": rule_data_list[126],
-    "Jahara - Great Cockatrice Escape Shurry Reward (3)": rule_data_list[126],
-    "Balfonheim - Great Cockatrice Escape Moomer Reward (1)": rule_data_list[125],
-    "Balfonheim - Great Cockatrice Escape Moomer Reward (2)": rule_data_list[125],
-    "Balfonheim - Great Cockatrice Escape Moomer Reward (3)": rule_data_list[125],
-    "Dalmasca Estersand - Great Cockatrice Escape Sassan Reward (1)": rule_data_list[127],
-    "Dalmasca Estersand - Great Cockatrice Escape Sassan Reward (2)": rule_data_list[127],
-    "Dalmasca Estersand - Great Cockatrice Escape Sassan Reward (3)": rule_data_list[127],
-    "Eruyt Village - Great Cockatrice Escape Chit Reward (1)": rule_data_list[125],
-    "Eruyt Village - Great Cockatrice Escape Chit Reward (2)": rule_data_list[125],
-    "Eruyt Village - Great Cockatrice Escape Chit Reward (3)": rule_data_list[125],
-    "Archades - Great Cockatrice Escape Agytha Reward (1)": rule_data_list[128],
-    "Archades - Great Cockatrice Escape Agytha Reward (2)": rule_data_list[128],
-    "Archades - Great Cockatrice Escape Agytha Reward (3)": rule_data_list[128],
-    "Giza Plains Dry - Great Cockatrice Escape Complete Terra Reward (1)": rule_data_list[129],
-    "Giza Plains Dry - Great Cockatrice Escape Complete Terra Reward (2)": rule_data_list[129],
-    "Giza Plains Dry - Great Cockatrice Escape Complete Terra Reward (3)": rule_data_list[129],
+    "Jahara - Great Cockatrice Escape Gift of the Great-chief Reward (1)": rule_data_list[126],
+    "Jahara - Great Cockatrice Escape Gift of the Great-chief Reward (2)": rule_data_list[126],
+    "Jahara - Great Cockatrice Escape Gift of the Great-chief Reward (3)": rule_data_list[126],
+    "Jahara - Great Cockatrice Escape Shurry Reward (1)": rule_data_list[127],
+    "Jahara - Great Cockatrice Escape Shurry Reward (2)": rule_data_list[127],
+    "Jahara - Great Cockatrice Escape Shurry Reward (3)": rule_data_list[127],
+    "Balfonheim - Great Cockatrice Escape Moomer Reward (1)": rule_data_list[126],
+    "Balfonheim - Great Cockatrice Escape Moomer Reward (2)": rule_data_list[126],
+    "Balfonheim - Great Cockatrice Escape Moomer Reward (3)": rule_data_list[126],
+    "Dalmasca Estersand - Great Cockatrice Escape Sassan Reward (1)": rule_data_list[128],
+    "Dalmasca Estersand - Great Cockatrice Escape Sassan Reward (2)": rule_data_list[128],
+    "Dalmasca Estersand - Great Cockatrice Escape Sassan Reward (3)": rule_data_list[128],
+    "Eruyt Village - Great Cockatrice Escape Chit Reward (1)": rule_data_list[126],
+    "Eruyt Village - Great Cockatrice Escape Chit Reward (2)": rule_data_list[126],
+    "Eruyt Village - Great Cockatrice Escape Chit Reward (3)": rule_data_list[126],
+    "Archades - Great Cockatrice Escape Agytha Reward (1)": rule_data_list[129],
+    "Archades - Great Cockatrice Escape Agytha Reward (2)": rule_data_list[129],
+    "Archades - Great Cockatrice Escape Agytha Reward (3)": rule_data_list[129],
+    "Giza Plains Dry - Great Cockatrice Escape Complete Terra Reward (1)": rule_data_list[130],
+    "Giza Plains Dry - Great Cockatrice Escape Complete Terra Reward (2)": rule_data_list[130],
+    "Giza Plains Dry - Great Cockatrice Escape Complete Terra Reward (3)": rule_data_list[130],
     "Nabreus Deadlands - Map of Nabreus Deadlands Urn Reward (1)": rule_data_list[1],
     "Nabreus Deadlands - Map of Nabreus Deadlands Urn Reward (2)": rule_data_list[1],
     "Nabreus Deadlands - Map of Nabreus Deadlands Urn Reward (3)": rule_data_list[1],
@@ -5688,99 +5716,99 @@ rule_data_table: Dict[str, Rule[Any]] = {
     "Zertinan Caverns Center - Map of Zertinan Caverns Urn Reward (1)": rule_data_list[1],
     "Zertinan Caverns Center - Map of Zertinan Caverns Urn Reward (2)": rule_data_list[1],
     "Zertinan Caverns Center - Map of Zertinan Caverns Urn Reward (3)": rule_data_list[1],
-    "Necrohol of Nabudis - Map of Necrohol of Nabudis Reward (1)": rule_data_list[130],
-    "Necrohol of Nabudis - Map of Necrohol of Nabudis Reward (2)": rule_data_list[130],
-    "Necrohol of Nabudis - Map of Necrohol of Nabudis Reward (3)": rule_data_list[130],
+    "Necrohol of Nabudis - Map of Necrohol of Nabudis Reward (1)": rule_data_list[131],
+    "Necrohol of Nabudis - Map of Necrohol of Nabudis Reward (2)": rule_data_list[131],
+    "Necrohol of Nabudis - Map of Necrohol of Nabudis Reward (3)": rule_data_list[131],
     "Salikawood - Moogle Boss Accept Search Reward (1)": rule_data_list[1],
     "Salikawood - Moogle Boss Accept Search Reward (2)": rule_data_list[1],
     "Salikawood - Moogle Boss Accept Search Reward (3)": rule_data_list[1],
-    "Salikawood - Moogle Boss Repair Gate Reward (1)": rule_data_list[131],
-    "Salikawood - Moogle Boss Repair Gate Reward (2)": rule_data_list[131],
-    "Salikawood - Moogle Boss Repair Gate Reward (3)": rule_data_list[131],
-    "Trials - Complete Stage 10 Reward (1)": rule_data_list[132],
-    "Trials - Complete Stage 10 Reward (2)": rule_data_list[132],
-    "Trials - Complete Stage 10 Reward (3)": rule_data_list[132],
-    "Trials - Complete Stage 20 Reward (1)": rule_data_list[133],
-    "Trials - Complete Stage 20 Reward (2)": rule_data_list[133],
-    "Trials - Complete Stage 20 Reward (3)": rule_data_list[133],
-    "Trials - Complete Stage 30 Reward (1)": rule_data_list[134],
-    "Trials - Complete Stage 30 Reward (2)": rule_data_list[134],
-    "Trials - Complete Stage 30 Reward (3)": rule_data_list[134],
-    "Trials - Complete Stage 40 Reward (1)": rule_data_list[135],
-    "Trials - Complete Stage 40 Reward (2)": rule_data_list[135],
-    "Trials - Complete Stage 40 Reward (3)": rule_data_list[135],
-    "Trials - Complete Stage 50 Reward (1)": rule_data_list[136],
-    "Trials - Complete Stage 50 Reward (2)": rule_data_list[136],
-    "Trials - Complete Stage 50 Reward (3)": rule_data_list[136],
-    "Trials - Complete Stage 60 Reward (1)": rule_data_list[137],
-    "Trials - Complete Stage 60 Reward (2)": rule_data_list[137],
-    "Trials - Complete Stage 60 Reward (3)": rule_data_list[137],
-    "Trials - Complete Stage 70 Reward (1)": rule_data_list[138],
-    "Trials - Complete Stage 70 Reward (2)": rule_data_list[138],
-    "Trials - Complete Stage 70 Reward (3)": rule_data_list[138],
-    "Trials - Complete Stage 80 Reward (1)": rule_data_list[139],
-    "Trials - Complete Stage 80 Reward (2)": rule_data_list[139],
-    "Trials - Complete Stage 80 Reward (3)": rule_data_list[139],
-    "Trials - Complete Stage 90 Reward (1)": rule_data_list[140],
-    "Trials - Complete Stage 90 Reward (2)": rule_data_list[140],
-    "Trials - Complete Stage 90 Reward (3)": rule_data_list[140],
-    "Trials - Complete Stage 100 Reward (1)": rule_data_list[141],
-    "Trials - Complete Stage 100 Reward (2)": rule_data_list[141],
-    "Trials - Complete Stage 100 Reward (3)": rule_data_list[141],
-    "Vaan's Starting Items (1)": rule_data_list[142],
-    "Vaan's Starting Items (2)": rule_data_list[142],
-    "Vaan's Starting Items (3)": rule_data_list[142],
-    "Vaan's Starting Items (4)": rule_data_list[142],
-    "Vaan's Starting Items (5)": rule_data_list[142],
-    "Vaan's Starting Items (6)": rule_data_list[142],
-    "Vaan's Starting Items (7)": rule_data_list[142],
-    "Vaan's Starting Items (8)": rule_data_list[142],
-    "Vaan's Starting Items (9)": rule_data_list[142],
-    "Ashe's Starting Items (1)": rule_data_list[143],
-    "Ashe's Starting Items (2)": rule_data_list[143],
-    "Ashe's Starting Items (3)": rule_data_list[143],
-    "Ashe's Starting Items (4)": rule_data_list[143],
-    "Ashe's Starting Items (5)": rule_data_list[143],
-    "Ashe's Starting Items (6)": rule_data_list[143],
-    "Ashe's Starting Items (7)": rule_data_list[143],
-    "Ashe's Starting Items (8)": rule_data_list[143],
-    "Ashe's Starting Items (9)": rule_data_list[143],
-    "Fran's Starting Items (1)": rule_data_list[144],
-    "Fran's Starting Items (2)": rule_data_list[144],
-    "Fran's Starting Items (3)": rule_data_list[144],
-    "Fran's Starting Items (4)": rule_data_list[144],
-    "Fran's Starting Items (5)": rule_data_list[144],
-    "Fran's Starting Items (6)": rule_data_list[144],
-    "Fran's Starting Items (7)": rule_data_list[144],
-    "Fran's Starting Items (8)": rule_data_list[144],
-    "Fran's Starting Items (9)": rule_data_list[144],
-    "Balthier's Starting Items (1)": rule_data_list[145],
-    "Balthier's Starting Items (2)": rule_data_list[145],
-    "Balthier's Starting Items (3)": rule_data_list[145],
-    "Balthier's Starting Items (4)": rule_data_list[145],
-    "Balthier's Starting Items (5)": rule_data_list[145],
-    "Balthier's Starting Items (6)": rule_data_list[145],
-    "Balthier's Starting Items (7)": rule_data_list[145],
-    "Balthier's Starting Items (8)": rule_data_list[145],
-    "Balthier's Starting Items (9)": rule_data_list[145],
-    "Basch's Starting Items (1)": rule_data_list[146],
-    "Basch's Starting Items (2)": rule_data_list[146],
-    "Basch's Starting Items (3)": rule_data_list[146],
-    "Basch's Starting Items (4)": rule_data_list[146],
-    "Basch's Starting Items (5)": rule_data_list[146],
-    "Basch's Starting Items (6)": rule_data_list[146],
-    "Basch's Starting Items (7)": rule_data_list[146],
-    "Basch's Starting Items (8)": rule_data_list[146],
-    "Basch's Starting Items (9)": rule_data_list[146],
-    "Penelo's Starting Items (1)": rule_data_list[147],
-    "Penelo's Starting Items (2)": rule_data_list[147],
-    "Penelo's Starting Items (3)": rule_data_list[147],
-    "Penelo's Starting Items (4)": rule_data_list[147],
-    "Penelo's Starting Items (5)": rule_data_list[147],
-    "Penelo's Starting Items (6)": rule_data_list[147],
-    "Penelo's Starting Items (7)": rule_data_list[147],
-    "Penelo's Starting Items (8)": rule_data_list[147],
-    "Penelo's Starting Items (9)": rule_data_list[147],
+    "Salikawood - Moogle Boss Repair Gate Reward (1)": rule_data_list[132],
+    "Salikawood - Moogle Boss Repair Gate Reward (2)": rule_data_list[132],
+    "Salikawood - Moogle Boss Repair Gate Reward (3)": rule_data_list[132],
+    "Trials - Complete Stage 10 Reward (1)": rule_data_list[133],
+    "Trials - Complete Stage 10 Reward (2)": rule_data_list[133],
+    "Trials - Complete Stage 10 Reward (3)": rule_data_list[133],
+    "Trials - Complete Stage 20 Reward (1)": rule_data_list[134],
+    "Trials - Complete Stage 20 Reward (2)": rule_data_list[134],
+    "Trials - Complete Stage 20 Reward (3)": rule_data_list[134],
+    "Trials - Complete Stage 30 Reward (1)": rule_data_list[135],
+    "Trials - Complete Stage 30 Reward (2)": rule_data_list[135],
+    "Trials - Complete Stage 30 Reward (3)": rule_data_list[135],
+    "Trials - Complete Stage 40 Reward (1)": rule_data_list[136],
+    "Trials - Complete Stage 40 Reward (2)": rule_data_list[136],
+    "Trials - Complete Stage 40 Reward (3)": rule_data_list[136],
+    "Trials - Complete Stage 50 Reward (1)": rule_data_list[137],
+    "Trials - Complete Stage 50 Reward (2)": rule_data_list[137],
+    "Trials - Complete Stage 50 Reward (3)": rule_data_list[137],
+    "Trials - Complete Stage 60 Reward (1)": rule_data_list[138],
+    "Trials - Complete Stage 60 Reward (2)": rule_data_list[138],
+    "Trials - Complete Stage 60 Reward (3)": rule_data_list[138],
+    "Trials - Complete Stage 70 Reward (1)": rule_data_list[139],
+    "Trials - Complete Stage 70 Reward (2)": rule_data_list[139],
+    "Trials - Complete Stage 70 Reward (3)": rule_data_list[139],
+    "Trials - Complete Stage 80 Reward (1)": rule_data_list[140],
+    "Trials - Complete Stage 80 Reward (2)": rule_data_list[140],
+    "Trials - Complete Stage 80 Reward (3)": rule_data_list[140],
+    "Trials - Complete Stage 90 Reward (1)": rule_data_list[141],
+    "Trials - Complete Stage 90 Reward (2)": rule_data_list[141],
+    "Trials - Complete Stage 90 Reward (3)": rule_data_list[141],
+    "Trials - Complete Stage 100 Reward (1)": rule_data_list[142],
+    "Trials - Complete Stage 100 Reward (2)": rule_data_list[142],
+    "Trials - Complete Stage 100 Reward (3)": rule_data_list[142],
+    "Vaan's Starting Items (1)": rule_data_list[143],
+    "Vaan's Starting Items (2)": rule_data_list[143],
+    "Vaan's Starting Items (3)": rule_data_list[143],
+    "Vaan's Starting Items (4)": rule_data_list[143],
+    "Vaan's Starting Items (5)": rule_data_list[143],
+    "Vaan's Starting Items (6)": rule_data_list[143],
+    "Vaan's Starting Items (7)": rule_data_list[143],
+    "Vaan's Starting Items (8)": rule_data_list[143],
+    "Vaan's Starting Items (9)": rule_data_list[143],
+    "Ashe's Starting Items (1)": rule_data_list[144],
+    "Ashe's Starting Items (2)": rule_data_list[144],
+    "Ashe's Starting Items (3)": rule_data_list[144],
+    "Ashe's Starting Items (4)": rule_data_list[144],
+    "Ashe's Starting Items (5)": rule_data_list[144],
+    "Ashe's Starting Items (6)": rule_data_list[144],
+    "Ashe's Starting Items (7)": rule_data_list[144],
+    "Ashe's Starting Items (8)": rule_data_list[144],
+    "Ashe's Starting Items (9)": rule_data_list[144],
+    "Fran's Starting Items (1)": rule_data_list[145],
+    "Fran's Starting Items (2)": rule_data_list[145],
+    "Fran's Starting Items (3)": rule_data_list[145],
+    "Fran's Starting Items (4)": rule_data_list[145],
+    "Fran's Starting Items (5)": rule_data_list[145],
+    "Fran's Starting Items (6)": rule_data_list[145],
+    "Fran's Starting Items (7)": rule_data_list[145],
+    "Fran's Starting Items (8)": rule_data_list[145],
+    "Fran's Starting Items (9)": rule_data_list[145],
+    "Balthier's Starting Items (1)": rule_data_list[146],
+    "Balthier's Starting Items (2)": rule_data_list[146],
+    "Balthier's Starting Items (3)": rule_data_list[146],
+    "Balthier's Starting Items (4)": rule_data_list[146],
+    "Balthier's Starting Items (5)": rule_data_list[146],
+    "Balthier's Starting Items (6)": rule_data_list[146],
+    "Balthier's Starting Items (7)": rule_data_list[146],
+    "Balthier's Starting Items (8)": rule_data_list[146],
+    "Balthier's Starting Items (9)": rule_data_list[146],
+    "Basch's Starting Items (1)": rule_data_list[147],
+    "Basch's Starting Items (2)": rule_data_list[147],
+    "Basch's Starting Items (3)": rule_data_list[147],
+    "Basch's Starting Items (4)": rule_data_list[147],
+    "Basch's Starting Items (5)": rule_data_list[147],
+    "Basch's Starting Items (6)": rule_data_list[147],
+    "Basch's Starting Items (7)": rule_data_list[147],
+    "Basch's Starting Items (8)": rule_data_list[147],
+    "Basch's Starting Items (9)": rule_data_list[147],
+    "Penelo's Starting Items (1)": rule_data_list[148],
+    "Penelo's Starting Items (2)": rule_data_list[148],
+    "Penelo's Starting Items (3)": rule_data_list[148],
+    "Penelo's Starting Items (4)": rule_data_list[148],
+    "Penelo's Starting Items (5)": rule_data_list[148],
+    "Penelo's Starting Items (6)": rule_data_list[148],
+    "Penelo's Starting Items (7)": rule_data_list[148],
+    "Penelo's Starting Items (8)": rule_data_list[148],
+    "Penelo's Starting Items (9)": rule_data_list[148],
     "Vaan Event (1)": rule_data_list[1],
     "Penelo Event (1)": rule_data_list[1],
     "Dreadnought Leviathan Guest Event (1)": rule_data_list[1],
@@ -5792,7 +5820,7 @@ rule_data_table: Dict[str, Rule[Any]] = {
     "Barheim Guest Event (1)": rule_data_list[1],
     "Defeat Vossler Event (1)": rule_data_list[1],
     "Defeat Bergan Event (1)": rule_data_list[91],
-    "Defeat Earth Tyrant Event (1)": rule_data_list[148],
+    "Defeat Earth Tyrant Event (1)": rule_data_list[149],
     "Defeat Cid Event (1)": rule_data_list[5],
     "Hunt 1: Rogue Tomato Event (1)": rule_data_list[25],
     "Hunt 2: Thextera Event (1)": rule_data_list[26],
@@ -5844,7 +5872,7 @@ rule_data_table: Dict[str, Rule[Any]] = {
     "Hunt 43: Ixion Event (1)": rule_data_list[61],
     "Hunt 44: Shadowseer Event (1)": rule_data_list[62],
     "Hunt 45: Yiazmat Event (1)": rule_data_list[63],
-    "Reddas Event (1)": rule_data_list[149],
+    "Reddas Event (1)": rule_data_list[150],
     "Basch Event (1)": rule_data_list[18],
     "Thalassinon - Shelled Trophy Event (1)": rule_data_list[1],
     "Gavial - Fur-scaled Trophy Event (1)": rule_data_list[107],
@@ -5879,6 +5907,18 @@ rule_data_table: Dict[str, Rule[Any]] = {
     "Avenger - Vile Trophy Event (1)": rule_data_list[107],
     "Final Boss Victory Event (1)": rule_data_list[1],
     "Great-chief Elder After Defeating Vossler Event (1)": rule_data_list[20],
+    "Henne Tantal Chocobo Event (1)": rule_data_list[151],
+    "Henne Gysahl Advanced Chocobo Event (1)": rule_data_list[152],
+    "Henne Krakka Advanced Chocobo Event (1)": rule_data_list[153],
+    "Henne Pahsana Advanced Chocobo Event (1)": rule_data_list[154],
+    "Henne Sylkis Advanced Chocobo Event (1)": rule_data_list[155],
+    "Mosphoran Sylkis Chocobo Event (1)": rule_data_list[156],
+    "Mosphoran Nalbina Advanced Chocobo Event (1)": rule_data_list[157],
+    "Mosphoran Gysahl Advanced Chocobo 1 Event (1)": rule_data_list[158],
+    "Mosphoran Gysahl Advanced Chocobo 2 Event (1)": rule_data_list[159],
+    "Mosphoran Curiel Advanced Chocobo Event (1)": rule_data_list[160],
+    "Mosphoran Tantal Advanced Chocobo 1 Event (1)": rule_data_list[161],
+    "Mosphoran Tantal Advanced Chocobo 2 Event (1)": rule_data_list[162],
     "Amal's Weaponry Shop Event (1)": rule_data_list[1],
     "Panamis's Protectives Shop Event (1)": rule_data_list[1],
     "Yugri's Magicks Shop Event (1)": rule_data_list[1],
@@ -5886,17 +5926,17 @@ rule_data_table: Dict[str, Rule[Any]] = {
     "Migelo's Sundries Shop Event (1)": rule_data_list[1],
     "Yamoora's Gambits Shop Event (1)": rule_data_list[1],
     "Clan Provisioner 1 Shop Event (1)": rule_data_list[51],
-    "Clan Provisioner 2 Shop Event (1)": rule_data_list[150],
-    "Clan Provisioner 3 Shop Event (1)": rule_data_list[151],
-    "Clan Provisioner 4 Shop Event (1)": rule_data_list[152],
-    "Clan Provisioner 5 Shop Event (1)": rule_data_list[153],
-    "Clan Provisioner 6 Shop Event (1)": rule_data_list[154],
-    "Clan Provisioner 7 Shop Event (1)": rule_data_list[155],
-    "Clan Provisioner 8 Shop Event (1)": rule_data_list[156],
-    "Clan Provisioner 9 Shop Event (1)": rule_data_list[157],
-    "Clan Provisioner 10 Shop Event (1)": rule_data_list[158],
-    "Clan Provisioner 11 Shop Event (1)": rule_data_list[159],
-    "Clan Provisioner 12 Shop Event (1)": rule_data_list[160],
+    "Clan Provisioner 2 Shop Event (1)": rule_data_list[163],
+    "Clan Provisioner 3 Shop Event (1)": rule_data_list[164],
+    "Clan Provisioner 4 Shop Event (1)": rule_data_list[165],
+    "Clan Provisioner 5 Shop Event (1)": rule_data_list[166],
+    "Clan Provisioner 6 Shop Event (1)": rule_data_list[167],
+    "Clan Provisioner 7 Shop Event (1)": rule_data_list[168],
+    "Clan Provisioner 8 Shop Event (1)": rule_data_list[169],
+    "Clan Provisioner 9 Shop Event (1)": rule_data_list[170],
+    "Clan Provisioner 10 Shop Event (1)": rule_data_list[171],
+    "Clan Provisioner 11 Shop Event (1)": rule_data_list[172],
+    "Clan Provisioner 12 Shop Event (1)": rule_data_list[173],
     "Travelling Merchant North Shop Event (1)": rule_data_list[1],
     "Travelling Merchant South Shop Event (1)": rule_data_list[1],
     "Weapons of War Shop Event (1)": rule_data_list[1],
@@ -5937,13 +5977,13 @@ rule_data_table: Dict[str, Rule[Any]] = {
     "Vendor of Goods Shop Event (1)": rule_data_list[1],
     "Stranded Merchant Shop Event (1)": rule_data_list[1],
     "Baknamy Shop Event (1)": rule_data_list[1],
-    "Storekeeper (Rabanastre <-> Bhujerba) Shop Event (1)": rule_data_list[161],
-    "Storekeeper (Rabanastre <-> Nalbina) Shop Event (1)": rule_data_list[162],
-    "Storekeeper (Rabanastre <-> Archades) Shop Event (1)": rule_data_list[163],
-    "Storekeeper (Nalbina <-> Archades) Shop Event (1)": rule_data_list[164],
-    "Storekeeper (Nalbina <-> Balfonheim) Shop Event (1)": rule_data_list[165],
-    "Storekeeper (Bhujerba <-> Balfonheim) Shop Event (1)": rule_data_list[166],
-    "Storekeeper (Archades <-> Balfonheim) Shop Event (1)": rule_data_list[167],
+    "Storekeeper (Rabanastre <-> Bhujerba) Shop Event (1)": rule_data_list[174],
+    "Storekeeper (Rabanastre <-> Nalbina) Shop Event (1)": rule_data_list[175],
+    "Storekeeper (Rabanastre <-> Archades) Shop Event (1)": rule_data_list[176],
+    "Storekeeper (Nalbina <-> Archades) Shop Event (1)": rule_data_list[177],
+    "Storekeeper (Nalbina <-> Balfonheim) Shop Event (1)": rule_data_list[178],
+    "Storekeeper (Bhujerba <-> Balfonheim) Shop Event (1)": rule_data_list[179],
+    "Storekeeper (Archades <-> Balfonheim) Shop Event (1)": rule_data_list[180],
     "Storekeeper (All) Shop Event (1)": rule_data_list[1],
 }
 
@@ -6180,16 +6220,16 @@ entrance_rule_difficulty_table: Dict[Tuple[str, str], int] = {
 }
 
 elixir_shop_rule_table: Dict[int, Rule[Any]] = {
-    3: rule_data_list[159],  # Clan Provisioner 11
-    4: rule_data_list[158],  # Clan Provisioner 10
-    5: rule_data_list[157],  # Clan Provisioner 9
-    6: rule_data_list[156],  # Clan Provisioner 8
-    7: rule_data_list[155],  # Clan Provisioner 7
-    8: rule_data_list[154],  # Clan Provisioner 6
-    9: rule_data_list[153],  # Clan Provisioner 5
-    10: rule_data_list[152],  # Clan Provisioner 4
-    11: rule_data_list[151],  # Clan Provisioner 3
-    12: rule_data_list[150],  # Clan Provisioner 2
+    3: rule_data_list[172],  # Clan Provisioner 11
+    4: rule_data_list[171],  # Clan Provisioner 10
+    5: rule_data_list[170],  # Clan Provisioner 9
+    6: rule_data_list[169],  # Clan Provisioner 8
+    7: rule_data_list[168],  # Clan Provisioner 7
+    8: rule_data_list[167],  # Clan Provisioner 6
+    9: rule_data_list[166],  # Clan Provisioner 5
+    10: rule_data_list[165],  # Clan Provisioner 4
+    11: rule_data_list[164],  # Clan Provisioner 3
+    12: rule_data_list[163],  # Clan Provisioner 2
     13: rule_data_list[51],  # Clan Provisioner 1
 }
 
@@ -6199,8 +6239,8 @@ entrance_rule_data_table: Dict[Tuple[str, str], Rule[Any]] = {
     ("Lowtown", "Rabanastre"): rule_data_list[1],
     ("Rabanastre", "Giza Plains Dry"): rule_data_list[1],
     ("Giza Plains Dry", "Rabanastre"): rule_data_list[1],
-    ("Rabanastre", "Giza Plains Rains"): rule_data_list[168],
-    ("Giza Plains Rains", "Rabanastre"): rule_data_list[168],
+    ("Rabanastre", "Giza Plains Rains"): rule_data_list[181],
+    ("Giza Plains Rains", "Rabanastre"): rule_data_list[181],
     ("Rabanastre", "Dalmasca Estersand"): rule_data_list[1],
     ("Dalmasca Estersand", "Rabanastre"): rule_data_list[1],
     ("Rabanastre", "Dalmasca Westersand"): rule_data_list[1],
@@ -6209,20 +6249,20 @@ entrance_rule_data_table: Dict[Tuple[str, str], Rule[Any]] = {
     ("Clan Hall", "Rabanastre"): rule_data_list[51],
     ("Lowtown", "Garamsythe Waterway"): rule_data_list[1],
     ("Garamsythe Waterway", "Lowtown"): rule_data_list[1],
-    ("Lowtown", "Royal Palace"): rule_data_list[169],
+    ("Lowtown", "Royal Palace"): rule_data_list[182],
     ("Royal Palace", "Nalbina Dungeon"): rule_data_list[1],
     ("Nalbina Dungeon", "Barheim Passage Shop"): rule_data_list[1],
     ("Royal Palace", "Barheim Passage Story"): rule_data_list[1],
     ("Barheim Passage Story", "Dalmasca Estersand"): rule_data_list[1],
     ("Barheim Passage", "Garamsythe Waterway"): rule_data_list[1],
-    ("Barheim Passage", "Dalmasca Estersand"): rule_data_list[170],
-    ("Dalmasca Estersand", "Barheim Passage"): rule_data_list[170],
+    ("Barheim Passage", "Dalmasca Estersand"): rule_data_list[183],
+    ("Dalmasca Estersand", "Barheim Passage"): rule_data_list[183],
     ("Dalmasca Estersand", "Nalbina Fortress"): rule_data_list[1],
     ("Nalbina Fortress", "Dalmasca Estersand"): rule_data_list[1],
     ("Dalmasca Estersand", "Giza Plains Dry"): rule_data_list[1],
     ("Giza Plains Dry", "Dalmasca Estersand"): rule_data_list[1],
-    ("Dalmasca Estersand", "Giza Plains Rains"): rule_data_list[168],
-    ("Giza Plains Rains", "Dalmasca Estersand"): rule_data_list[168],
+    ("Dalmasca Estersand", "Giza Plains Rains"): rule_data_list[181],
+    ("Giza Plains Rains", "Dalmasca Estersand"): rule_data_list[181],
     ("Dalmasca Estersand", "Dalmasca Estersand North"): rule_data_list[90],
     ("Dalmasca Estersand North", "Dalmasca Westersand"): rule_data_list[76],
     ("Dalmasca Westersand", "Dalmasca Estersand North"): rule_data_list[76],
@@ -6232,14 +6272,14 @@ entrance_rule_data_table: Dict[Tuple[str, str], Rule[Any]] = {
     ("Zertinan Caverns NE", "Dalmasca Westersand"): rule_data_list[1],
     ("Dalmasca Westersand", "Giza Plains Dry"): rule_data_list[1],
     ("Giza Plains Dry", "Dalmasca Westersand"): rule_data_list[1],
-    ("Dalmasca Westersand", "Giza Plains Rains"): rule_data_list[168],
-    ("Giza Plains Rains", "Dalmasca Westersand"): rule_data_list[168],
-    ("Dalmasca Westersand", "Ogir-Yensa Sandsea"): rule_data_list[171],
-    ("Ogir-Yensa Sandsea", "Dalmasca Westersand"): rule_data_list[171],
+    ("Dalmasca Westersand", "Giza Plains Rains"): rule_data_list[181],
+    ("Giza Plains Rains", "Dalmasca Westersand"): rule_data_list[181],
+    ("Dalmasca Westersand", "Ogir-Yensa Sandsea"): rule_data_list[184],
+    ("Ogir-Yensa Sandsea", "Dalmasca Westersand"): rule_data_list[184],
     ("Barheim Passage", "Barheim Passage Shop"): rule_data_list[1],
-    ("Nalbina Fortress", "Mosphoran Highwaste"): rule_data_list[172],
-    ("Mosphoran Highwaste", "Nalbina Fortress"): rule_data_list[172],
-    ("Mosphoran Highwaste", "Mosphoran Highwaste Upper"): rule_data_list[173],
+    ("Nalbina Fortress", "Mosphoran Highwaste"): rule_data_list[185],
+    ("Mosphoran Highwaste", "Nalbina Fortress"): rule_data_list[185],
+    ("Mosphoran Highwaste", "Mosphoran Highwaste Upper"): rule_data_list[186],
     ("Mosphoran Highwaste", "Salikawood"): rule_data_list[1],
     ("Salikawood", "Mosphoran Highwaste"): rule_data_list[1],
     ("Salikawood", "Salikawood NW"): rule_data_list[1],
@@ -6256,37 +6296,37 @@ entrance_rule_data_table: Dict[Tuple[str, str], Rule[Any]] = {
     ("Zertinan Caverns NW", "Nam-Yensa Sandsea"): rule_data_list[1],
     ("Nam-Yensa Sandsea", "Tomb of Raithwall"): rule_data_list[1],
     ("Tomb of Raithwall", "Nam-Yensa Sandsea"): rule_data_list[1],
-    ("Zertinan Caverns Center", "Zertinan Caverns NE"): rule_data_list[168],
-    ("Zertinan Caverns NE", "Zertinan Caverns Center"): rule_data_list[168],
-    ("Zertinan Caverns Center", "Zertinan Caverns NW"): rule_data_list[168],
-    ("Zertinan Caverns NW", "Zertinan Caverns Center"): rule_data_list[168],
-    ("Zertinan Caverns Center", "Zertinan Caverns N"): rule_data_list[168],
-    ("Zertinan Caverns N", "Zertinan Caverns Center"): rule_data_list[168],
-    ("Zertinan Caverns Connector N", "Zertinan Caverns NW"): rule_data_list[168],
-    ("Zertinan Caverns Center", "Zertinan Caverns S"): rule_data_list[168],
-    ("Zertinan Caverns S", "Zertinan Caverns Center"): rule_data_list[168],
+    ("Zertinan Caverns Center", "Zertinan Caverns NE"): rule_data_list[181],
+    ("Zertinan Caverns NE", "Zertinan Caverns Center"): rule_data_list[181],
+    ("Zertinan Caverns Center", "Zertinan Caverns NW"): rule_data_list[181],
+    ("Zertinan Caverns NW", "Zertinan Caverns Center"): rule_data_list[181],
+    ("Zertinan Caverns Center", "Zertinan Caverns N"): rule_data_list[181],
+    ("Zertinan Caverns N", "Zertinan Caverns Center"): rule_data_list[181],
+    ("Zertinan Caverns Connector N", "Zertinan Caverns NW"): rule_data_list[181],
+    ("Zertinan Caverns Center", "Zertinan Caverns S"): rule_data_list[181],
+    ("Zertinan Caverns S", "Zertinan Caverns Center"): rule_data_list[181],
     ("Ozmone Plain", "Zertinan Caverns S"): rule_data_list[1],
     ("Zertinan Caverns S", "Ozmone Plain"): rule_data_list[1],
-    ("Ozmone Plain", "Giza Plains Dry"): rule_data_list[168],
-    ("Giza Plains Dry", "Ozmone Plain"): rule_data_list[168],
-    ("Ozmone Plain", "Giza Plains Rains"): rule_data_list[168],
-    ("Giza Plains Rains", "Ozmone Plain"): rule_data_list[168],
+    ("Ozmone Plain", "Giza Plains Dry"): rule_data_list[181],
+    ("Giza Plains Dry", "Ozmone Plain"): rule_data_list[181],
+    ("Ozmone Plain", "Giza Plains Rains"): rule_data_list[181],
+    ("Giza Plains Rains", "Ozmone Plain"): rule_data_list[181],
     ("Ozmone Plain", "Jahara"): rule_data_list[1],
     ("Jahara", "Ozmone Plain"): rule_data_list[1],
     ("Ozmone Plain", "Golmore Jungle NW"): rule_data_list[1],
     ("Golmore Jungle NW", "Ozmone Plain"): rule_data_list[1],
-    ("Ozmone Plain", "Henne Mines"): rule_data_list[10],
-    ("Henne Mines", "Ozmone Plain"): rule_data_list[174],
-    ("Henne Mines", "Henne Mines Deep"): rule_data_list[175],
+    ("Ozmone Plain", "Henne Mines"): rule_data_list[187],
+    ("Henne Mines", "Ozmone Plain"): rule_data_list[188],
+    ("Henne Mines", "Henne Mines Deep"): rule_data_list[189],
     ("Henne Mines Deep", "Henne Mines Feywood"): rule_data_list[1],
     ("Henne Mines Feywood", "Feywood"): rule_data_list[1],
     ("Feywood", "Henne Mines Feywood"): rule_data_list[1],
     ("Golmore Jungle NW", "Eruyt Village"): rule_data_list[1],
     ("Eruyt Village", "Golmore Jungle NW"): rule_data_list[1],
-    ("Golmore Jungle NW", "Golmore Jungle S"): rule_data_list[176],
-    ("Golmore Jungle S", "Golmore Jungle NW"): rule_data_list[176],
-    ("Golmore Jungle NW", "Golmore Jungle E"): rule_data_list[176],
-    ("Golmore Jungle E", "Golmore Jungle NW"): rule_data_list[176],
+    ("Golmore Jungle NW", "Golmore Jungle S"): rule_data_list[190],
+    ("Golmore Jungle S", "Golmore Jungle NW"): rule_data_list[190],
+    ("Golmore Jungle NW", "Golmore Jungle E"): rule_data_list[190],
+    ("Golmore Jungle E", "Golmore Jungle NW"): rule_data_list[190],
     ("Golmore Jungle S", "Feywood"): rule_data_list[1],
     ("Feywood", "Golmore Jungle S"): rule_data_list[1],
     ("Golmore Jungle E", "Paramina Rift"): rule_data_list[1],
@@ -6297,109 +6337,109 @@ entrance_rule_data_table: Dict[Tuple[str, str], Rule[Any]] = {
     ("Feywood", "Paramina Rift"): rule_data_list[1],
     ("Paramina Rift", "Stilshrine of Miriam"): rule_data_list[1],
     ("Stilshrine of Miriam", "Paramina Rift"): rule_data_list[1],
-    ("Feywood", "Giruvegan"): rule_data_list[177],
+    ("Feywood", "Giruvegan"): rule_data_list[191],
     ("Giruvegan", "Great Crystal"): rule_data_list[1],
     ("Great Crystal", "Giruvegan"): rule_data_list[1],
     ("Great Crystal", "Giruvegan End"): rule_data_list[1],
     ("Giruvegan End", "Great Crystal"): rule_data_list[1],
-    ("Great Crystal", "Great Crystal Deep"): rule_data_list[178],
-    ("Great Crystal Deep", "Great Crystal"): rule_data_list[178],
+    ("Great Crystal", "Great Crystal Deep"): rule_data_list[192],
+    ("Great Crystal Deep", "Great Crystal"): rule_data_list[192],
     ("Henne Mines", "Eruyt Village"): rule_data_list[1],
     ("Giruvegan End", "Giruvegan"): rule_data_list[1],
     ("Necrohol of Nabudis", "Salikawood NW"): rule_data_list[1],
     ("Salikawood NW", "Necrohol of Nabudis"): rule_data_list[1],
     ("Nabreus Deadlands", "Salikawood NW"): rule_data_list[1],
     ("Salikawood NW", "Nabreus Deadlands"): rule_data_list[1],
-    ("Salikawood", "Phon Coast"): rule_data_list[131],
+    ("Salikawood", "Phon Coast"): rule_data_list[132],
     ("Tchita Uplands", "Phon Coast"): rule_data_list[1],
     ("Phon Coast", "Tchita Uplands"): rule_data_list[1],
     ("Tchita Uplands", "Sochen Cave Palace S"): rule_data_list[1],
     ("Sochen Cave Palace S", "Tchita Uplands"): rule_data_list[1],
-    ("Tchita Uplands", "Cerobi Steppe"): rule_data_list[179],
-    ("Cerobi Steppe", "Tchita Uplands"): rule_data_list[180],
+    ("Tchita Uplands", "Cerobi Steppe"): rule_data_list[193],
+    ("Cerobi Steppe", "Tchita Uplands"): rule_data_list[194],
     ("Balfonheim", "Cerobi Steppe"): rule_data_list[1],
     ("Cerobi Steppe", "Balfonheim"): rule_data_list[1],
-    ("Sochen Cave Palace S", "Sochen Cave Palace Middle"): rule_data_list[181],
-    ("Sochen Cave Palace Middle", "Sochen Cave Palace S"): rule_data_list[181],
-    ("Sochen Cave Palace N", "Sochen Cave Palace Middle"): rule_data_list[181],
-    ("Sochen Cave Palace Middle", "Sochen Cave Palace N"): rule_data_list[181],
+    ("Sochen Cave Palace S", "Sochen Cave Palace Middle"): rule_data_list[195],
+    ("Sochen Cave Palace Middle", "Sochen Cave Palace S"): rule_data_list[195],
+    ("Sochen Cave Palace N", "Sochen Cave Palace Middle"): rule_data_list[195],
+    ("Sochen Cave Palace Middle", "Sochen Cave Palace N"): rule_data_list[195],
     ("Sochen Cave Palace N", "Old Archades"): rule_data_list[1],
     ("Old Archades", "Sochen Cave Palace N"): rule_data_list[1],
     ("Old Archades", "Archades"): rule_data_list[1],
     ("Archades", "Old Archades"): rule_data_list[1],
-    ("Archades", "Draklor Laboratory"): rule_data_list[182],
-    ("Draklor Laboratory", "Archades"): rule_data_list[182],
+    ("Archades", "Draklor Laboratory"): rule_data_list[196],
+    ("Draklor Laboratory", "Archades"): rule_data_list[196],
     ("Bhujerba", "Lhusu Mines"): rule_data_list[1],
     ("Lhusu Mines", "Bhujerba"): rule_data_list[1],
     ("Ridorana Cataract", "Pharos of Ridorana"): rule_data_list[1],
     ("Pharos of Ridorana", "Ridorana Cataract"): rule_data_list[1],
     ("Pharos of Ridorana", "Pharos of Ridorana Subterra"): rule_data_list[1],
     ("Pharos of Ridorana Subterra", "Pharos of Ridorana"): rule_data_list[1],
-    ("Rabanastre", "Nalbina Fortress"): rule_data_list[183],
-    ("Nalbina Fortress", "Rabanastre"): rule_data_list[183],
-    ("Rabanastre", "Bhujerba"): rule_data_list[184],
-    ("Bhujerba", "Rabanastre"): rule_data_list[184],
-    ("Rabanastre", "Archades"): rule_data_list[185],
-    ("Archades", "Rabanastre"): rule_data_list[185],
-    ("Nalbina Fortress", "Archades"): rule_data_list[186],
-    ("Archades", "Nalbina Fortress"): rule_data_list[186],
-    ("Nalbina Fortress", "Balfonheim"): rule_data_list[187],
-    ("Balfonheim", "Nalbina Fortress"): rule_data_list[187],
-    ("Bhujerba", "Balfonheim"): rule_data_list[188],
-    ("Balfonheim", "Bhujerba"): rule_data_list[188],
-    ("Archades", "Balfonheim"): rule_data_list[189],
-    ("Balfonheim", "Archades"): rule_data_list[189],
-    ("Rabanastre", "Strahl"): rule_data_list[190],
-    ("Strahl", "Rabanastre"): rule_data_list[190],
-    ("Bhujerba", "Strahl"): rule_data_list[190],
-    ("Strahl", "Bhujerba"): rule_data_list[190],
-    ("Nalbina Fortress", "Strahl"): rule_data_list[190],
-    ("Strahl", "Nalbina Fortress"): rule_data_list[190],
-    ("Archades", "Strahl"): rule_data_list[191],
-    ("Strahl", "Archades"): rule_data_list[191],
-    ("Balfonheim", "Strahl"): rule_data_list[191],
-    ("Strahl", "Balfonheim"): rule_data_list[191],
-    ("Dalmasca Estersand", "Strahl"): rule_data_list[190],
-    ("Strahl", "Dalmasca Estersand"): rule_data_list[190],
-    ("Dalmasca Westersand", "Strahl"): rule_data_list[190],
-    ("Strahl", "Dalmasca Westersand"): rule_data_list[190],
-    ("Giza Plains Dry", "Strahl"): rule_data_list[190],
-    ("Strahl", "Giza Plains Dry"): rule_data_list[190],
-    ("Giza Plains Rains", "Strahl"): rule_data_list[192],
-    ("Strahl", "Giza Plains Rains"): rule_data_list[192],
-    ("Ogir-Yensa Sandsea", "Strahl"): rule_data_list[190],
-    ("Strahl", "Ogir-Yensa Sandsea"): rule_data_list[190],
-    ("Nam-Yensa Sandsea", "Strahl"): rule_data_list[190],
-    ("Strahl", "Nam-Yensa Sandsea"): rule_data_list[190],
-    ("Ozmone Plain", "Strahl"): rule_data_list[190],
-    ("Strahl", "Ozmone Plain"): rule_data_list[190],
-    ("Paramina Rift", "Strahl"): rule_data_list[193],
-    ("Strahl", "Paramina Rift"): rule_data_list[193],
-    ("Mosphoran Highwaste", "Strahl"): rule_data_list[193],
-    ("Strahl", "Mosphoran Highwaste"): rule_data_list[193],
-    ("Phon Coast", "Strahl"): rule_data_list[194],
-    ("Strahl", "Phon Coast"): rule_data_list[194],
-    ("Tchita Uplands", "Strahl"): rule_data_list[194],
-    ("Strahl", "Tchita Uplands"): rule_data_list[194],
-    ("Cerobi Steppe", "Strahl"): rule_data_list[191],
-    ("Strahl", "Cerobi Steppe"): rule_data_list[191],
-    ("Ridorana Cataract", "Strahl"): rule_data_list[194],
-    ("Strahl", "Ridorana Cataract"): rule_data_list[194],
-    ("Rabanastre", "Rabanastre <-> Nalbina Skyferry"): rule_data_list[183],
-    ("Nalbina Fortress", "Rabanastre <-> Nalbina Skyferry"): rule_data_list[183],
-    ("Rabanastre", "Rabanastre <-> Bhujerba Skyferry"): rule_data_list[184],
-    ("Bhujerba", "Rabanastre <-> Bhujerba Skyferry"): rule_data_list[184],
-    ("Rabanastre", "Rabanastre <-> Archades Skyferry"): rule_data_list[185],
-    ("Archades", "Rabanastre <-> Archades Skyferry"): rule_data_list[185],
-    ("Nalbina Fortress", "Nalbina <-> Archades Skyferry"): rule_data_list[186],
-    ("Archades", "Nalbina <-> Archades Skyferry"): rule_data_list[186],
-    ("Nalbina Fortress", "Nalbina <-> Balfonheim Skyferry"): rule_data_list[187],
-    ("Balfonheim", "Nalbina <-> Balfonheim Skyferry"): rule_data_list[187],
-    ("Bhujerba", "Bhujerba <-> Balfonheim Skyferry"): rule_data_list[188],
-    ("Balfonheim", "Bhujerba <-> Balfonheim Skyferry"): rule_data_list[188],
-    ("Archades", "Archades <-> Balfonheim Skyferry"): rule_data_list[189],
-    ("Balfonheim", "Archades <-> Balfonheim Skyferry"): rule_data_list[189],
-    ("Bhujerba", "Dreadnought Leviathan"): rule_data_list[195],
+    ("Rabanastre", "Nalbina Fortress"): rule_data_list[197],
+    ("Nalbina Fortress", "Rabanastre"): rule_data_list[197],
+    ("Rabanastre", "Bhujerba"): rule_data_list[198],
+    ("Bhujerba", "Rabanastre"): rule_data_list[198],
+    ("Rabanastre", "Archades"): rule_data_list[199],
+    ("Archades", "Rabanastre"): rule_data_list[199],
+    ("Nalbina Fortress", "Archades"): rule_data_list[200],
+    ("Archades", "Nalbina Fortress"): rule_data_list[200],
+    ("Nalbina Fortress", "Balfonheim"): rule_data_list[201],
+    ("Balfonheim", "Nalbina Fortress"): rule_data_list[201],
+    ("Bhujerba", "Balfonheim"): rule_data_list[202],
+    ("Balfonheim", "Bhujerba"): rule_data_list[202],
+    ("Archades", "Balfonheim"): rule_data_list[203],
+    ("Balfonheim", "Archades"): rule_data_list[203],
+    ("Rabanastre", "Strahl"): rule_data_list[204],
+    ("Strahl", "Rabanastre"): rule_data_list[204],
+    ("Bhujerba", "Strahl"): rule_data_list[204],
+    ("Strahl", "Bhujerba"): rule_data_list[204],
+    ("Nalbina Fortress", "Strahl"): rule_data_list[204],
+    ("Strahl", "Nalbina Fortress"): rule_data_list[204],
+    ("Archades", "Strahl"): rule_data_list[205],
+    ("Strahl", "Archades"): rule_data_list[205],
+    ("Balfonheim", "Strahl"): rule_data_list[205],
+    ("Strahl", "Balfonheim"): rule_data_list[205],
+    ("Dalmasca Estersand", "Strahl"): rule_data_list[204],
+    ("Strahl", "Dalmasca Estersand"): rule_data_list[204],
+    ("Dalmasca Westersand", "Strahl"): rule_data_list[204],
+    ("Strahl", "Dalmasca Westersand"): rule_data_list[204],
+    ("Giza Plains Dry", "Strahl"): rule_data_list[204],
+    ("Strahl", "Giza Plains Dry"): rule_data_list[204],
+    ("Giza Plains Rains", "Strahl"): rule_data_list[206],
+    ("Strahl", "Giza Plains Rains"): rule_data_list[206],
+    ("Ogir-Yensa Sandsea", "Strahl"): rule_data_list[204],
+    ("Strahl", "Ogir-Yensa Sandsea"): rule_data_list[204],
+    ("Nam-Yensa Sandsea", "Strahl"): rule_data_list[204],
+    ("Strahl", "Nam-Yensa Sandsea"): rule_data_list[204],
+    ("Ozmone Plain", "Strahl"): rule_data_list[204],
+    ("Strahl", "Ozmone Plain"): rule_data_list[204],
+    ("Paramina Rift", "Strahl"): rule_data_list[207],
+    ("Strahl", "Paramina Rift"): rule_data_list[207],
+    ("Mosphoran Highwaste", "Strahl"): rule_data_list[207],
+    ("Strahl", "Mosphoran Highwaste"): rule_data_list[207],
+    ("Phon Coast", "Strahl"): rule_data_list[208],
+    ("Strahl", "Phon Coast"): rule_data_list[208],
+    ("Tchita Uplands", "Strahl"): rule_data_list[208],
+    ("Strahl", "Tchita Uplands"): rule_data_list[208],
+    ("Cerobi Steppe", "Strahl"): rule_data_list[205],
+    ("Strahl", "Cerobi Steppe"): rule_data_list[205],
+    ("Ridorana Cataract", "Strahl"): rule_data_list[208],
+    ("Strahl", "Ridorana Cataract"): rule_data_list[208],
+    ("Rabanastre", "Rabanastre <-> Nalbina Skyferry"): rule_data_list[197],
+    ("Nalbina Fortress", "Rabanastre <-> Nalbina Skyferry"): rule_data_list[197],
+    ("Rabanastre", "Rabanastre <-> Bhujerba Skyferry"): rule_data_list[198],
+    ("Bhujerba", "Rabanastre <-> Bhujerba Skyferry"): rule_data_list[198],
+    ("Rabanastre", "Rabanastre <-> Archades Skyferry"): rule_data_list[199],
+    ("Archades", "Rabanastre <-> Archades Skyferry"): rule_data_list[199],
+    ("Nalbina Fortress", "Nalbina <-> Archades Skyferry"): rule_data_list[200],
+    ("Archades", "Nalbina <-> Archades Skyferry"): rule_data_list[200],
+    ("Nalbina Fortress", "Nalbina <-> Balfonheim Skyferry"): rule_data_list[201],
+    ("Balfonheim", "Nalbina <-> Balfonheim Skyferry"): rule_data_list[201],
+    ("Bhujerba", "Bhujerba <-> Balfonheim Skyferry"): rule_data_list[202],
+    ("Balfonheim", "Bhujerba <-> Balfonheim Skyferry"): rule_data_list[202],
+    ("Archades", "Archades <-> Balfonheim Skyferry"): rule_data_list[203],
+    ("Balfonheim", "Archades <-> Balfonheim Skyferry"): rule_data_list[203],
+    ("Bhujerba", "Dreadnought Leviathan"): rule_data_list[209],
     ("Draklor Laboratory", "Balfonheim"): rule_data_list[5],
     ("Rabanastre <-> Nalbina Skyferry", "Skyferry"): rule_data_list[1],
     ("Rabanastre <-> Bhujerba Skyferry", "Skyferry"): rule_data_list[1],
@@ -6408,7 +6448,7 @@ entrance_rule_data_table: Dict[Tuple[str, str], Rule[Any]] = {
     ("Nalbina <-> Balfonheim Skyferry", "Skyferry"): rule_data_list[1],
     ("Bhujerba <-> Balfonheim Skyferry", "Skyferry"): rule_data_list[1],
     ("Archades <-> Balfonheim Skyferry", "Skyferry"): rule_data_list[1],
-    ("Rabanastre", "Bahamut"): rule_data_list[196],
+    ("Rabanastre", "Bahamut"): rule_data_list[210],
     ("Rabanastre", "Aerodrome"): rule_data_list[1],
     ("Bhujerba", "Aerodrome"): rule_data_list[1],
     ("Nalbina Fortress", "Aerodrome"): rule_data_list[1],

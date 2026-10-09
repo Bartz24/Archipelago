@@ -498,6 +498,66 @@ event_data_table: Dict[str, FF12OpenWorldEventData] = {
         item="Guest",
         difficulty=2
     ),
+    "Henne Tantal Chocobo Event (1)": FF12OpenWorldEventData(
+        region="Ozmone Plain",
+        item="HenneChocobo",
+        difficulty=0
+    ),
+    "Henne Gysahl Advanced Chocobo Event (1)": FF12OpenWorldEventData(
+        region="Ozmone Plain",
+        item="HenneChocobo",
+        difficulty=0
+    ),
+    "Henne Krakka Advanced Chocobo Event (1)": FF12OpenWorldEventData(
+        region="Ozmone Plain",
+        item="HenneChocobo",
+        difficulty=0
+    ),
+    "Henne Pahsana Advanced Chocobo Event (1)": FF12OpenWorldEventData(
+        region="Ozmone Plain",
+        item="HenneChocobo",
+        difficulty=0
+    ),
+    "Henne Sylkis Advanced Chocobo Event (1)": FF12OpenWorldEventData(
+        region="Ozmone Plain",
+        item="HenneChocobo",
+        difficulty=0
+    ),
+    "Mosphoran Sylkis Chocobo Event (1)": FF12OpenWorldEventData(
+        region="Mosphoran Highwaste",
+        item="MosphoranChocobo",
+        difficulty=0
+    ),
+    "Mosphoran Nalbina Advanced Chocobo Event (1)": FF12OpenWorldEventData(
+        region="Mosphoran Highwaste",
+        item="MosphoranChocobo",
+        difficulty=0
+    ),
+    "Mosphoran Gysahl Advanced Chocobo 1 Event (1)": FF12OpenWorldEventData(
+        region="Mosphoran Highwaste",
+        item="MosphoranChocobo",
+        difficulty=0
+    ),
+    "Mosphoran Gysahl Advanced Chocobo 2 Event (1)": FF12OpenWorldEventData(
+        region="Mosphoran Highwaste",
+        item="MosphoranChocobo",
+        difficulty=0
+    ),
+    "Mosphoran Curiel Advanced Chocobo Event (1)": FF12OpenWorldEventData(
+        region="Mosphoran Highwaste",
+        item="MosphoranChocobo",
+        difficulty=0
+    ),
+    "Mosphoran Tantal Advanced Chocobo 1 Event (1)": FF12OpenWorldEventData(
+        region="Mosphoran Highwaste",
+        item="MosphoranChocobo",
+        difficulty=0
+    ),
+    "Mosphoran Tantal Advanced Chocobo 2 Event (1)": FF12OpenWorldEventData(
+        region="Mosphoran Highwaste",
+        item="MosphoranChocobo",
+        difficulty=0
+    ),
     "Amal's Weaponry Shop Event (1)": FF12OpenWorldEventData(
         region="Rabanastre",
         item="Amal's Weaponry Shop",

@@ -9,6 +9,14 @@ class AllowSeitengrat(Toggle):
     default = 0
 
 
+class AdvChoco(Toggle):
+    """Allow more advanced chocobo routes into Henne Mines and the upper area of Mosphoran Highwaste.
+    If off, only the Jahara chocobo is needed for Henne Mines and only the Mosphoran chocobo for upper
+    Mosphoran Highwaste."""
+    display_name = "Allow Advanced Chocobo Routes"
+    default = 0
+
+
 class ShuffleMainParty(Toggle):
     """Shuffle the 6 main party members around."""
     display_name = "Shuffle Main Party"
@@ -30,9 +38,7 @@ class IncludeTreasures(Toggle):
 
 class TreasureCount(Range):
     """How many of the game's 1581 treasures become checks.
-    Treasures are picked at random, and the ones not picked are emptied.
-    Every treasure is one time only, so the count is not limited by the game's
-    256 respawn ids: the mod banks them per map."""
+    Treasures are picked at random, and the rest will not spawn."""
     display_name = "Treasure Count"
     range_start = 0
     range_end = 1581
@@ -59,6 +65,10 @@ class IncludeTrophyRareGames(Toggle):
     display_name = "Trophy Rare Games"
     default = 0
 
+class IncludeTrophyTurnIns(Toggle):
+    """Allows trophy turn-in checks for all 30 and the outfitters hunt club shop to contain progression and useful items."""
+    display_name = "Trophy Turn-Ins"
+    default = 0
 
 class IncludeHuntRewards(Toggle):
     """Allows Hunt rewards and drops to contain progression and useful items."""
@@ -74,8 +84,6 @@ class IncludeClanHallRewards(Toggle):
 
 class MaxTrialStage(Range):
     """The highest Trial Mode stage whose rewards can contain progression and useful items.
-    Rewards for later stages only get filler, so the trials can be stopped at this stage without
-    missing anything. Stages come in steps of 10; values in between round down.
     0 excludes every trial reward, 100 includes them all."""
     display_name = "Highest Trial Stage with Important Rewards"
     range_start = 0
@@ -113,8 +121,10 @@ class FF12OpenWorldGameOptions(PerGameCommonOptions):
     include_chops: IncludeChops
     include_black_orbs: IncludeBlackOrbs
     include_trophy_rare_games: IncludeTrophyRareGames
+    include_trophy_turn_ins: IncludeTrophyTurnIns
     include_hunt_rewards: IncludeHuntRewards
     include_clan_hall_rewards: IncludeClanHallRewards
     max_trial_stage: MaxTrialStage
     allow_seitengrat: AllowSeitengrat
+    allow_advanced_chocobo_routes: AdvChoco
     bahamut_unlock: BahamutUnlock
