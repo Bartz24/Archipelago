@@ -15288,7 +15288,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9192",
-        difficulty=5
+        difficulty=4
     ),
     "Giruvegan End - Defeat Shemhazai Reward (2)": FF12OpenWorldLocationData(
         region="Giruvegan End",
@@ -15297,7 +15297,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         type="reward",
         str_id="9192",
         secondary_index=1,
-        difficulty=5
+        difficulty=4
     ),
     "Giruvegan End - Defeat Shemhazai Reward (3)": FF12OpenWorldLocationData(
         region="Giruvegan End",
@@ -15306,7 +15306,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         type="reward",
         str_id="9192",
         secondary_index=2,
-        difficulty=5
+        difficulty=4
     ),
     "Giruvegan End - Treaty-Blade Reward (1)": FF12OpenWorldLocationData(
         region="Giruvegan End",
@@ -15314,7 +15314,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         classification=LocationProgressType.DEFAULT,
         type="reward",
         str_id="9152",
-        difficulty=5
+        difficulty=4
     ),
     "Giruvegan End - Treaty-Blade Reward (2)": FF12OpenWorldLocationData(
         region="Giruvegan End",
@@ -15323,7 +15323,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         type="reward",
         str_id="9152",
         secondary_index=1,
-        difficulty=5
+        difficulty=4
     ),
     "Giruvegan End - Treaty-Blade Reward (3)": FF12OpenWorldLocationData(
         region="Giruvegan End",
@@ -15332,7 +15332,7 @@ location_data_table: Dict[str, FF12OpenWorldLocationData] = {
         type="reward",
         str_id="9152",
         secondary_index=2,
-        difficulty=5
+        difficulty=4
     ),
     "Pharos of Ridorana - Black Orb 1 Reward (1)": FF12OpenWorldLocationData(
         region="Pharos of Ridorana",

@@ -88,7 +88,7 @@ class MaxTrialStage(Range):
     display_name = "Highest Trial Stage with Important Rewards"
     range_start = 0
     range_end = 100
-    default = 100
+    default = 0
 
 
 class BahamutUnlock(Choice):

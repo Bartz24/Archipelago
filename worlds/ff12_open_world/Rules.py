@@ -134,7 +134,7 @@ rule_data_list: list[Rule[Any]] = [
     Has("Site 3 Key"),  # Rule 7
     (Has("Site 3 Key") & Has("Site 11 Key")),  # Rule 8
     Has("Dawn Shard"),  # Rule 9
-    (Has("Tantal Greens") | ((Has("Gysahl Greens") | Has("Krakka Greens")) & Has("Rainstone")) | (Has("Pahsana Greens") & Has("Lente's Tear")) | (CanReachRegion("Mosphoran Highwaste") & Has("Sylkis Greens") & Has("Rainstone"))),  # Rule 10
+    Has("HenneChocobo"),  # Rule 10
     Has("Black Orb", 3),  # Rule 11
     Has("Black Orb", 8),  # Rule 12
     Has("Black Orb", 15),  # Rule 13
@@ -311,30 +311,29 @@ rule_data_list: list[Rule[Any]] = [
     Has("Defeat Ghis"),  # Rule 184
     Has("Defeat Bergan"),  # Rule 185
     Has("MosphoranChocobo"),  # Rule 186
-    Has("HenneChocobo"),  # Rule 187
-    Has("Tantal Greens"),  # Rule 188
-    HasCategoryRule("Esper", 10),  # Rule 189
-    Has("Lente's Tear"),  # Rule 190
-    Has("Belias"),  # Rule 191
-    Has("Treaty-Blade"),  # Rule 192
-    Has("Curiel Greens"),  # Rule 193
-    Has("Mimett Greens"),  # Rule 194
-    Has("Soul Ward Key"),  # Rule 195
-    (Has("Pinewood Chop", 3) | Has("Sandalwood Chop")),  # Rule 196
-    (Has("Rabanastre Aeropass") & Has("Nalbina Aeropass")),  # Rule 197
-    (Has("Rabanastre Aeropass") & Has("Bhujerba Aeropass")),  # Rule 198
-    (Has("Rabanastre Aeropass") & Has("Archades Aeropass")),  # Rule 199
-    (Has("Nalbina Aeropass") & Has("Archades Aeropass")),  # Rule 200
-    (Has("Nalbina Aeropass") & Has("Balfonheim Aeropass")),  # Rule 201
-    (Has("Bhujerba Aeropass") & Has("Balfonheim Aeropass")),  # Rule 202
-    (Has("Archades Aeropass") & Has("Balfonheim Aeropass")),  # Rule 203
-    Has("Systems Access Key"),  # Rule 204
-    Has("Systems Access Key", 4),  # Rule 205
-    (Has("Systems Access Key") & Has("Rainstone")),  # Rule 206
-    Has("Systems Access Key", 2),  # Rule 207
-    Has("Systems Access Key", 3),  # Rule 208
-    (Has("Basch") | Has("Goddess's Magicite")),  # Rule 209
-    (Has("Writ of Transit") & Has("Systems Access Key")),  # Rule 210
+    Has("Tantal Greens"),  # Rule 187
+    HasCategoryRule("Esper", 10),  # Rule 188
+    Has("Lente's Tear"),  # Rule 189
+    Has("Belias"),  # Rule 190
+    Has("Treaty-Blade"),  # Rule 191
+    Has("Curiel Greens"),  # Rule 192
+    Has("Mimett Greens"),  # Rule 193
+    Has("Soul Ward Key"),  # Rule 194
+    (Has("Pinewood Chop", 3) | Has("Sandalwood Chop")),  # Rule 195
+    (Has("Rabanastre Aeropass") & Has("Nalbina Aeropass")),  # Rule 196
+    (Has("Rabanastre Aeropass") & Has("Bhujerba Aeropass")),  # Rule 197
+    (Has("Rabanastre Aeropass") & Has("Archades Aeropass")),  # Rule 198
+    (Has("Nalbina Aeropass") & Has("Archades Aeropass")),  # Rule 199
+    (Has("Nalbina Aeropass") & Has("Balfonheim Aeropass")),  # Rule 200
+    (Has("Bhujerba Aeropass") & Has("Balfonheim Aeropass")),  # Rule 201
+    (Has("Archades Aeropass") & Has("Balfonheim Aeropass")),  # Rule 202
+    Has("Systems Access Key"),  # Rule 203
+    Has("Systems Access Key", 4),  # Rule 204
+    (Has("Systems Access Key") & Has("Rainstone")),  # Rule 205
+    Has("Systems Access Key", 2),  # Rule 206
+    Has("Systems Access Key", 3),  # Rule 207
+    (Has("Basch") | Has("Goddess's Magicite")),  # Rule 208
+    (Has("Writ of Transit") & Has("Systems Access Key")),  # Rule 209
 ]
 
 location_trait_data_table = {
@@ -6315,18 +6314,18 @@ entrance_rule_data_table: Dict[Tuple[str, str], Rule[Any]] = {
     ("Jahara", "Ozmone Plain"): rule_data_list[1],
     ("Ozmone Plain", "Golmore Jungle NW"): rule_data_list[1],
     ("Golmore Jungle NW", "Ozmone Plain"): rule_data_list[1],
-    ("Ozmone Plain", "Henne Mines"): rule_data_list[187],
-    ("Henne Mines", "Ozmone Plain"): rule_data_list[188],
-    ("Henne Mines", "Henne Mines Deep"): rule_data_list[189],
+    ("Ozmone Plain", "Henne Mines"): rule_data_list[10],
+    ("Henne Mines", "Ozmone Plain"): rule_data_list[187],
+    ("Henne Mines", "Henne Mines Deep"): rule_data_list[188],
     ("Henne Mines Deep", "Henne Mines Feywood"): rule_data_list[1],
     ("Henne Mines Feywood", "Feywood"): rule_data_list[1],
     ("Feywood", "Henne Mines Feywood"): rule_data_list[1],
     ("Golmore Jungle NW", "Eruyt Village"): rule_data_list[1],
     ("Eruyt Village", "Golmore Jungle NW"): rule_data_list[1],
-    ("Golmore Jungle NW", "Golmore Jungle S"): rule_data_list[190],
-    ("Golmore Jungle S", "Golmore Jungle NW"): rule_data_list[190],
-    ("Golmore Jungle NW", "Golmore Jungle E"): rule_data_list[190],
-    ("Golmore Jungle E", "Golmore Jungle NW"): rule_data_list[190],
+    ("Golmore Jungle NW", "Golmore Jungle S"): rule_data_list[189],
+    ("Golmore Jungle S", "Golmore Jungle NW"): rule_data_list[189],
+    ("Golmore Jungle NW", "Golmore Jungle E"): rule_data_list[189],
+    ("Golmore Jungle E", "Golmore Jungle NW"): rule_data_list[189],
     ("Golmore Jungle S", "Feywood"): rule_data_list[1],
     ("Feywood", "Golmore Jungle S"): rule_data_list[1],
     ("Golmore Jungle E", "Paramina Rift"): rule_data_list[1],
@@ -6337,13 +6336,13 @@ entrance_rule_data_table: Dict[Tuple[str, str], Rule[Any]] = {
     ("Feywood", "Paramina Rift"): rule_data_list[1],
     ("Paramina Rift", "Stilshrine of Miriam"): rule_data_list[1],
     ("Stilshrine of Miriam", "Paramina Rift"): rule_data_list[1],
-    ("Feywood", "Giruvegan"): rule_data_list[191],
+    ("Feywood", "Giruvegan"): rule_data_list[190],
     ("Giruvegan", "Great Crystal"): rule_data_list[1],
     ("Great Crystal", "Giruvegan"): rule_data_list[1],
     ("Great Crystal", "Giruvegan End"): rule_data_list[1],
     ("Giruvegan End", "Great Crystal"): rule_data_list[1],
-    ("Great Crystal", "Great Crystal Deep"): rule_data_list[192],
-    ("Great Crystal Deep", "Great Crystal"): rule_data_list[192],
+    ("Great Crystal", "Great Crystal Deep"): rule_data_list[191],
+    ("Great Crystal Deep", "Great Crystal"): rule_data_list[191],
     ("Henne Mines", "Eruyt Village"): rule_data_list[1],
     ("Giruvegan End", "Giruvegan"): rule_data_list[1],
     ("Necrohol of Nabudis", "Salikawood NW"): rule_data_list[1],
@@ -6355,91 +6354,91 @@ entrance_rule_data_table: Dict[Tuple[str, str], Rule[Any]] = {
     ("Phon Coast", "Tchita Uplands"): rule_data_list[1],
     ("Tchita Uplands", "Sochen Cave Palace S"): rule_data_list[1],
     ("Sochen Cave Palace S", "Tchita Uplands"): rule_data_list[1],
-    ("Tchita Uplands", "Cerobi Steppe"): rule_data_list[193],
-    ("Cerobi Steppe", "Tchita Uplands"): rule_data_list[194],
+    ("Tchita Uplands", "Cerobi Steppe"): rule_data_list[192],
+    ("Cerobi Steppe", "Tchita Uplands"): rule_data_list[193],
     ("Balfonheim", "Cerobi Steppe"): rule_data_list[1],
     ("Cerobi Steppe", "Balfonheim"): rule_data_list[1],
-    ("Sochen Cave Palace S", "Sochen Cave Palace Middle"): rule_data_list[195],
-    ("Sochen Cave Palace Middle", "Sochen Cave Palace S"): rule_data_list[195],
-    ("Sochen Cave Palace N", "Sochen Cave Palace Middle"): rule_data_list[195],
-    ("Sochen Cave Palace Middle", "Sochen Cave Palace N"): rule_data_list[195],
+    ("Sochen Cave Palace S", "Sochen Cave Palace Middle"): rule_data_list[194],
+    ("Sochen Cave Palace Middle", "Sochen Cave Palace S"): rule_data_list[194],
+    ("Sochen Cave Palace N", "Sochen Cave Palace Middle"): rule_data_list[194],
+    ("Sochen Cave Palace Middle", "Sochen Cave Palace N"): rule_data_list[194],
     ("Sochen Cave Palace N", "Old Archades"): rule_data_list[1],
     ("Old Archades", "Sochen Cave Palace N"): rule_data_list[1],
     ("Old Archades", "Archades"): rule_data_list[1],
     ("Archades", "Old Archades"): rule_data_list[1],
-    ("Archades", "Draklor Laboratory"): rule_data_list[196],
-    ("Draklor Laboratory", "Archades"): rule_data_list[196],
+    ("Archades", "Draklor Laboratory"): rule_data_list[195],
+    ("Draklor Laboratory", "Archades"): rule_data_list[195],
     ("Bhujerba", "Lhusu Mines"): rule_data_list[1],
     ("Lhusu Mines", "Bhujerba"): rule_data_list[1],
     ("Ridorana Cataract", "Pharos of Ridorana"): rule_data_list[1],
     ("Pharos of Ridorana", "Ridorana Cataract"): rule_data_list[1],
     ("Pharos of Ridorana", "Pharos of Ridorana Subterra"): rule_data_list[1],
     ("Pharos of Ridorana Subterra", "Pharos of Ridorana"): rule_data_list[1],
-    ("Rabanastre", "Nalbina Fortress"): rule_data_list[197],
-    ("Nalbina Fortress", "Rabanastre"): rule_data_list[197],
-    ("Rabanastre", "Bhujerba"): rule_data_list[198],
-    ("Bhujerba", "Rabanastre"): rule_data_list[198],
-    ("Rabanastre", "Archades"): rule_data_list[199],
-    ("Archades", "Rabanastre"): rule_data_list[199],
-    ("Nalbina Fortress", "Archades"): rule_data_list[200],
-    ("Archades", "Nalbina Fortress"): rule_data_list[200],
-    ("Nalbina Fortress", "Balfonheim"): rule_data_list[201],
-    ("Balfonheim", "Nalbina Fortress"): rule_data_list[201],
-    ("Bhujerba", "Balfonheim"): rule_data_list[202],
-    ("Balfonheim", "Bhujerba"): rule_data_list[202],
-    ("Archades", "Balfonheim"): rule_data_list[203],
-    ("Balfonheim", "Archades"): rule_data_list[203],
-    ("Rabanastre", "Strahl"): rule_data_list[204],
-    ("Strahl", "Rabanastre"): rule_data_list[204],
-    ("Bhujerba", "Strahl"): rule_data_list[204],
-    ("Strahl", "Bhujerba"): rule_data_list[204],
-    ("Nalbina Fortress", "Strahl"): rule_data_list[204],
-    ("Strahl", "Nalbina Fortress"): rule_data_list[204],
-    ("Archades", "Strahl"): rule_data_list[205],
-    ("Strahl", "Archades"): rule_data_list[205],
-    ("Balfonheim", "Strahl"): rule_data_list[205],
-    ("Strahl", "Balfonheim"): rule_data_list[205],
-    ("Dalmasca Estersand", "Strahl"): rule_data_list[204],
-    ("Strahl", "Dalmasca Estersand"): rule_data_list[204],
-    ("Dalmasca Westersand", "Strahl"): rule_data_list[204],
-    ("Strahl", "Dalmasca Westersand"): rule_data_list[204],
-    ("Giza Plains Dry", "Strahl"): rule_data_list[204],
-    ("Strahl", "Giza Plains Dry"): rule_data_list[204],
-    ("Giza Plains Rains", "Strahl"): rule_data_list[206],
-    ("Strahl", "Giza Plains Rains"): rule_data_list[206],
-    ("Ogir-Yensa Sandsea", "Strahl"): rule_data_list[204],
-    ("Strahl", "Ogir-Yensa Sandsea"): rule_data_list[204],
-    ("Nam-Yensa Sandsea", "Strahl"): rule_data_list[204],
-    ("Strahl", "Nam-Yensa Sandsea"): rule_data_list[204],
-    ("Ozmone Plain", "Strahl"): rule_data_list[204],
-    ("Strahl", "Ozmone Plain"): rule_data_list[204],
-    ("Paramina Rift", "Strahl"): rule_data_list[207],
-    ("Strahl", "Paramina Rift"): rule_data_list[207],
-    ("Mosphoran Highwaste", "Strahl"): rule_data_list[207],
-    ("Strahl", "Mosphoran Highwaste"): rule_data_list[207],
-    ("Phon Coast", "Strahl"): rule_data_list[208],
-    ("Strahl", "Phon Coast"): rule_data_list[208],
-    ("Tchita Uplands", "Strahl"): rule_data_list[208],
-    ("Strahl", "Tchita Uplands"): rule_data_list[208],
-    ("Cerobi Steppe", "Strahl"): rule_data_list[205],
-    ("Strahl", "Cerobi Steppe"): rule_data_list[205],
-    ("Ridorana Cataract", "Strahl"): rule_data_list[208],
-    ("Strahl", "Ridorana Cataract"): rule_data_list[208],
-    ("Rabanastre", "Rabanastre <-> Nalbina Skyferry"): rule_data_list[197],
-    ("Nalbina Fortress", "Rabanastre <-> Nalbina Skyferry"): rule_data_list[197],
-    ("Rabanastre", "Rabanastre <-> Bhujerba Skyferry"): rule_data_list[198],
-    ("Bhujerba", "Rabanastre <-> Bhujerba Skyferry"): rule_data_list[198],
-    ("Rabanastre", "Rabanastre <-> Archades Skyferry"): rule_data_list[199],
-    ("Archades", "Rabanastre <-> Archades Skyferry"): rule_data_list[199],
-    ("Nalbina Fortress", "Nalbina <-> Archades Skyferry"): rule_data_list[200],
-    ("Archades", "Nalbina <-> Archades Skyferry"): rule_data_list[200],
-    ("Nalbina Fortress", "Nalbina <-> Balfonheim Skyferry"): rule_data_list[201],
-    ("Balfonheim", "Nalbina <-> Balfonheim Skyferry"): rule_data_list[201],
-    ("Bhujerba", "Bhujerba <-> Balfonheim Skyferry"): rule_data_list[202],
-    ("Balfonheim", "Bhujerba <-> Balfonheim Skyferry"): rule_data_list[202],
-    ("Archades", "Archades <-> Balfonheim Skyferry"): rule_data_list[203],
-    ("Balfonheim", "Archades <-> Balfonheim Skyferry"): rule_data_list[203],
-    ("Bhujerba", "Dreadnought Leviathan"): rule_data_list[209],
+    ("Rabanastre", "Nalbina Fortress"): rule_data_list[196],
+    ("Nalbina Fortress", "Rabanastre"): rule_data_list[196],
+    ("Rabanastre", "Bhujerba"): rule_data_list[197],
+    ("Bhujerba", "Rabanastre"): rule_data_list[197],
+    ("Rabanastre", "Archades"): rule_data_list[198],
+    ("Archades", "Rabanastre"): rule_data_list[198],
+    ("Nalbina Fortress", "Archades"): rule_data_list[199],
+    ("Archades", "Nalbina Fortress"): rule_data_list[199],
+    ("Nalbina Fortress", "Balfonheim"): rule_data_list[200],
+    ("Balfonheim", "Nalbina Fortress"): rule_data_list[200],
+    ("Bhujerba", "Balfonheim"): rule_data_list[201],
+    ("Balfonheim", "Bhujerba"): rule_data_list[201],
+    ("Archades", "Balfonheim"): rule_data_list[202],
+    ("Balfonheim", "Archades"): rule_data_list[202],
+    ("Rabanastre", "Strahl"): rule_data_list[203],
+    ("Strahl", "Rabanastre"): rule_data_list[203],
+    ("Bhujerba", "Strahl"): rule_data_list[203],
+    ("Strahl", "Bhujerba"): rule_data_list[203],
+    ("Nalbina Fortress", "Strahl"): rule_data_list[203],
+    ("Strahl", "Nalbina Fortress"): rule_data_list[203],
+    ("Archades", "Strahl"): rule_data_list[204],
+    ("Strahl", "Archades"): rule_data_list[204],
+    ("Balfonheim", "Strahl"): rule_data_list[204],
+    ("Strahl", "Balfonheim"): rule_data_list[204],
+    ("Dalmasca Estersand", "Strahl"): rule_data_list[203],
+    ("Strahl", "Dalmasca Estersand"): rule_data_list[203],
+    ("Dalmasca Westersand", "Strahl"): rule_data_list[203],
+    ("Strahl", "Dalmasca Westersand"): rule_data_list[203],
+    ("Giza Plains Dry", "Strahl"): rule_data_list[203],
+    ("Strahl", "Giza Plains Dry"): rule_data_list[203],
+    ("Giza Plains Rains", "Strahl"): rule_data_list[205],
+    ("Strahl", "Giza Plains Rains"): rule_data_list[205],
+    ("Ogir-Yensa Sandsea", "Strahl"): rule_data_list[203],
+    ("Strahl", "Ogir-Yensa Sandsea"): rule_data_list[203],
+    ("Nam-Yensa Sandsea", "Strahl"): rule_data_list[203],
+    ("Strahl", "Nam-Yensa Sandsea"): rule_data_list[203],
+    ("Ozmone Plain", "Strahl"): rule_data_list[203],
+    ("Strahl", "Ozmone Plain"): rule_data_list[203],
+    ("Paramina Rift", "Strahl"): rule_data_list[206],
+    ("Strahl", "Paramina Rift"): rule_data_list[206],
+    ("Mosphoran Highwaste", "Strahl"): rule_data_list[206],
+    ("Strahl", "Mosphoran Highwaste"): rule_data_list[206],
+    ("Phon Coast", "Strahl"): rule_data_list[207],
+    ("Strahl", "Phon Coast"): rule_data_list[207],
+    ("Tchita Uplands", "Strahl"): rule_data_list[207],
+    ("Strahl", "Tchita Uplands"): rule_data_list[207],
+    ("Cerobi Steppe", "Strahl"): rule_data_list[204],
+    ("Strahl", "Cerobi Steppe"): rule_data_list[204],
+    ("Ridorana Cataract", "Strahl"): rule_data_list[207],
+    ("Strahl", "Ridorana Cataract"): rule_data_list[207],
+    ("Rabanastre", "Rabanastre <-> Nalbina Skyferry"): rule_data_list[196],
+    ("Nalbina Fortress", "Rabanastre <-> Nalbina Skyferry"): rule_data_list[196],
+    ("Rabanastre", "Rabanastre <-> Bhujerba Skyferry"): rule_data_list[197],
+    ("Bhujerba", "Rabanastre <-> Bhujerba Skyferry"): rule_data_list[197],
+    ("Rabanastre", "Rabanastre <-> Archades Skyferry"): rule_data_list[198],
+    ("Archades", "Rabanastre <-> Archades Skyferry"): rule_data_list[198],
+    ("Nalbina Fortress", "Nalbina <-> Archades Skyferry"): rule_data_list[199],
+    ("Archades", "Nalbina <-> Archades Skyferry"): rule_data_list[199],
+    ("Nalbina Fortress", "Nalbina <-> Balfonheim Skyferry"): rule_data_list[200],
+    ("Balfonheim", "Nalbina <-> Balfonheim Skyferry"): rule_data_list[200],
+    ("Bhujerba", "Bhujerba <-> Balfonheim Skyferry"): rule_data_list[201],
+    ("Balfonheim", "Bhujerba <-> Balfonheim Skyferry"): rule_data_list[201],
+    ("Archades", "Archades <-> Balfonheim Skyferry"): rule_data_list[202],
+    ("Balfonheim", "Archades <-> Balfonheim Skyferry"): rule_data_list[202],
+    ("Bhujerba", "Dreadnought Leviathan"): rule_data_list[208],
     ("Draklor Laboratory", "Balfonheim"): rule_data_list[5],
     ("Rabanastre <-> Nalbina Skyferry", "Skyferry"): rule_data_list[1],
     ("Rabanastre <-> Bhujerba Skyferry", "Skyferry"): rule_data_list[1],
@@ -6448,7 +6447,7 @@ entrance_rule_data_table: Dict[Tuple[str, str], Rule[Any]] = {
     ("Nalbina <-> Balfonheim Skyferry", "Skyferry"): rule_data_list[1],
     ("Bhujerba <-> Balfonheim Skyferry", "Skyferry"): rule_data_list[1],
     ("Archades <-> Balfonheim Skyferry", "Skyferry"): rule_data_list[1],
-    ("Rabanastre", "Bahamut"): rule_data_list[210],
+    ("Rabanastre", "Bahamut"): rule_data_list[209],
     ("Rabanastre", "Aerodrome"): rule_data_list[1],
     ("Bhujerba", "Aerodrome"): rule_data_list[1],
     ("Nalbina Fortress", "Aerodrome"): rule_data_list[1],

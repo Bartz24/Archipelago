@@ -560,6 +560,8 @@ class FF12OpenWorldWorld(World):
                 self.options.include_trophy_turn_ins = options["include_trophy_turn_ins"]
                 self.options.include_hunt_rewards = options["include_hunt_rewards"]
                 self.options.include_clan_hall_rewards = options["include_clan_hall_rewards"]
+                # Older slot data predates the option, when every trial stage was included.
+                # Keep this at 100 regardless of the option's default.
                 self.options.max_trial_stage = options.get("max_trial_stage", 100)
                 self.options.allow_seitengrat = options["allow_seitengrat"]
                 self.options.allow_advanced_chocobo_routes = options.get("allow_advanced_chocobo_routes", 1)
