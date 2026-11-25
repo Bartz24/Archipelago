@@ -588,6 +588,9 @@ class FF12OpenWorldWorld(World):
                                     "id": location_data_table[loc.name].str_id,
                                     "index": location_data_table[loc.name].secondary_index,
                                     "item_display": self.get_item_display(loc),
+                                    "item_name": loc.item.name if loc.item else "",
+                                    "item_player": self.multiworld.get_player_name(loc.item.player) if loc.item else "",
+                                    "item_flags": int(loc.item.classification) if loc.item else 0,
                                     "sphere": cur_sphere})
                 elif loc.name in event_data_table.keys():
                     spheres.append({"name": loc.name,
